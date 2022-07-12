@@ -1,0 +1,76 @@
+.currency-converter-container {
+  box-shadow: 0 5px 15px #6477aa30;
+}
+.currency-converter-container .header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+.currency-converter-container .header h2 {
+  font-weight: 400;
+  font-size: 22px;
+  color: var(--text-color);
+}
+.currency-converter-container .header img {
+  width: 25px;
+}
+.currency-converter-container .fromToFields {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 10px 10px;
+}
+.currency-converter-container .fromToFields .from input[name='from'],
+.currency-converter-container .fromToFields .to input[name='to'] {
+  background-color: #E4E9FA;
+  border: none;
+  padding: 5px;
+  width: 100%;
+  min-height: 82px;
+  border-radius: 10px;
+  margin: 10px 0;
+  outline: none;
+  font-size: 22px;
+  font-weight: 400;
+  color: var(--text-color);
+  text-align: center;
+}
+.currency-converter-container .fromToFields .from input[name='from']::placeholder,
+.currency-converter-container .fromToFields .to input[name='to']::placeholder {
+  color: var(--text-color);
+  opacity: 0.5;
+}
+.currency-converter-container button {
+  width: 100%;
+  border: none;
+  padding: 7px;
+  border-radius: 10px;
+  background-color: var(--main-color);
+  color: #fff;
+  margin-top: 5px;
+  cursor: pointer;
+}
+
+.currency-converter-container button:hover {
+  opacity: 0.9;
+}
+.currency-converter-container button:active {
+  opacity: 0.8;
+}
+.currency-converter-container button.resetTrans {
+  background-color: #eee;
+  color: var(--text-color);
+
+}
+
+
+
+.ant-select:not(.ant-select-customize-input) .ant-select-selector {
+  background-color: #E4E9FA !important;
+  border-radius:  50px !important;
+  border: none !important;
+}
+.ant-select {
+  border-radius: 50px !important;
+  color: var(--text-color) !important;
+}

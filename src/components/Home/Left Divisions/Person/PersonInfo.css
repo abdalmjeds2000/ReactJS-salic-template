@@ -1,0 +1,57 @@
+.home-container .home-division .home-info .person {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 15px 25px;
+  background: rgb(231,240,254);
+  background: linear-gradient(90deg, rgba(231,240,254,1) 0%, rgba(255,255,255,0) 100%);
+}
+.home-container .home-division .home-info .person .person-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.home-container .home-division .home-info .person .person-info .person-img img {
+  max-width: 75px;
+  border: 7px solid #fff;
+  border-radius: 50%;
+}
+.home-container .home-division .home-info .person .person-info .person-txt {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.home-container .home-division .home-info .person .person-info .person-txt h1 {
+  font-weight: 400;
+  font-size: 28px;
+}
+.home-container .home-division .home-info .person .person-info .person-txt > p {
+  font-weight: 400;
+  font-size: 20px;
+}
+.home-container .home-division .home-info .person .person-info .person-txt > div {
+  display: flex;
+  gap: 30px;
+}
+.home-container .home-division .home-info .person .person-info .person-txt > div div {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  font-size: 14px;
+}
+.home-container .home-division .home-info .person .person-info .person-txt > div div svg {
+  width: 20px;
+}
+.home-container .home-division .home-info .person .person-control-buttons {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  padding: 15px 0;
+}
+.home-container .home-division .home-info .person .person-control-buttons svg {
+  width: 30px;
+}

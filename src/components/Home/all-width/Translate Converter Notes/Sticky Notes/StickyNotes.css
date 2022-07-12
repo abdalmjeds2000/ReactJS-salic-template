@@ -1,0 +1,50 @@
+.sticky-notes-container {
+  background-color: #FFF3CC !important;
+  color: var(--text-color);
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 5px 15px #6477aa30;
+}
+.sticky-notes-container .header h2 {
+  margin: 0 0 25px 0;
+  font-weight: 400;
+  font-size: 22px;
+}
+
+.sticky-notes-container .note {
+
+}
+.sticky-notes-container .note .note-title{
+  margin: 0 0 10px 0;
+  font-weight: 400;
+  font-size: 20px;
+}
+.sticky-notes-container .note .note-description{
+  margin: 0 0 10px 0;
+  font-weight: 100;
+  font-size: 12px;
+  color: var(--text-color);
+}
+
+.sticky-notes-container .dots {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  align-items: flex-end;
+}
+
+.sticky-notes-container .dots span {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #DBE4FC;
+}
+
+.sticky-notes-container .dots span.active {
+  border-style: solid;
+  border: 2px solid #DBE4FC;
+  background-color: var(--text-color);
+  transform: scale(1.2);
+}

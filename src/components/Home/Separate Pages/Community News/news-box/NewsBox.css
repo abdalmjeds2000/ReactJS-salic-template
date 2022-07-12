@@ -1,0 +1,46 @@
+.news-box {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  color: var(--text-color);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.news-box .header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+}
+.news-box .header img {
+  width: 50px;
+  border: 3px solid #fff;
+  border-radius: 50%;
+  box-shadow: 0 5px 5px #ccc;
+}
+.news-box .header div h3 {
+  font-weight: 400;
+  font-size: 18px;
+}
+.news-box .header div p {
+  font-weight: 400;
+  font-size: 14px;
+}
+.news-box > h2 {
+  font-weight: 400;
+  font-size: 22px;
+}
+.news-box > p {
+  font-weight: 400;
+  font-size: 14px;
+}
+.news-box > a {
+  font-weight: 400;
+  font-size: 14px;
+  text-decoration: underline;
+  display: block;
+  text-align: right;
+  color: #458CFF;
+}

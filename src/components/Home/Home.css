@@ -1,0 +1,74 @@
+.home-container {
+  min-height: calc(100vh - 60px);
+  background: rgb(224,233,255);
+  background: linear-gradient(0deg, rgba(224,233,255,1) 0%, rgba(255,255,255,1) 100%);
+  position: relative;
+}
+
+.home-container .home-division {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+.home-container .home-division .home-info {
+  flex-basis: 60%;
+  color: var(--text-color);
+}
+
+.home-container .home-division .home-world-graph {
+  flex-basis: 40%;
+  min-height: calc(100vh - 60px);
+  z-index: 3;
+}
+._worldMap {
+  position: absolute;
+  top: calc(-10vh + -60px);
+  right: 0;
+  transform: translateX(35%);
+  width: 120vh;
+  z-index: 2;
+}
+@media screen and (max-width: 1090px) {
+  ._worldMap {
+    width: 120vw;
+    top: 200px;
+    left: -10vw;
+    transform: translateX(0%);
+  }
+  .home-container .home-division {
+    flex-direction: column-reverse;
+    overflow: hidden;
+  }
+  .home-container .home-division .home-world-graph {
+    flex-basis: 100%;
+    background-size: contain;
+    background-position: top;
+    position: relative;
+    min-height: auto;
+    top: 140px;
+    margin-bottom: 270px;
+  }  
+  .home-container .home-division .home-info {
+    flex-basis: 100%;
+    background-color: #fff;
+    border-radius: 50vw 50vw 0 0;
+    z-index: 3;
+    min-height: 600px;
+  }
+  .home-container .home-division .home-info > div:not(:first-child) {
+    position: relative;
+    top: -90px;
+  }
+}
+
+
+.vision-logo-2030 {
+  width: 75px;
+  position: absolute;
+  right: 25px;
+  top: calc(100vh - 135px);
+}
+
+

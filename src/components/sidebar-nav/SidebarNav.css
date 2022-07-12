@@ -1,0 +1,97 @@
+.nav-container {
+  background-color: var(--main-color);
+  max-height: 100vh;
+  width: 250px;
+  position: sticky;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+  transition: var(--main-animation-duration);
+  z-index: 5 !important;
+}
+.nav-container-small {
+  width: 60px;
+}
+.nav-container-large {
+  width: 220px;
+}
+@media screen and (max-width: 992px) {
+  .nav-container {
+    position: fixed;
+    top: 12.5px;
+    margin-top: 50px;
+    min-width: 75%;
+    padding: 0px;
+    border-radius: 10px;
+    left: 25px;
+  }
+}
+.nav-container div {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 5px 10px #00000025;
+  padding: 15px;
+  height: 60px;
+}
+@media screen and (max-width: 992px) {
+  .nav-container div {
+    position: absolute;
+    width: 35px;
+    height: 35px;
+    background-color: var(--main-color);
+    padding: 7px;
+    border-radius: 25%;
+    left: 0px;
+    top: -50px;
+    box-shadow: none;
+  }
+}
+.nav-container div svg {
+  padding: 2px;
+  cursor: pointer;
+}
+
+.nav-container ul {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  transition: var(--main-animation-duration);
+}
+
+.nav-container ul li {
+  width: 100%;
+  color: #fff;
+}
+.nav-container ul li:hover {
+  background-color: #00000010;
+}
+.nav-container ul li a {
+  color: #fff;
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.9em;
+}
+.nav-container ul li a svg {
+  padding: 2px;
+}
+.nav-container ul li a p {
+  font-size: 1.2em;
+  transition: var(--main-animation-duration);
+  color: #fff !important;
+}
+
+.centered-icons-disktop {
+  justify-content: flex-start;
+}
+.centered-icons-mobile {
+  justify-content: center;
+}

@@ -1,0 +1,21 @@
+.home-info .numbers-attendance-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+  gap: 5px;
+  padding: 10px 25px;
+  margin: 25px 0 0 0;
+}
+
+@media screen and (max-width: 1090px) {
+  .home-info .numbers-attendance-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(20%, 1fr));
+    gap: 10px;
+    padding: 15px;
+  }
+  .home-info .numbers-attendance-container .div2,
+  .home-info .numbers-attendance-container .div3 {
+    position: relative;
+    top: -50px;
+  }
+}
