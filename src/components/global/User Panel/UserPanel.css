@@ -8,9 +8,21 @@
 .user-panel-container .icons {
   display: flex;
   gap: 15px;
+  position: relative;
+
+}
+.user-panel-container .icons a {
+  position: relative;
+}
+.user-panel-container .icons a .badge {
+  width: 15px;
+  height: 15px;
+  font-size: 0.65rem;
+  font-weight: 600;
 }
 .user-panel-container .icons img {
   width: 20px;
+
 }
 
 .user-panel-container .user-info {
@@ -87,7 +99,7 @@
   position: absolute;
   width: 100vw;
   height: 100vh;
-  left: -68vw;
-  top: -8px;
+  right: -25px;
+  top: -13px;
   z-index: -1;
 }

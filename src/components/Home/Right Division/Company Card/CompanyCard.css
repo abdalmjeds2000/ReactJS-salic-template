@@ -22,7 +22,7 @@
   left: 50%;
   transform: translateX(-50%);
 }
-@media screen and (max-width: 1090px) {
+@media screen and (max-width: 990px) {
   .company-card {
     width: 100px;
     padding: 10px 5px;
@@ -51,7 +51,7 @@
 .company-card .company-card-name div p {
   font-size: 10px;
 }
-@media screen and (max-width: 992px) {
+@media screen and (max-width: 990px) {
   .company-card .company-card-name {
     gap: 0px;
   }

@@ -5,19 +5,28 @@
 }
 .latest-attendance-table-container .latest-attendance-table tr th,
 .latest-attendance-table-container .latest-attendance-table tr td:not(:first-child) {
-  font-size: 14px;
+  font-size: 0.7rem;
 }
 .latest-attendance-table-container .latest-attendance-table tr td:not(:first-child) {
   text-align: center;
 }
 .latest-attendance-table-container .latest-attendance-table tr td span {
   line-height: 0px;
-  font-size: 35px;
+  font-size: 2rem;
   position: relative;
-  top: 6px;
+  top: 5px;
+  right: 2px;
+}
+
+.latest-attendance-table-container .latest-attendance-table tbody tr:nth-child(2) {
+  line-height: 1.5rem;
+}
+.latest-attendance-table-container .latest-attendance-table tbody tr:nth-child(2):first-child {
+  text-align: left;
 }
 .latest-attendance-table-container .latest-attendance-table td {
-  padding: 5px 25px;
+  padding: 0px 25px;
+  font-size: 0.7rem;
 }
 .latest-attendance-table-container div.thead {
   display: flex;
@@ -27,14 +36,15 @@
 }
 .latest-attendance-table-container .latest-attendance-table tbody > tr h2 {
   font-weight: 400;
-  font-size: 20px;
-  margin: 25px 0 10px 0 !important;
+  font-size: 1.2rem;
+  margin: 10px 0 7px 0 !important;
 }
 .latest-attendance-table-container .latest-attendance-table tbody > tr a {
   font-weight: 400;
-  color: var(--text-color);
-  font-size: 14px;
-  text-decoration: underline;
+  color: var(--link-text-color);
+  font-size: 0.7rem;
+  position: relative;
+  top: 10px;
 }
 
 
@@ -51,26 +61,62 @@
   }
   .latest-attendance-table-container .latest-attendance-table tbody tr:nth-child(2),
   .latest-attendance-table-container .latest-attendance-table tbody > tr a {
-    display: none;
-    font-size: 5px;
+    /* display: none; */
+    font-size: 0.7rem;
   }
   .latest-attendance-table-container .latest-attendance-table tbody > tr h2 {
-    padding: 10px;
+    padding: 0;
+    margin-top: 0 !important;
   }
-  .latest-attendance-table-container .latest-attendance-table tbody tr td {
+  .latest-attendance-table-container .latest-attendance-table tbody > tr a {
+    top: 4px;
   }
-  .latest-attendance-table-container .latest-attendance-table tr td span {
-    line-height: 0px;
-    font-size: 50px;
-    position: relative;
-    top: 12px;
-    padding: 0 5px;
-  }
+  
 }
 
 
-@media screen and (max-width: 1090px) {
+@media screen and (max-width: 800px) {
   .latest-attendance-table-container .latest-attendance-table td {
-    padding: 5px 10px;
+    padding: 0 10px;
+  }
+}
+@media screen and (min-width: 1500px) {
+  .latest-attendance-table-container .latest-attendance-table td {
+    font-size: 0.9rem;
+  }
+  .latest-attendance-table-container .latest-attendance-table tbody > tr h2 {
+    font-size: 1.4rem;
+  }
+  .latest-attendance-table-container .latest-attendance-table tbody > tr a {
+    font-size: 0.9rem;
+  }
+  .latest-attendance-table-container .latest-attendance-table tr th, 
+  .latest-attendance-table-container .latest-attendance-table tr td:not(:first-child) {
+    font-size: 0.9rem;
+  }
+  .latest-attendance-table-container .latest-attendance-table tr td span {
+    font-size: 2.5rem;
+    top: 6px;
+  }
+}
+
+@media screen and (min-width: 1500px) {
+  .home-info .numbers-attendance-container {
+    grid-column-gap: 15px;
+    grid-row-gap: 15px;
+  }
+  .latest-attendance-table-container .latest-attendance-table td {
+    font-size: 1.1rem;
+  }
+  .latest-attendance-table-container .latest-attendance-table tbody > tr h2 {
+    font-size: 1.6rem;
+  }
+  .latest-attendance-table-container .latest-attendance-table tbody > tr a {
+    font-size: 1.1rem;
+    
+  }
+  .latest-attendance-table-container .latest-attendance-table tr th, 
+  .latest-attendance-table-container .latest-attendance-table tr td:not(:first-child) {
+    font-size: 1.1rem;
   }
 }

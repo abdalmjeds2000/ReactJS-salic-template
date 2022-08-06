@@ -7,6 +7,7 @@ import { ReactComponent as ApplicationsIcon } from '../../icons/icons-menu/Iconl
 import { ReactComponent as LocationsIcon } from '../../icons/icons-menu/Iconly-Light-Discovery.svg';
 import { ReactComponent as CommunicationIcon } from '../../icons/icons-menu/Iconly-Light-Calling.svg';
 import { ReactComponent as NotesIcon } from '../../icons/icons-menu/Iconly-Light-Paper.svg';
+import { ReactComponent as LogoutIcon } from '../../icons/icons-menu/logout.svg';
 
 
 function getWindowSize() {
@@ -24,7 +25,7 @@ const SidebarNav = (props) => {
     {index: 4, to: '/notes', icon: <NotesIcon/>, text: <p>Notes</p>},
   ];
   let activeStyle = {
-    borderLeft: "5px solid var(--second-color)",
+    borderLeft: "4px solid var(--second-color)",
   };
   
   const [windowSize, setWindowSize] = useState(getWindowSize());
@@ -43,15 +44,15 @@ const SidebarNav = (props) => {
 
   return (
     <nav 
-      className={isNavBarLarge? "nav-container nav-container-large": "nav-container nav-container-small"} 
-      style={(windowSize.innerWidth < 992 && !isNavBarLarge) ? {padding: 0} : {}}
+      className={isNavBarLarge? "nav-container nav-container-large" : "nav-container nav-container-small"} 
+      style={(windowSize.innerWidth < 800 && !isNavBarLarge) ? {padding: 0} : {}}
     >
 
       <div>
         <NavButton onClick={() => setIsNavBarLarge(!isNavBarLarge)}/>
       </div>
 
-      <ul style={(windowSize.innerWidth < 992 && !isNavBarLarge) ? {display: 'none'} : {padding: '20px 0'}}>
+      <ul style={(windowSize.innerWidth < 800 && !isNavBarLarge) ? {display: 'none'} : {padding: '20px 0'}}>
         {listItems.map(({ to, icon, text, index }) => {
           return <li key={index}>
             <NavLink 
@@ -64,6 +65,12 @@ const SidebarNav = (props) => {
             </NavLink>
           </li>
         })}
+      
+        <li>
+          <a href="https://salic.sharepoint.com/sites/newsalic/_layouts/closeConnection.aspx?loginasanotheruser=true&Source=https://salic.sharepoint.com/sites/dev">
+            <LogoutIcon style={{fontSize: '2rem', fill: '#fff', opacity: '0.6'}}/>
+          </a>
+        </li>
       </ul>
 
     </nav>

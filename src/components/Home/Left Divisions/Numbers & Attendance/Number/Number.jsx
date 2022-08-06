@@ -17,8 +17,8 @@ const Number = (props) => {
         styles={buildStyles({
           pathColor: props.pathColor,
           trailColor: '#EEF3FF',
-          textSize: '24px',
-          textColor: '#6477AA75',
+          textSize: '2rem',
+          textColor: props.textColor,
         })
         }
       />

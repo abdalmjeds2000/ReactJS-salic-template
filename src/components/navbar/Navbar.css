@@ -1,5 +1,5 @@
 .navbar {
-  min-height: 60px;
+  min-height: 50px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -29,11 +29,11 @@
 .navbar img {
   position: relative;
   top: -2px;
-  max-width: 220px;
+  max-width: 200px;
 }
 @media screen and (max-width: 320px){
   .navbar img {
-    max-width: 140px;
+    max-width: 120px;
   }
   .navbar {
     justify-content: end;
@@ -41,12 +41,12 @@
 }
 @media screen and (max-width: 375px){
   .navbar img {
-    max-width: 180px;
+    max-width: 165px;
   }
 }
 
 
-@media screen and (max-width: 992px){
+@media screen and (max-width: 800px){
   .navbar {
     justify-content: center;
   }
@@ -56,6 +56,6 @@
   .navbar img {
     position: relative;
     top: -2px;
-    width: 400px;
+    width: 360px;
   }
 }

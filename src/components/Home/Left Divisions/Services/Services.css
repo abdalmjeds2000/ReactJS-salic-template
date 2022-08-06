@@ -2,17 +2,17 @@
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 15px 25px;
-  padding: 10px 25px;
+  padding: 0px 25px;
 }
 
 .services-container .service-box {
   background-color: #fff;
-  padding: 20px;
-  border-radius: 15px;
+  padding: 15px 10px;
+  border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  gap: 10px;
+  gap: 7px;
   color: var(--text-color);
   transition: .3s;
 }
@@ -22,18 +22,18 @@
 
 
 .services-container .service-box h3 {
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 400;
 }
 .services-container .service-box img {
-  width: 45px;
+  width: 35px;
 }
 
-@media screen and (max-width: 1090px) {
+@media screen and (max-width: 800px) {
   .services-container {
-    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-    gap: 10px 15px;
-    padding: 25px;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 7px 10px;
+    padding: 0 10px;
     background-color: var(--third-color);
   }
   
@@ -48,4 +48,14 @@
     width: 30px;
   }
   
+}
+@media screen and (min-width: 1500px) {
+  .services-container {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  }
+}
+@media screen and (min-width: 1750px) {
+  .services-container {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  }
 }

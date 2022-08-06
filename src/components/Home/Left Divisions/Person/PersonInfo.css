@@ -3,9 +3,10 @@
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  padding: 15px 25px;
+  padding: 5px 25px;
   background: rgb(231,240,254);
   background: linear-gradient(90deg, rgba(231,240,254,1) 0%, rgba(255,255,255,0) 100%);
+  top: 0;
 }
 .home-container .home-division .home-info .person .person-info {
   display: flex;
@@ -15,22 +16,23 @@
   gap: 20px;
 }
 .home-container .home-division .home-info .person .person-info .person-img img {
-  max-width: 75px;
-  border: 7px solid #fff;
-  border-radius: 50%;
+  max-width: 65px;
+  border: 5px solid #fff;
+  border-radius: 50%;;
 }
 .home-container .home-division .home-info .person .person-info .person-txt {
   display: flex;
   flex-direction: column;
-  gap: 5px;
 }
 .home-container .home-division .home-info .person .person-info .person-txt h1 {
   font-weight: 400;
-  font-size: 28px;
+  font-size: 1.3rem;
+  line-height: 1.2;
 }
 .home-container .home-division .home-info .person .person-info .person-txt > p {
   font-weight: 400;
-  font-size: 20px;
+  font-size: 1.0rem;
+  line-height: 1.2;
 }
 .home-container .home-division .home-info .person .person-info .person-txt > div {
   display: flex;
@@ -38,20 +40,67 @@
 }
 .home-container .home-division .home-info .person .person-info .person-txt > div div {
   display: flex;
-  gap: 10px;
+  gap: 8px;
   align-items: center;
-  font-size: 14px;
+  font-size: 0.7rem;
 }
 .home-container .home-division .home-info .person .person-info .person-txt > div div svg {
-  width: 20px;
+  width: 0.7rem;
 }
 .home-container .home-division .home-info .person .person-control-buttons {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  gap: 15px;
-  padding: 15px 0;
+  gap: 10px;
 }
 .home-container .home-division .home-info .person .person-control-buttons svg {
-  width: 30px;
+  width: 1.7rem;
+  transition: .3s;
+  cursor: pointer;
+}
+.home-container .home-division .home-info .person .person-control-buttons svg:hover {
+  opacity: 0.7;
+}
+.badge {
+  width: 17px;
+  height: 17px;
+  text-align: center;
+  border-radius: 50px;
+  position: absolute;
+  color: #fff;
+  font-size: 0.75rem;
+  top: -4px;
+  right: -10px;
+}
+.mail-count {
+  background-color: #79D5A7;
+}
+.notifi-count {
+  background-color: #EF9494;
+}
+.home-container .home-division .home-info .person .person-control-buttons a {
+  position: relative;
+}
+@media screen and (min-width: 1500px) {
+  .home-container .home-division .home-info .person {
+    padding: 15px 25px;
+  }
+  .home-container .home-division .home-info .person .person-control-buttons svg {
+    width: 2rem;
+  }
+  .home-container .home-division .home-info .person .person-info .person-img img {
+    max-width: 75px;
+  }
+  .home-container .home-division .home-info .person .person-info .person-txt h1 {
+    font-size: 1.7rem;
+  }
+  .home-container .home-division .home-info .person .person-info .person-txt > p {
+    font-size: 1.4rem;
+  }
+  .home-container .home-division .home-info .person .person-info .person-txt > div div {
+    font-size: 0.9rem;
+  }
+  .home-container .home-division .home-info .person .person-info .person-txt > div div svg {
+    font-size: 0.9rem;
+  }
 }

@@ -12,52 +12,57 @@ const NumbersAttendance = (props) => {
     <div className="numbers-attendance-container">
       <div className="div1">
         <Number 
-          pathColor='#55ACEE' 
-          header="Employment Period" 
-          description="24 Days" 
-          value='22'
+          pathColor='#94EF9D' 
+          header="Performance" 
+          description="Good" 
+          value='100'
           minValue='0'
-          maxValue='30'
-          text='22'
+          maxValue='100'
+          text='100%'
+          textColor='#94EF9D'
         />
       </div>
       <div className="div2">
         <Number 
-          pathColor='#FABD81' 
-          header="Next Event" 
-          description="Saudi National Day" 
-          value='4'
+          pathColor='#EF9494' 
+          header="Employment Period" 
+          description="5 Days" 
+          value='5'
           minValue='0'
-          maxValue='10'
-          text={'4'}
+          maxValue='24'
+          text='5'
+          textColor='#EF9494'
         />
       </div>
       <div className="div3">
         <Number 
-          pathColor='#EF9494' 
-          header="Performance" 
-          description="Good" 
-          value='62'
+          pathColor='#55ACEE' 
+          header="Next Event" 
+          description="National day" 
+          value='55'
           minValue='0'
-          maxValue='100'
-          text='62%'
+          maxValue='70'
+          text='55'
+          textColor='#55ACEE' 
         />
       </div>
       <div className="div4">
         <Number 
           pathColor='#94EF9D' 
           header="Annual Leaves" 
-          description="24 Days" 
-          value='129'
+          description="20 / 30 Days" 
+          value='20'
           minValue='0'
-          maxValue='200'
-          text='129'
+          maxValue='30'
+          text='20'
+          textColor='#94EF9D' 
         />
       </div>
-    </div>
-    <div className="div5">
+      <div className="div5">
       <Attendance />
     </div>
+    </div>
+    
     
   </>
 }

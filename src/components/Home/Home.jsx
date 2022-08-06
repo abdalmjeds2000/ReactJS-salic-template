@@ -41,39 +41,39 @@ const Home = (props) => {
 
 
   return <div className="home-container">
-    <img src={worldIllustration} alt='map' className="_worldMap" />
     <div className="container">
 
 
       <div className="home-division">
         <div className="home-info">
-          {windowSize.innerWidth > 1090 ? <PersonInfo /> : <PersonMobile />}
+          {windowSize.innerWidth > 600 ? <PersonInfo /> : <PersonMobile />}
           <NumbersAttendance />
           <Services />
         </div>
 
         <div className="home-world-graph">
-          {windowSize.innerWidth > 1090 ? <img src={VisionLogo} alt='2030 Vision Logo' className="vision-logo-2030" /> : null}
-          <CompanyCard
+          <img src={worldIllustration} alt='map' className="_worldMap" />
+          {windowSize.innerWidth > 800 ? <img src={VisionLogo} alt='2030 Vision Logo' className="vision-logo-2030" /> : null}
+          {/* <CompanyCard
             logoSrc={MerredinLogo}
             companyName='Merredin Farms'
             companyLocation='Australia,'
-            companyDescription= {windowSize.innerWidth > 1090 && 'Merredin Farms is one of Australia’s largest farming companies with arable lands extending over 211k ha in western Australia, in addition to a flock of more than 35k Merino sheep.'}
-            top={windowSize.innerWidth > 1090 ? '2%' : '100px'}
-            right={windowSize.innerWidth < 1090 ? '-10%' : '-25%'}
-            float={windowSize.innerWidth < 1090 ? 'left' : ''}
-            logo_name_vertical={ windowSize.innerWidth < 1090 ? {flexDirection: 'column'} : {} }
+            companyDescription= {windowSize.innerWidth > 800 && 'Merredin Farms is one of Australia’s largest farming companies with arable lands extending over 211k ha in western Australia, in addition to a flock of more than 35k Merino sheep.'}
+            top={windowSize.innerWidth > 800 ? '2%' : '100px'}
+            right={windowSize.innerWidth < 800 ? '-10%' : '-25%'}
+            float={windowSize.innerWidth < 800 ? 'left' : ''}
+            logo_name_vertical={ windowSize.innerWidth < 800 ? {flexDirection: 'column'} : {} }
           />
           <CompanyCard
             logoSrc={DawatLogo}
             companyName='Daawat'
             companyLocation='India, Saket, New Delhi'
-            companyDescription={windowSize.innerWidth > 1090 && 'Daawat is India’s Finest Basmati Rice, which is produced by one of the leading Basmati rice manufacturers in the country, LT Foods Ltd.'}
-            top={windowSize.innerWidth > 1090 ? '20%' : '100px'}
-            right={windowSize.innerWidth < 1090 ? '10%' : '-45%'}
-            float={windowSize.innerWidth < 1090 ? 'right' : ''}
-            logo_name_vertical={ windowSize.innerWidth < 1090 ? {flexDirection: 'column'} : {} }
-          />
+            companyDescription={windowSize.innerWidth > 800 && 'Daawat is India’s Finest Basmati Rice, which is produced by one of the leading Basmati rice manufacturers in the country, LT Foods Ltd.'}
+            top={windowSize.innerWidth > 800 ? '20%' : '100px'}
+            right={windowSize.innerWidth < 800 ? '10%' : '-45%'}
+            float={windowSize.innerWidth < 800 ? 'right' : ''}
+            logo_name_vertical={ windowSize.innerWidth < 800 ? {flexDirection: 'column'} : {} }
+          /> */}
         </div>
       </div>
 
