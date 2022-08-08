@@ -6,24 +6,24 @@
   box-shadow: 0 5px 15px #6477aa30;
 }
 .sticky-notes-container .header h2 {
-  margin: 0 0 25px 0;
   font-weight: 400;
-  font-size: 22px;
+  font-size: 1.3rem;
+  padding-bottom: 15px;
 }
 
 .sticky-notes-container .note {
 
 }
 .sticky-notes-container .note .note-title{
-  margin: 0 0 10px 0;
   font-weight: 400;
-  font-size: 20px;
+  font-size: 1rem;
+  margin-bottom: 5px !important; 
 }
 .sticky-notes-container .note .note-description{
-  margin: 0 0 10px 0;
+  padding: 0 0 15px 0;
   font-weight: 100;
-  font-size: 12px;
-  color: var(--text-color);
+  font-size: 0.7rem;
+  line-height: 1.3;
 }
 
 .sticky-notes-container .dots {

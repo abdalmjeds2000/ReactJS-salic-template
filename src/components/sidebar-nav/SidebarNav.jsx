@@ -52,7 +52,7 @@ const SidebarNav = (props) => {
         <NavButton onClick={() => setIsNavBarLarge(!isNavBarLarge)}/>
       </div>
 
-      <ul style={(windowSize.innerWidth < 800 && !isNavBarLarge) ? {display: 'none'} : {padding: '20px 0'}}>
+      <ul style={(windowSize.innerWidth < 800 && !isNavBarLarge) ? {display: 'none'} : {}}>
         {listItems.map(({ to, icon, text, index }) => {
           return <li key={index}>
             <NavLink 
@@ -67,8 +67,13 @@ const SidebarNav = (props) => {
         })}
       
         <li>
-          <a href="https://salic.sharepoint.com/sites/newsalic/_layouts/closeConnection.aspx?loginasanotheruser=true&Source=https://salic.sharepoint.com/sites/dev">
-            <LogoutIcon style={{fontSize: '2rem', fill: '#fff', opacity: '0.6'}}/>
+          <a 
+            className={!isNavBarLarge? 'centered-icons-mobile': 'centered-icons-disktop'} 
+            style={{fontSize: '1.05rem', opacity: '0.7'}} 
+            href="https://salic.sharepoint.com/sites/newsalic/_layouts/closeConnection.aspx?loginasanotheruser=true&Source=https://salic.sharepoint.com/sites/dev"
+          >
+            <LogoutIcon style={{fill: '#fff', maxWidth: '35px'}} />
+            {isNavBarLarge && 'Sign Out'}
           </a>
         </li>
       </ul>

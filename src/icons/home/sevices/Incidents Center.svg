@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="51" height="51" viewBox="0 0 51 51">
   <g id="Group_764" data-name="Group 764" transform="translate(-480 -808)">
-    <rect id="Rectangle_444" data-name="Rectangle 444" width="51" height="51" rx="25.5" transform="translate(480 808)" fill="#f4a65b" opacity="0.732"/>
+    <path id="Path_5092" data-name="Path 5092" d="M25.5,0A25.5,25.5,0,1,1,0,25.5,25.5,25.5,0,0,1,25.5,0Z" transform="translate(480 808)" fill="#4ba8d1"/>
     <g id="Iconly_Light_Danger" data-name="Iconly/Light/Danger" transform="translate(491.625 817.999)">
       <g id="Danger" transform="translate(0)">
         <path id="Path" d="M0,1.134A1.133,1.133,0,0,1,1.125,0,1.119,1.119,0,0,1,2.25,1.118v.016a1.125,1.125,0,1,1-2.25,0Z" transform="translate(12.75 17.646)" fill="#fff"/>

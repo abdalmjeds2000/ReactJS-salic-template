@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import './Home.css';
 
 import PersonInfo from "./Left Divisions/Person/PersonInfo";
@@ -12,9 +12,10 @@ import TranslateConverterNotes from './all-width/Translate Converter Notes/Trans
 import MerredinLogo from '../../icons/home/merredin_logo.png'
 import DawatLogo from '../../icons/home/dawat_logo.png'
 
-
 import worldIllustration from '../../icons/home/world.svg';
-import VisionLogo from '../../icons/home/2030-vision-logo.svg';
+import Navbar from "../navbar/Navbar";
+import UserPanel from "../global/User Panel/UserPanel";
+import { UserContext } from "../../Context/userContext";
 
 
 
@@ -22,28 +23,57 @@ function getWindowSize() {
   const {innerWidth, innerHeight} = window;
   return {innerWidth, innerHeight};
 }
+function getScrollY() {
+  const isScroll = window.scrollY > 0 ? true : false;
+  return isScroll;
+}
+
+
+
 
 
 
 const Home = (props) => {
 
   const [windowSize, setWindowSize] = useState(getWindowSize());
-
+  const [scrollSize, setScrollSize] = useState(getScrollY());
   useEffect(() => {
     function handleWindowResize() {
       setWindowSize(getWindowSize());
     }
     window.addEventListener('resize', handleWindowResize);
-    return () => {
-      window.removeEventListener('resize', handleWindowResize);
-    };
+
+    function handleScrollY() {
+      setScrollSize(getScrollY());
+    }
+    window.addEventListener('scroll', handleScrollY);
   }, []);
 
 
+
+  const { user_data } = useContext(UserContext);
+  const { notifications_count } = useContext(UserContext);
+  const { mail_count } = useContext(UserContext);
+
+
+
+
   return <div className="home-container">
+    {
+      scrollSize
+      ? <Navbar style={{width: '100%', position: 'fixed', zIndex: '4'}}>
+        <UserPanel 
+          mobile={user_data.Data?.Mobile}
+          mailTo='https://outlook.office.com/owa/'
+          mailCount={mail_count}
+          notificationsCount={notifications_count}
+          userName={user_data.Data?.DisplayName}
+          userImage={`https://salic.sharepoint.com/sites/newsalic/_layouts/15/userphoto.aspx?size=M&username=${user_data.Data?.Mail}`}
+        />
+      </Navbar>
+      : <></>
+    }
     <div className="container">
-
-
       <div className="home-division">
         <div className="home-info">
           {windowSize.innerWidth > 600 ? <PersonInfo /> : <PersonMobile />}
@@ -53,7 +83,7 @@ const Home = (props) => {
 
         <div className="home-world-graph">
           <img src={worldIllustration} alt='map' className="_worldMap" />
-          {windowSize.innerWidth > 800 ? <img src={VisionLogo} alt='2030 Vision Logo' className="vision-logo-2030" /> : null}
+          
           {/* <CompanyCard
             logoSrc={MerredinLogo}
             companyName='Merredin Farms'
@@ -78,7 +108,6 @@ const Home = (props) => {
       </div>
 
       <ThreeDivisions />
-
       <TranslateConverterNotes />
 
     </div>

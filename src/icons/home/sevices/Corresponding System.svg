@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="51" height="51" viewBox="0 0 51 51">
-  <g id="Group_765" data-name="Group 765" transform="translate(-826 -808)">
-    <rect id="Rectangle_444" data-name="Rectangle 444" width="51" height="51" rx="25.5" transform="translate(826 808)" fill="#f24343" opacity="0.732"/>
+  <g id="Group_766" data-name="Group 766" transform="translate(-826 -808)">
+    <path id="Path_5091" data-name="Path 5091" d="M25.5,0A25.5,25.5,0,1,1,0,25.5,25.5,25.5,0,0,1,25.5,0Z" transform="translate(826 808)" fill="#4ba8d1"/>
     <g id="Group_711" data-name="Group 711" transform="translate(824.278 801.278)">
       <path id="Path_5075" data-name="Path 5075" d="M24.31,36.639H11.5V27.905A6.4,6.4,0,0,1,17.905,21.5h0a6.4,6.4,0,0,1,6.405,6.405Z" transform="translate(0 0.823)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
       <path id="Path_5076" data-name="Path 5076" d="M23.405,36.639H42.038V27.905A6.4,6.4,0,0,0,35.633,21.5H17" transform="translate(0.905 0.823)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>

@@ -62,7 +62,7 @@
   opacity: 0.7;
 }
 .badge {
-  width: 17px;
+  min-width: 17px;
   height: 17px;
   text-align: center;
   border-radius: 50px;
@@ -71,19 +71,23 @@
   font-size: 0.75rem;
   top: -4px;
   right: -10px;
+  padding: 2px;
+  line-height: 1;
 }
 .mail-count {
   background-color: #79D5A7;
+  box-shadow: 0 2px 3px #79D5A775;
 }
 .notifi-count {
   background-color: #EF9494;
+  box-shadow: 0 2px 3px #EF949475;
 }
 .home-container .home-division .home-info .person .person-control-buttons a {
   position: relative;
 }
 @media screen and (min-width: 1500px) {
   .home-container .home-division .home-info .person {
-    padding: 15px 25px;
+    padding: 20px 25px;
   }
   .home-container .home-division .home-info .person .person-control-buttons svg {
     width: 2rem;
@@ -101,6 +105,6 @@
     font-size: 0.9rem;
   }
   .home-container .home-division .home-info .person .person-info .person-txt > div div svg {
-    font-size: 0.9rem;
+    width: 0.9rem;
   }
 }

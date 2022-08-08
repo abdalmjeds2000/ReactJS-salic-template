@@ -1,0 +1,47 @@
+.simple-user-panel {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  gap: 10px;
+  position: absolute;
+  right: 0;
+  top: -50px;
+  height: 50px;
+  padding: 0 25px;
+}
+
+.simple-user-panel > img {
+  width: 45px;
+  border: 2px solid #fff;
+  border-radius: 50px;
+}
+
+.simple-user-panel > p {
+  white-space: nowrap;
+  font-size: 1.1rem;
+  line-height: 1;
+}
+
+.simple-user-panel > div {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.simple-user-panel > div > a {
+  position: relative;
+  line-height: 1;
+}
+.simple-user-panel > div > a svg {
+  width: 30px;
+  height: 30px;
+  background-color: #fff;
+  padding: 4px;
+  border-radius: 50px;
+  border: 1px solid var(--third-color);
+}
+
+.simple-user-panel > div > img:hover {
+  cursor: pointer;
+  background-color: var(--third-color);
+}

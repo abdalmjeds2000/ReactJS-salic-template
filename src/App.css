@@ -23,13 +23,13 @@ ul {
 h1, h2, h3, h4, h5, h6, p {
   margin-bottom: 0 !important;
   color: var(--text-color) !important;
-  line-height: normal;
+  line-height: 1;
 }
 p {
   line-height: normal;
 }
 a { text-decoration: none; }
-a, a:hover, a:focus, a:active { color: #000; }
+a:hover, a:focus, a:active { color: var(--text-color) !important; }
 body {
   font-family: Helvetica, Arial;
 }
@@ -52,4 +52,25 @@ html {
   margin-right: auto;
   width: 100%;
   max-width: 2560px;
+}
+
+.loader {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.loader div {
+  border: 8px solid #f3f3f3;
+  border-top: 8px solid var(--link-text-color);
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  margin: 30px auto;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }

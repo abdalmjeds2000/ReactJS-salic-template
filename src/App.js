@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import {
   BrowserRouter as Router,
   Routes,
@@ -13,10 +13,13 @@ import Applications from './components/Applications/Applications.jsx';
 import CommunityNews from "./components/Home/Separate Pages/Community News/CommunityNews";
 import Attendance from "./components/Home/Separate Pages/Attendance/Attendance";
 
-import AdminServices from './components/Home/Separate Pages/Admin Services/AdminServices.jsx';
-import ITServices from './components/Home/Separate Pages/IT Services/ITServices.jsx';
-import HRSelfServices from './components/Home/Separate Pages/HR Self Services/HRSelfServices.jsx';
+import AdminServices from './components/Home/Separate Pages/9 Boxes/Admin Services/AdminServices.jsx';
+import ITServices from './components/Home/Separate Pages/9 Boxes/IT Services/ITServices.jsx';
+import HRSelfServices from './components/Home/Separate Pages/9 Boxes/HR Self Services/HRSelfServices.jsx';
 import UserPanel from "./components/global/User Panel/UserPanel";
+
+import logo from './icons/icons-menu/logo.jpg';
+
 import { UserContext } from './Context/userContext'
 
 import axios from "axios";
@@ -27,23 +30,9 @@ const Notes = () => { return <h1>Notes</h1> }
 const NotFoundPage = () => { return <h1>NotFoundPage</h1> }
 
 
-function getScrollY() {
-  const isScroll = window.scrollY > 0 ? true : false;
-  return isScroll;
-}
+
+
 const App = () => {
-
-  const [windowSize, setWindowSize] = useState(getScrollY());
-
-  useEffect(() => {
-    function handleScrollY() {
-      setWindowSize(getScrollY());
-    }
-    window.addEventListener('scroll', handleScrollY);
-    return () => {
-      window.removeEventListener('scroll', handleScrollY);
-    };
-  }, []);
 
 
   
@@ -51,8 +40,8 @@ const App = () => {
   const [notificationsCount, setNotificationsCount] = useState('');
   const [mailCount, setMailCount] = useState('');
   const [latestAttendance, setLatestAttendance] = useState([]);
-  
   useEffect(() => {
+    // Get User Data
     axios({
       method: 'GET',
       url: 'https://salicapi.com/api/User/GetUserByEmail?Expand=manager&Email=abdulmohsen.alaiban@salic.com',
@@ -62,7 +51,7 @@ const App = () => {
       setUserData(response.data)
       return response
     })
-    // Notifications Count #1
+    // GetNotifications Count #1
     .then((response) => {
       axios({ method: 'GET', url: `https://salicapi.com/api/Integration/ERPApprovalCount?PIN=${response.data.Data?.PIN}`})
       .then((res) => { setNotificationsCount(res.data.Data) })
@@ -70,7 +59,7 @@ const App = () => {
 
       return response
     })
-    // Notifications Count #2
+    // Get Notifications Count #2
     .then((response) => {
       axios({ method: 'GET', url: `https://salicapi.com/api/Integration/PendingApprovalCount?PIN=${response.data.Data?.Mail}`})
       .then((res) => { setNotificationsCount(prev => prev + res.data.Data) })
@@ -78,7 +67,7 @@ const App = () => {
       
       return response
     })
-    // Mail Count
+    // Get Mail Count
     .then((response) => {
       axios({ method: 'GET', url: `https://salicapi.com/api/User/GetUnReadMessags?UserId=${response.data.Data?.GraphId}`})
       .then((res) => { setMailCount(res.data.Data) })
@@ -86,9 +75,9 @@ const App = () => {
 
       return response
     })
-
+    // Get Latest Attendance
     .then((response) => {
-      axios({ method: 'post', url: `https://salicapi.com/api/attendance/Get`, 
+      axios({ method: 'POST', url: `https://salicapi.com/api/attendance/Get`, 
         data: {
           Email: response.data.Data.Mail,
           Month: new Date().getMonth()+1,
@@ -112,38 +101,39 @@ const App = () => {
       mail_count: mailCount,
       latest_attendance: latestAttendance
     }}>
-      <Router>
-        <div className="app-container">
-          <SidebarNav />
-          <div className="content-container">
-            <Navbar />
-            {
-              windowSize
-              ? <Navbar style={{width: '100%', position: 'fixed', zIndex: '4'}}>
-                <UserPanel />
-              </Navbar>
-              : <></>
-            }
-            <Routes>
-              <Route index path="/" element={<Home />} />
-              <Route path="/home" element={<Home />} />
-              <Route path="/applications" element={<Applications />} />
-              <Route path="/locations" element={<Locations />} />
-              <Route path="/communication" element={<Communication />} />
-              <Route path="/notes" element={<Notes />} />
-              
-              <Route path="/community-news" element={<CommunityNews />} />
-              <Route path="/attendance" element={<Attendance />} />
+      {
+        userData.Data?.DisplayName?.length > 0
+        ? <Router>
+            <div className="app-container">
+              <SidebarNav />
+              <div className="content-container">
+                <Navbar />
+                <Routes>
+                  <Route index path="/" element={<Home />} />
+                  <Route path="/home" element={<Home />} />
+                  <Route path="/applications" element={<Applications />} />
+                  <Route path="/locations" element={<Locations />} />
+                  <Route path="/communication" element={<Communication />} />
+                  <Route path="/notes" element={<Notes />} />
+                  
+                  <Route path="/community-news" element={<CommunityNews />} />
+                  <Route path="/attendance" element={<Attendance />} />
 
-              <Route path="/admin-services" element={<AdminServices />} />
-              <Route path="/it-services" element={<ITServices />} />
-              <Route path="/hr-self-services" element={<HRSelfServices />} />
+                  <Route path="/admin-services" element={<AdminServices />} />
+                  <Route path="/it-services" element={<ITServices />} />
+                  <Route path="/hr-self-services" element={<HRSelfServices />} />
 
-              <Route path="*" element={<NotFoundPage />} />
-            </Routes>
+                  <Route path="*" element={<NotFoundPage />} />
+                </Routes>
+              </div>
+            </div>
+          </Router>
+        : <div class="loader">  
+            <img src={logo} alt="salic logo" style={{maxWidth: '250px', textAlign: 'center'}} />
+            <div></div>
           </div>
-        </div>
-      </Router>
+      }
+      
     </UserContext.Provider>
   )
 }

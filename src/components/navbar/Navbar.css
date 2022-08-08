@@ -7,7 +7,7 @@
   position: sticky;
   top: 0;
   background-color: #fff;
-  z-index: 2;
+  z-index: 1;
   transition: 0.3s !important;
 }
 
@@ -26,11 +26,21 @@
 
 
 
-.navbar img {
+.navbar img:nth-child(1) {
   position: relative;
   top: -2px;
   max-width: 200px;
 }
+.navbar img.logo_2030 {
+  position: absolute;
+  left: 230px;
+  top: 50%;
+  max-width: 45px;
+  transform: translateY(-50%);
+  opacity: 0.2;
+}
+
+
 @media screen and (max-width: 320px){
   .navbar img {
     max-width: 120px;
@@ -57,5 +67,9 @@
     position: relative;
     top: -2px;
     width: 360px;
+  }
+
+  .navbar img.logo_2030 {
+    display: none;
   }
 }

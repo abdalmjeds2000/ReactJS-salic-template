@@ -72,7 +72,7 @@ const CurrencyConverter = () => {
       <div className='fromToFields'>
         <div className="from">
         <Select showSearch style={{ width: '100%', }} placeholder="Search to Select" optionFilterProp="children"
-          filterOption={(input, option) => option.children.includes(input)}
+          filterOption={(input, option) => option.children.includes(input.toUpperCase())}
           onChange={(value) => setFrom(value)}
           // onSearch={onSearch}
           // filterSort={(optionA, optionB) => optionA.children.toLowerCase().localeCompare(optionB.children.toLowerCase())}
@@ -87,7 +87,7 @@ const CurrencyConverter = () => {
         </div>
         <div className="to">
           <Select showSearch style={{ width: '100%', }} placeholder="Search to Select" optionFilterProp="children"
-            filterOption={(input, option) => option.children.includes(input)}
+            filterOption={(input, option) => option.children.includes(input.toUpperCase())}
             onChange={(value) => setTo(value)}
             // filterSort={(optionA, optionB) => optionA.children.toLowerCase().localeCompare(optionB.children.toLowerCase())}
           >

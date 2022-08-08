@@ -2,6 +2,7 @@
   background-color: var(--main-color);
   max-height: 100vh;
   width: 250px;
+  padding: 0;
   position: sticky;
   top: 0;
   display: flex;
@@ -26,6 +27,7 @@
     padding: 0px;
     border-radius: 10px;
     left: 25px;
+    padding: 10px 0;
   }
 }
 .nav-container div {
@@ -59,9 +61,10 @@
   width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   gap: 5px;
   transition: var(--main-animation-duration);
+  position: relative;
+  height: 100%;
 }
 
 .nav-container ul li {
@@ -71,14 +74,28 @@
 .nav-container ul li:hover {
   background-color: #00000010;
 }
+.nav-container ul li:last-child {
+  position: absolute;
+  bottom: 0;
+  padding: 0px 0px 0 0 !important;
+}
+@media screen and (max-width: 800px) {
+  .nav-container ul li:last-child {
+    position: inherit;
+  }
+  
+}
 .nav-container ul li a {
-  color: #fff;
+  color: #fff !important;
   width: 100%;
   padding: 7px;
   display: flex;
   align-items: center;
   gap: 5px;
-  font-size: 0.9em;
+  font-size: 0.9rem;
+}
+.nav-container ul li:last-child a:hover {
+  color: #ffffff !important;
 }
 .nav-container ul li a svg {
   padding: 3px;

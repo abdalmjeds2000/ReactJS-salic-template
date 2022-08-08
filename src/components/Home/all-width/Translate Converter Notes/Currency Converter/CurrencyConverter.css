@@ -5,20 +5,23 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 }
 .currency-converter-container .header h2 {
   font-weight: 400;
-  font-size: 22px;
-  color: var(--text-color);
+  font-size: 1.3rem;
 }
 .currency-converter-container .header img {
   width: 25px;
 }
+.ant-select-selection-placeholder {
+  color: var(--text-color) !important;
+  opacity: 0.5 !important;
+}
 .currency-converter-container .fromToFields {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-  gap: 10px 10px;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 20px;
 }
 .currency-converter-container .fromToFields .from input[name='from'],
 .currency-converter-container .fromToFields .to input[name='to'] {
@@ -26,9 +29,9 @@
   border: none;
   padding: 5px;
   width: 100%;
-  min-height: 82px;
+  min-height: 62px;
   border-radius: 10px;
-  margin: 10px 0;
+  margin: 10px 0 0 0;
   outline: none;
   font-size: 22px;
   font-weight: 400;
@@ -47,8 +50,8 @@
   border-radius: 10px;
   background-color: var(--main-color);
   color: #fff;
-  margin-top: 5px;
   cursor: pointer;
+  margin-top: 15px;
 }
 
 .currency-converter-container button:hover {
@@ -73,4 +76,11 @@
 .ant-select {
   border-radius: 50px !important;
   color: var(--text-color) !important;
+}
+
+
+@media screen and (min-width: 1500px) {
+  .currency-converter-container .fromToFields {
+      grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+  }
 }
