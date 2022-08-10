@@ -1,5 +1,5 @@
 import React from "react";
-import { Tweet } from 'react-twitter-widgets'
+import { Timeline, Tweet } from 'react-twitter-widgets'
 
 import { NavLink } from 'react-router-dom';
 
@@ -92,7 +92,9 @@ const ThreeDivisions = (props) => {
           <div className="boxs">
             {communityNewsBoxs.map(box => {
               return <div key={box.id} className="oranization-documents">
-                <img src={box.icon} alt={box.name} />
+                <div>
+                  <img src={box.icon} alt={box.name} />
+                </div>
                 <p>{box.name}</p>
               </div>
             })}
@@ -105,7 +107,16 @@ const ThreeDivisions = (props) => {
 
 
     <div className="twitter-wid">
-      <Tweet tweetId="1538823702271430656" />
+      <Timeline
+        dataSource={{
+          sourceType: 'profile',
+          screenName: 'KSA_SALIC'
+        }}
+        options={{
+          height: 'calc(100vh - 50px)'
+        }}
+      />
+      {/* <Tweet tweetId="1538823702271430656"  /> */}
     </div>
     
     <img src={WorldBG} alt="world background" />

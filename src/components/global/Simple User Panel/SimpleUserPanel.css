@@ -45,3 +45,10 @@
   cursor: pointer;
   background-color: var(--third-color);
 }
+
+
+@media screen and (max-width: 800px) {
+  .simple-user-panel {
+    display: none;
+  }
+}

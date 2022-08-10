@@ -5,7 +5,7 @@
   grid-column-gap: 15px;
   grid-row-gap: 10px;
   align-items: center;
-  margin: 20px 0;
+  margin: 15px 0;
 }
 .home-info .numbers-attendance-container .div1 { grid-area: 1 / 1 / 2 / 2; }
 .home-info .numbers-attendance-container .div2 { grid-area: 1 / 2 / 2 / 3; }
@@ -35,5 +35,14 @@
   .home-info .numbers-attendance-container .div2,
   .home-info .numbers-attendance-container .div3 {
     position: relative;
+  }
+}
+
+
+@media screen and (min-width: 1500px) {
+  .home-info .numbers-attendance-container {
+    grid-column-gap: 15px;
+    grid-row-gap: 15px;
+    margin: 45px 0;
   }
 }

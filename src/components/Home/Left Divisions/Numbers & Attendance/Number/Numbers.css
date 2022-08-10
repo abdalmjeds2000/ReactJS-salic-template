@@ -45,24 +45,24 @@
     align-items: center;
     justify-content: flex-start;
     flex-direction: column;
-    gap: 0px;
+    gap: 5px;
     padding: 0;
   }
   .number-box-container .circular-progress-bar {
     padding: 5px;
     background-color: #fff;
-    min-width: 80px;
-    max-width: 80px;
+    min-width: 70px;
+    max-width: 70px;
   }
   .number-box-container .number-box-info {
     text-align: center;
   }
   .number-box-container .number-box-info h3 {
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     font-weight: 400;
   }
   .number-box-container .number-box-info p {
-    font-size: 0.8rem;
+    font-size: 0.7rem;
   }
 }
 @media screen and (min-width: 1500px) {

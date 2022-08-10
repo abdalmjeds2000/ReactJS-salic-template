@@ -1,5 +1,5 @@
 .daily-attendance-container {
-padding: 25px 35px;
+padding: 25px;
 }
 .daily-attendance-container .content {
   background-color: #fff;
@@ -7,7 +7,7 @@ padding: 25px 35px;
   border-radius: 15px;
   display: flex;
   flex-direction: column;
-  gap: 50px;
+  gap: 30px;
 }
 .daily-attendance-container .content .form {
   display: flex;
@@ -16,25 +16,26 @@ padding: 25px 35px;
 }
 .daily-attendance-container .content .form .inputs {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 25px;
 }
-.daily-attendance-container .content .form .inputs > div {
-  
+
+
+.custom-select-container {
 }
-.daily-attendance-container .content .form .inputs > div > label {
+.custom-select-container > label {
   display: block;
   color: var(--text-color);
-  font-size: 18px;
-  margin-bottom: 10px;
+  font-size: 1rem;
+  margin-bottom: 5px;
 }
-.daily-attendance-container .content .form .inputs > div > select,
-.daily-attendance-container .content .form .inputs > div > input {
+.custom-select-container > select,
+.custom-select-container > input {
   width: 100%;
   border: none;
   background-color: #E4E9FA60;
   border-radius: 50px;
-  padding: 8px 15px;
+  padding: 5px 10px;
   color: var(--text-color);
   outline-color: #E4E9FA;
 }
@@ -49,7 +50,7 @@ padding: 25px 35px;
   gap: 15px;
 }
 .daily-attendance-container .content .form .btns button {
-  padding: 8px 15px;
+  padding: 8px 30px;
   border-radius: 50px;
   border: none;
   color: #fff;
@@ -68,16 +69,20 @@ padding: 25px 35px;
   opacity: 0.8;
 }
 
+.daily-attendance-container .content .table {
+  overflow-x: auto;
+}
 .daily-attendance-container .content .table table {
   border-radius: 15px;
-  font-size: 14px;
-  line-height: 15px;
+  font-size: 0.7rem;
+  line-height: 1;
   overflow: hidden;
   color: var(--text-color);
+  text-align: center;
 }
 .daily-attendance-container .content .table table tr,
 .daily-attendance-container .content .table table td {
-  padding: 5px 10px;
+  padding: 5px;
 }
 .daily-attendance-container .content .table table td:not(:last-child) {
   border-right: 1px solid #E4E9FA60;
@@ -85,14 +90,41 @@ padding: 25px 35px;
 .daily-attendance-container .content .table table th {
   background-color: #E4E9FA60;
   font-weight: 400;
-  padding: 10px 0;
+  padding: 10px;
+  font-size: 0.7rem;
+  white-space: nowrap;
 }
 
 .daily-attendance-container .content .table table tr:nth-child(odd) {
-  background-color: #E4E9FA25;
+  background-color: #E4E9FA30;
 }
 
 
-@media screen and (max-width: 1090px) {
-  
+@media screen and (max-width: 1500px) and (min-width: 890px) {
+  .daily-attendance-container .content .form .inputs {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 10px;
+  }
+  .daily-attendance-container .content .form .inputs > div > select,
+  .daily-attendance-container .content .form .inputs > div > input {
+    width: 100%;
+    border: none;
+    background-color: #E4E9FA60;
+    border-radius: 50px;
+    padding: 5px 10px;
+    color: var(--text-color);
+    outline-color: #E4E9FA;
+  }
+}
+
+@media screen and (max-width: 890px) {
+  .daily-attendance-container {
+    padding: 20px 10px;
+  }
+  .daily-attendance-container .content .form .inputs {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+    gap: 5px;
+  }
 }

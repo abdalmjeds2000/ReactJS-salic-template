@@ -128,7 +128,7 @@ const App = () => {
               </div>
             </div>
           </Router>
-        : <div class="loader">  
+        : <div className="loader">  
             <img src={logo} alt="salic logo" style={{maxWidth: '250px', textAlign: 'center'}} />
             <div></div>
           </div>

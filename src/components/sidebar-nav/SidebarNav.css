@@ -112,3 +112,28 @@
 .centered-icons-mobile {
   justify-content: center;
 }
+
+
+
+
+
+@media screen and (max-width: 800px) and (min-width: 425px) {
+  .nav-container ul {
+    display: grid;
+    flex-direction: row;
+    gap: 5px;
+    grid-template-columns: repeat(auto-fill, minmax(28%, 1fr));
+  }
+  .nav-container ul li a {
+    color: #fff !important;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    flex-direction: column;
+    font-size: 0.7rem !important;
+  }
+  .nav-container {
+    margin-top: 50px;
+    padding: 10px;
+  }
+}

@@ -74,11 +74,11 @@ function DailyAttendance() {
               ]}
               onChange={(e) => alert(e.target.value)}
             />
-            <div>
+            <div className='custom-select-container'>
               <label htmlFor="start-date">Start Date</label>
               <input type="date" name="start-date" id="start-date" />
             </div>
-            <div>
+            <div className='custom-select-container'>
               <label htmlFor="end-date">End Date</label>
               <input type="date" name="end-date" id="end-date" />
             </div>
@@ -106,29 +106,28 @@ function DailyAttendance() {
               <th>Manager Feedback</th>
               <th>Approval Status</th>
             </tr>
-            
-            {
-              tableData.map((row) => {
-                return <tr>
-                  <td>{row.EmployeeName}</td>
-                  <td>{row.Date}</td>
-                  <td>{row.Day}</td>
-                  <td>{row.CheckIn}</td>
-                  <td>{row.CheckOut}</td>
-                  <td>{row.WTime}</td>
-                  <td>{row.WTime8_16}</td>
-                  <td>{row.Late}</td>
-                  <td>{row.EarlyLeave}</td>
-                  <td>{row.Overtime}</td>
-                  <td>{row.AttendanceStatus}</td>
-                  <td>{row.EmpJustification}</td>
-                  <td>{row.ManagerFeedback}</td>
-                  <td>{row.ApprovalStatus}</td>
-                </tr>
-              })
-            }
-
-            
+            <tbody>
+              {
+                tableData.map((row, i) => {
+                  return <tr key={i}>
+                    <td>{row.EmployeeName}</td>
+                    <td>{row.Date}</td>
+                    <td>{row.Day}</td>
+                    <td>{row.CheckIn}</td>
+                    <td>{row.CheckOut}</td>
+                    <td>{row.WTime}</td>
+                    <td>{row.WTime8_16}</td>
+                    <td>{row.Late}</td>
+                    <td>{row.EarlyLeave}</td>
+                    <td>{row.Overtime}</td>
+                    <td>{row.AttendanceStatus}</td>
+                    <td>{row.EmpJustification}</td>
+                    <td>{row.ManagerFeedback}</td>
+                    <td>{row.ApprovalStatus}</td>
+                  </tr>
+                })
+              }
+            </tbody>
 
           </table>
         </div>

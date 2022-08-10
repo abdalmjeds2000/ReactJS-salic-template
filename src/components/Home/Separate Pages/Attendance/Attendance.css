@@ -1,7 +1,7 @@
 .attendance-page-container {
   width: 100%;
   padding: 25px;
-  min-height: calc(200vh - 60px);
+  min-height: calc(100vh - 50px);
   background: rgb(224,233,255);
   background: linear-gradient(0deg, rgba(224,233,255,1) 0%, rgba(255,255,255,1) 100%);
   position: relative;
@@ -32,6 +32,7 @@
   color: #6477AA50;
   border-radius: 10px 10px 0 0;
   text-align: center;
+  font-size: 1.1rem;
   cursor: pointer;
   transition: .3s;
 }
@@ -56,18 +57,27 @@
   width: 200vh;
   position: absolute;
   top: -50vh;
-  right: -75vh;
+  right: -110vh;
   opacity: 0.15;
   z-index: -1;
 }
 
 
 
-@media screen and (max-width: 1090px) {
-  
+
+@media screen and (max-width: 1500px) and (min-width: 890px) {
+  .attendance-page-container .buttons ul li {
+    padding: 7px 17px;
+    border-radius: 10px 10px 0 0;
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 890px) {
   .bg-img-world {
-    width: 100vh;
-    top: 10vh;
+    width: 120vh;
+    top: 0;
+    right: 0;
   }
 
   .attendance-page-container .buttons ul {

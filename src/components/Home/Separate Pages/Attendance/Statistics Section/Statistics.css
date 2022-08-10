@@ -1,8 +1,9 @@
+  
 .statistics-container {
   display: grid;
-  padding: 25px 35px;
+  padding: 25px;
   grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: repeat(5, 1fr);
+  grid-template-rows: repeat(2, 1fr);
   grid-column-gap: 20px;
   grid-row-gap: 20px;
 }
@@ -10,10 +11,11 @@
   background-color: #fff;
   padding: 25px;
   border-radius: 15px;
-  grid-area: 1 / 1 / 3 / 3;
+  grid-area: 1 / 1 / 2 / 3;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  box-shadow: 0 13px 16px #07448b10;
 }
 .statistics-container .head {
   margin: 0 0 10px 0;
@@ -21,14 +23,22 @@
   font-weight: 400;
 }
 .statistics-container .head h3 {
+  display: block;
   font-weight: 400;
-  font-size: 22px;
-  margin-bottom: 5px;
+  font-size: 1.5rem;
+  margin-bottom: 5px !important;
 }
 .statistics-container .head p {
-  font-size: 18px;
+  font-size: 1rem;
+  display: block;
+  padding: 0;
 }
-
+.statistics-container .head select {
+  border: 0;
+  padding: 5px 0;
+  outline-color: var(--third-color);
+  cursor: pointer;
+}
 .statistics-container .monthly-attendance .body {
   position: relative;
 }
@@ -61,32 +71,45 @@
   background-color: #FD96A6;
 }
 
+
 .statistics-container .monthly-attendance .body .radialBar > div {
   height: 200px;
 }
 
+
+
+
 .statistics-container .annual-attendance {
-  grid-area: 1 / 3 / 3 / 6;
+  grid-area: 1 / 3 / 2 / 6;
   background-color: #fff;
   padding: 25px;
   border-radius: 15px;
+  box-shadow: 0 13px 16px #07448b10;
 }
 
 .statistics-container .annual-attendance canvas {
   height: 250px !important;
 }
-
+.statistics-container .annual-attendance .head h3 {
+  display: inline;
+}
+.statistics-container .annual-attendance .head p {
+  display: inline;
+  padding: 0 10px;
+}
 
 
 
 .statistics-container .employees-availability-attendance {
-  grid-area: 3 / 1 / 5 / 6;
+  grid-area: 2 / 1 / 3 / 6;
   background-color: #fff;
   padding: 25px;
   border-radius: 15px;
   display: flex;
-
+  box-shadow: 0 13px 16px #07448b10;
+  gap: 20px;
 }
+
 .statistics-container .employees-availability-attendance .head {
   flex-basis: 50%;
 }
@@ -95,79 +118,55 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  gap: 40px;
 }
 
-.statistics-container .employees-availability-attendance .body .custom-column-chart-container {
-  width: 100%;
+
+
+.column-chart-container {
   display: flex;
-  justify-content: space-between;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
 }
-.statistics-container .employees-availability-attendance .body .custom-column-chart-container .data {
-  border-bottom: 1px solid var(--text-color);
-  min-height: 200px;
-  min-width: 250px;
-  position: relative;
-  display: flex;
-  align-items: flex-end;
-  gap: 15px;
-  padding: 50px 75px 0 75px;
-}
-.employees-availability-attendance .custom-column-chart-container .data .col {
-  position: relative;
-  width: 50px;
-  height: 100%;
-  opacity: .6;
-}
-.employees-availability-attendance .custom-column-chart-container .data .col-1 {
-  background-color: #F9A654;
-  height: 60%;
-}
-.employees-availability-attendance .custom-column-chart-container .data .col-2 {
-  background-color: #FD96A6;
-  height: 40%;
-}
-.employees-availability-attendance .custom-column-chart-container .data .col-3 {
-  background-color: #43A2CC;
-  height: 20%;
-}
-.employees-availability-attendance .custom-column-chart-container .data .col-4 {
-  background-color: #66CE9A;
-  height: 80%;
-}
-.employees-availability-attendance .custom-column-chart-container .data .col-5 {
-  background-color: #897ED4;
-  height: 100%;
+.column-chart-container .index {
+  min-width: 200px;
+  gap: 10px;
+  padding: 25px 15px 0 15px;
 }
 
+.column-chart-container canvas {
+  height: 200px !important;
+}
 
-.employees-availability-attendance .custom-column-chart-container .index ul {
+.column-chart-container .index ul {
   gap: 25px;
   list-style: outside;
   color: #43A2CC;
   font-size: 14px;
   padding: 25px;
 }
-.employees-availability-attendance .custom-column-chart-container .index ul li {
+.column-chart-container .index ul li {
   font-size: 22px;
   line-height: 20px;
 }
-.employees-availability-attendance .custom-column-chart-container .index ul li:nth-child(1) {
+.column-chart-container .index ul li:nth-child(1) {
   color: #F9A654;
 }
-.employees-availability-attendance .custom-column-chart-container .index ul li:nth-child(2) {
+.column-chart-container .index ul li:nth-child(2) {
   color: #FD96A6;
 }
-.employees-availability-attendance .custom-column-chart-container .index ul li:nth-child(3) {
+.column-chart-container .index ul li:nth-child(3) {
   color: #43A2CC;
 }
-.employees-availability-attendance .custom-column-chart-container .index ul li:nth-child(4) {
+.column-chart-container .index ul li:nth-child(4) {
   color: #66CE9A;
 }
-.employees-availability-attendance .custom-column-chart-container .index ul li:nth-child(5) {
+.column-chart-container .index ul li:nth-child(5) {
   color: #897ED4;
 }
 
-.employees-availability-attendance .custom-column-chart-container .index ul li p {
+.column-chart-container .index ul li p {
   font-size: 14px;
   line-height: 20px;
   position: relative;
@@ -175,12 +174,9 @@
   left: -5px;
 }
 .employees-availability-attendance .body .buttons {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(30%, 1fr));
   gap: 15px;
-  margin: 10px 0;
 }
 
 .employees-availability-attendance .body .buttons input {
@@ -197,20 +193,45 @@
   color: var(--text-color);
 }
 
-@media screen and (max-width: 1090px) {
-  .statistics-container {
-    grid-template-columns: repeat(6, 1fr);
-    grid-template-rows: repeat(6, 1fr);
+
+
+
+
+
+
+@media screen and (max-width: 1000px) {
+  .statistics-container .employees-availability-attendance {
+    flex-direction: column;
+  }
+  .statistics-container .employees-availability-attendance .head {
+    flex-basis: 100%;
+  }
+  .statistics-container .employees-availability-attendance .body {
+    flex-basis: 100%;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 800px) {
+
+  .statistics-container .monthly-attendance .body .radialBar  {
+    display: flex;
+    justify-content: center;
   }
 
-  .statistics-container .monthly-attendance {
-    grid-area: 1 / 1 / 3 / 7;
-  }
-  .statistics-container .annual-attendance {
-    grid-area: 3 / 1 / 5 / 7;
-    }
-  .statistics-container .employees-availability-attendance {
-    grid-area: 5 / 1 / 7 / 7;
+  .statistics-container {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 10px;
   }
 
   .statistics-container .monthly-attendance .body .radialBar > div {
@@ -231,9 +252,8 @@
 
 
   .statistics-container .monthly-attendance .body .radialBar > div {
-    height: 220px !important;
-    width: 220px !important;
-    left: -20px !important;
+    height: 230px !important;
+    width: 300px !important;
   }
   .statistics-container .monthly-attendance {
     justify-content: flex-start;
@@ -274,5 +294,20 @@
 
   .employees-availability-attendance .body .buttons input {
     min-width: 100%;
+  }
+
+  .statistics-container .head h3 {
+    font-size: 1.2rem;
+  }
+  .statistics-container .head p {
+    font-size: 0.9rem;
+  }
+
+
+  .column-chart-container .index {
+    display: none;
+  }
+  .column-chart-container canvas {
+    width: 100% !important;
   }
 }

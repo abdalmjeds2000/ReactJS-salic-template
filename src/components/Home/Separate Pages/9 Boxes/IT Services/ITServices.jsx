@@ -2,12 +2,12 @@ import React, { useState } from 'react'
 import './ITServices.css';
 
 
-import ITServicesIcon from '../../../../../icons/home/sevices/IT Services.svg';
+import { ReactComponent as ITServicesIcon } from '../../../../../icons/home/sevices/IT Services.svg';
 
-import NewITServiceRequest from '../../../../../icons/IT Services Requests/New IT Service Request.svg';
-import MyRequests from '../../../../../icons/IT Services Requests/My Requests.svg';
-import RequestsAssigned from '../../../../../icons/IT Services Requests/Requests Assigned.svg';
-import ITServiceRequests from '../../../../../icons/IT Services Requests/IT Service Requests.svg';
+import { ReactComponent as NewITServiceRequest } from '../../../../../icons/IT Services Requests/New IT Service Request.svg';
+import { ReactComponent as MyRequests } from '../../../../../icons/IT Services Requests/My Requests.svg';
+import { ReactComponent as RequestsAssigned } from '../../../../../icons/IT Services Requests/Requests Assigned.svg';
+import { ReactComponent as ITServiceRequests } from '../../../../../icons/IT Services Requests/IT Service Requests.svg';
 
 
 import WorldBG from '../../../../../icons/home/world.svg';
@@ -17,14 +17,16 @@ import WorldBG from '../../../../../icons/home/world.svg';
 function ITServices() {
 
   const [services, setServices] = useState([
-    {icon: NewITServiceRequest, text: 'New IT Service Request'},
+    {bgColor: '#70CFAF', icon: <NewITServiceRequest />, text: 'New IT Service Request'},
   ]);
 
 
   return (
     <div className='services-page-container'>
       <div className="header">
-        <img src={ITServicesIcon} alt="Attendance Icon" />
+        <div style={{backgroundColor: '#897ED4'}}>
+          <ITServicesIcon />
+        </div>
         <h2>IT Services Requests</h2>
       </div>
 
@@ -34,28 +36,36 @@ function ITServices() {
 
         <div className="services-boxs-container">
           {services.map((service, i) => {
-            return <div className='box' key={i}>
-              <img src={service.icon} alt={service.text} />
+            return <a className='box' key={i}>
+              <div style={{backgroundColor: service.bgColor}}>
+                {service.icon}
+              </div>
               <h3>{service.text}</h3>
-            </div>
+            </a>
           })}
         </div>
 
 
         <h4 className='services-second-header'>Request Center</h4>
         <div className="services-boxs-container">
-          <div className='box'>
-            <img src={MyRequests} alt='icon box' />
+          <a className='box'>
+            <div style={{backgroundColor: '#43A2CC'}}>
+              <MyRequests />
+            </div>
             <h3>My Requests</h3>
-          </div>
-          <div className='box'>
-            <img src={RequestsAssigned} alt='icon box' />
+          </a>
+          <a className='box'>
+            <div style={{backgroundColor: '#FBBE82'}}>
+              <RequestsAssigned />
+            </div>
             <h3>Requests Assigned</h3>
-          </div>
-          <div className='box'>
-            <img src={ITServiceRequests} alt='icon box' />
+          </a>
+          <a className='box'>
+            <div style={{backgroundColor: '#FD96A6'}}>
+              <ITServiceRequests />
+            </div>
             <h3>IT Service Requests</h3>
-          </div>
+          </a>
         </div>
         <img src={WorldBG} className='img-bg' alt="world background" />
 

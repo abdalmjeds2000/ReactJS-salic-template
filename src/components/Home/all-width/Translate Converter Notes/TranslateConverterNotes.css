@@ -1,8 +1,8 @@
 .translate-converter-notes-container {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(30%, 1fr));
   gap: 50px;
-  padding: 40px 25px;
+  padding: 50px 25px;
   position: relative;
   z-index: 3;
 }
@@ -10,35 +10,38 @@
 .translate-converter-notes-container > div {
   background-color: #fff;
   padding: 20px;
-  border-radius: 20px;
+  border-radius: 10px;
 }
 
 
 
-@media screen and (max-width: 890px) {
+@media screen and (min-width: 1500px) {
   .translate-converter-notes-container {
-    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
-    padding: 20px 10px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(30%, 1fr));
+    gap: 20px 50px;
   }
 }
+
+
 @media screen and (max-width: 1190px) {
   .translate-converter-notes-container {
     gap: 25px;
   }
 }
-@media screen and (min-width: 1500px) {
+
+@media screen and (max-width: 890px) {
   .translate-converter-notes-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(430px, 1fr));
-    gap: 20px 50px;
-    padding: 40px 25px;
-    position: relative;
-    z-index: 3;
+    grid-template-columns: repeat(auto-fill, minmax(45%, 1fr));
+    padding: 20px 10px;
   }
 }
 
-@media screen and (min-width: 1170px) and (max-width:1500px) {
+
+
+@media screen and (max-width: 500px) {
   .translate-converter-notes-container {
-    grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
+    padding: 20px 10px;
   }
 }

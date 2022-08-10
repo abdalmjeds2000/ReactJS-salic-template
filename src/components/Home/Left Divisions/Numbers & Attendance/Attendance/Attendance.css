@@ -1,7 +1,6 @@
 .latest-attendance-table-container .latest-attendance-table {
   width: 100%;
   padding: 10px 25px;
-  margin-bottom: 25px;
 }
 .latest-attendance-table-container .latest-attendance-table tr th,
 .latest-attendance-table-container .latest-attendance-table tr td:not(:first-child) {
@@ -19,7 +18,7 @@
 }
 
 .latest-attendance-table-container .latest-attendance-table tbody tr:nth-child(2) {
-  line-height: 1.5rem;
+  line-height: 1;
   height: 35px;
 }
 .latest-attendance-table-container .latest-attendance-table tbody tr:nth-child(2):first-child {
@@ -50,6 +49,9 @@
   text-align: left;
   padding-left: 25px;
 }
+.latest-attendance-table-container .latest-attendance-table tbody tr:nth-child(2) th {
+  font-weight: 500;
+}
 
 @media screen and (max-width: 1090px) {
   .latest-attendance-table-container .latest-attendance-table {
@@ -67,11 +69,6 @@
     padding: 0;
     margin-top: 0 !important;
   }
-  .latest-attendance-table-container .latest-attendance-table tbody > tr a {
-    top: 0;
-    display: none;
-  }
-  
 }
 
 

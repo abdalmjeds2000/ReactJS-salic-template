@@ -59,20 +59,16 @@ const Home = (props) => {
 
 
   return <div className="home-container">
-    {
-      scrollSize
-      ? <Navbar style={{width: '100%', position: 'fixed', zIndex: '4'}}>
-        <UserPanel 
-          mobile={user_data.Data?.Mobile}
-          mailTo='https://outlook.office.com/owa/'
-          mailCount={mail_count}
-          notificationsCount={notifications_count}
-          userName={user_data.Data?.DisplayName}
-          userImage={`https://salic.sharepoint.com/sites/newsalic/_layouts/15/userphoto.aspx?size=M&username=${user_data.Data?.Mail}`}
-        />
-      </Navbar>
-      : <></>
-    }
+    <Navbar style={{width: '100%', position: 'fixed', zIndex: '4', display: !scrollSize ? 'none' : ''}}>
+      <UserPanel 
+        mobile={user_data.Data?.Mobile}
+        mailTo='https://outlook.office.com/owa/'
+        mailCount={mail_count}
+        notificationsCount={notifications_count}
+        userName={user_data.Data?.DisplayName}
+        userImage={`https://salic.sharepoint.com/sites/newsalic/_layouts/15/userphoto.aspx?size=M&username=${user_data.Data?.Mail}`}
+      />
+    </Navbar>
     <div className="container">
       <div className="home-division">
         <div className="home-info">
