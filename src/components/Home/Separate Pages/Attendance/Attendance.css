@@ -29,16 +29,20 @@
 }
 .attendance-page-container .buttons ul li {
   padding: 10px 20px;
-  color: #6477AA50;
+  color: #6477AA90;
   border-radius: 10px 10px 0 0;
   text-align: center;
   font-size: 1.1rem;
   cursor: pointer;
   transition: .3s;
+  background-color: #EBF1FF80;
 }
 .attendance-page-container .buttons ul li.active {
   background-color: #EBF1FF;
   color: var(--text-color);
+  border-top: 1px solid #00000007;
+  border-right: 1px solid #00000007;
+  border-left: 1px solid #00000007;
 }
 
 
@@ -81,10 +85,13 @@
   }
 
   .attendance-page-container .buttons ul {
-    flex-direction: column;
-    padding: 25px 0;
+    display: flex;
+    padding: 25px 0 10px 0;
+    flex-wrap: wrap;
   }
   .attendance-page-container .buttons ul li {
-    border-radius: 10px;    
+    border-radius: 5px;
+    font-size: 0.7rem;
+    padding: 5px 10px;
   }
 }

@@ -1,11 +1,15 @@
 .services-page-container {
   width: 100%;
   padding: 25px 25px;
-  min-height: calc(100vh - 50px);
+  min-height: calc(100% + 110px);
   background: rgb(224,233,255);
   background: linear-gradient(0deg, rgba(224,233,255,1) 0%, rgba(255,255,255,1) 100%);
   position: relative;
-  z-index: 1;
+  top: 50px;
+  /* z-index: 1; */
+}
+.services-body-container .services-boxs-container:last-child {
+  margin-bottom: 100px;
 }
 .img-bg {
   width: 150vh;
@@ -15,7 +19,7 @@
   opacity: 0.15;
   z-index: -2;
 }
-.services-page-container .header {
+.services-page-container > .header {
   display: flex;
   align-items: center;
   gap: 10px;

@@ -13,31 +13,34 @@ function SimpleUserPanel(props) {
       <div className='simple-user-panel'>
         <img 
           src={props.userImage} 
-          alt="user face" 
+          alt="" 
           onClick={() => setShowUserDetails(!showUserDetails)} 
         />
         <p>{props.userName}</p>
-        <div>
-          <a href="">
+        <div className='icons'>
+          <a href="/" target="blank">
             <NotificationIcon />
             {props.notificationsCount > 0 && <span className="badge notifi-count">{props.notificationsCount}</span>}  
           </a>
-          <a href="">
+          <a href="https://outlook.office.com/owa/" target="blank">
             <MessageIcon />
             {props.mailCount > 0 &&  <span className="badge mail-count">{props.mailCount}</span>}
           </a>
         </div>
+
+        
+        {
+          showUserDetails
+          ? <UserSettingsPanel
+              userName={props.userName}
+              userImage={props.userImage}
+              onclick={_ => setShowUserDetails(!showUserDetails)}
+            />
+          : null
+        }
       </div>
 
-      {/* {
-        showUserDetails
-        ? <UserSettingsPanel
-            userName={props.userName}
-            userImage={props.userImage}
-            onClickGradient={() => setShowUserDetails(!showUserDetails)}
-          />
-        : null
-      } */}
+      
     </>
   )
 }

@@ -10,7 +10,7 @@
   align-items: center;
   gap: 25px;
   transition: var(--main-animation-duration);
-  z-index: 5 !important;
+  z-index: 3 !important;
 }
 .nav-container-small {
   width: 50px;

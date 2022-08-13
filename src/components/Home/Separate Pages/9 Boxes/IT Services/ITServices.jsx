@@ -11,13 +11,15 @@ import { ReactComponent as ITServiceRequests } from '../../../../../icons/IT Ser
 
 
 import WorldBG from '../../../../../icons/home/world.svg';
+import { NavLink } from 'react-router-dom';
+import HistoryNavigation from '../../History Navigation/HistoryNavigation';
 
 
 
 function ITServices() {
 
   const [services, setServices] = useState([
-    {bgColor: '#70CFAF', icon: <NewITServiceRequest />, text: 'New IT Service Request'},
+    {to: '/it-services/services-request', bgColor: '#70CFAF', icon: <NewITServiceRequest />, text: 'New IT Service Request'},
   ]);
 
 
@@ -36,25 +38,33 @@ function ITServices() {
 
         <div className="services-boxs-container">
           {services.map((service, i) => {
-            return <a className='box' key={i}>
-              <div style={{backgroundColor: service.bgColor}}>
-                {service.icon}
-              </div>
-              <h3>{service.text}</h3>
-            </a>
+            return (
+              <NavLink 
+                key={i}
+                to={service.to} 
+                className='box' 
+              >
+                <div style={{backgroundColor: service.bgColor}}>
+                  {service.icon}
+                </div>
+                <h3>{service.text}</h3>
+              </NavLink>
+            ) 
+            
           })}
         </div>
 
 
         <h4 className='services-second-header'>Request Center</h4>
         <div className="services-boxs-container">
-          <a className='box'>
+          <img src={WorldBG} className='img-bg' alt="world background" />
+          <a className='box' href='/'>
             <div style={{backgroundColor: '#43A2CC'}}>
               <MyRequests />
             </div>
             <h3>My Requests</h3>
           </a>
-          <a className='box'>
+          <a className='box' href='/'>
             <div style={{backgroundColor: '#FBBE82'}}>
               <RequestsAssigned />
             </div>
@@ -67,7 +77,6 @@ function ITServices() {
             <h3>IT Service Requests</h3>
           </a>
         </div>
-        <img src={WorldBG} className='img-bg' alt="world background" />
 
       </div>
     </div>

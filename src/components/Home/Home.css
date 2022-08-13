@@ -15,13 +15,15 @@
 
 .home-container .home-division .home-info {
   color: var(--text-color);
+  position: relative;
+  top: 50px;
   flex-basis: 70%;
-  z-index: 3;
+  /* z-index: 3; */
 }
 
 .home-container .home-division .home-world-graph {
   flex-basis: 30%;
-  z-index: 3;
+  /* z-index: 3; */
   position: relative;
 }
 ._worldMap {
@@ -29,7 +31,7 @@
   top: -20vh;
   left: 20px;
   width: 120vh;
-  z-index: 0;
+  z-index: 1;
 }
 
 

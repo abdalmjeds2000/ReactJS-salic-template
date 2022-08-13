@@ -17,8 +17,8 @@
   transition: .3s;
 }
 
-.service-box:hover {
-  background-color: var(--third-color);
+.services-container .service-box:hover {
+  background-color: var(--third-color) !important;
 }
 
 

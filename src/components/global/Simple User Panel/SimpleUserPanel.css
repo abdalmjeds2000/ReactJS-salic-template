@@ -3,17 +3,20 @@
   flex-direction: row-reverse;
   align-items: center;
   gap: 10px;
-  position: absolute;
+  position: fixed;
   right: 0;
-  top: -50px;
+  top: 0;
   height: 50px;
   padding: 0 25px;
+  z-index: 3;
 }
 
 .simple-user-panel > img {
-  width: 45px;
+  max-width: 45px;
+  max-height: 45px;
   border: 2px solid #fff;
   border-radius: 50px;
+  cursor: pointer;
 }
 
 .simple-user-panel > p {
@@ -22,17 +25,17 @@
   line-height: 1;
 }
 
-.simple-user-panel > div {
+.simple-user-panel .icons {
   display: flex;
   gap: 12px;
   align-items: center;
 }
 
-.simple-user-panel > div > a {
+.simple-user-panel .icons > a {
   position: relative;
   line-height: 1;
 }
-.simple-user-panel > div > a svg {
+.simple-user-panel .icons > a svg {
   width: 30px;
   height: 30px;
   background-color: #fff;
@@ -41,7 +44,7 @@
   border: 1px solid var(--third-color);
 }
 
-.simple-user-panel > div > img:hover {
+.simple-user-panel .icons > a svg:hover {
   cursor: pointer;
   background-color: var(--third-color);
 }

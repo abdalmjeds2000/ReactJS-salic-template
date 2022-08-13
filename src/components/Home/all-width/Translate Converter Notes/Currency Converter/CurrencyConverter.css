@@ -68,12 +68,12 @@
 
 
 
-.ant-select:not(.ant-select-customize-input) .ant-select-selector {
+.currency-converter-container .ant-select:not(.ant-select-customize-input) .ant-select-selector {
   background-color: #E4E9FA !important;
   border-radius:  50px !important;
   border: none !important;
 }
-.ant-select {
+.currency-converter-container .ant-select {
   border-radius: 50px !important;
   color: var(--text-color) !important;
 }

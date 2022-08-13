@@ -1,10 +1,10 @@
 .navbar {
   min-height: 50px;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 25px;
-  position: sticky;
+  position: fixed;
   top: 0;
   background-color: #fff;
   z-index: 1;
@@ -26,9 +26,10 @@
 
 
 
-.navbar img:nth-child(1) {
+.navbar img.logoSALIC {
   position: relative;
   top: -2px;
+  left: 25px;
   max-width: 200px;
 }
 .navbar img.logo_2030 {
@@ -42,16 +43,18 @@
 
 
 @media screen and (max-width: 320px){
-  .navbar img {
+  .navbar img.logoSALIC {
     max-width: 120px;
+    left: 0;
   }
   .navbar {
     justify-content: end;
   }
 }
 @media screen and (max-width: 375px){
-  .navbar img {
+  .navbar img.logoSALIC {
     max-width: 165px;
+    left: 0;
   }
 }
 
@@ -63,9 +66,10 @@
   .navbar div {
     display: none;
   }
-  .navbar img {
+  .navbar img.logoSALIC {
     position: relative;
     top: -2px;
+    left: 0;
     width: 360px;
   }
 

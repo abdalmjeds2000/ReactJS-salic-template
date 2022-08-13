@@ -16,9 +16,12 @@
   gap: 20px;
 }
 .home-container .home-division .home-info .person .person-info .person-img img {
+  width: 65px;
+  height: 65px;
   max-width: 65px;
+  max-height: 65px;
   border: 5px solid #fff;
-  border-radius: 50%;;
+  border-radius: 50%;
 }
 .home-container .home-division .home-info .person .person-info .person-txt {
   display: flex;

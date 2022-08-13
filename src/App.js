@@ -1,33 +1,17 @@
 import React, { useContext, useEffect, useState } from "react";
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-} from 'react-router-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
 import './App.css';
 
 import Navbar from "./components/navbar/Navbar.jsx";
 import SidebarNav from './components/sidebar-nav/SidebarNav.jsx';
-import Home from './components/Home/Home.jsx';
-import Applications from './components/Applications/Applications.jsx';
-import CommunityNews from "./components/Home/Separate Pages/Community News/CommunityNews";
-import Attendance from "./components/Home/Separate Pages/Attendance/Attendance";
-
-import AdminServices from './components/Home/Separate Pages/9 Boxes/Admin Services/AdminServices.jsx';
-import ITServices from './components/Home/Separate Pages/9 Boxes/IT Services/ITServices.jsx';
-import HRSelfServices from './components/Home/Separate Pages/9 Boxes/HR Self Services/HRSelfServices.jsx';
-import UserPanel from "./components/global/User Panel/UserPanel";
 
 import logo from './icons/icons-menu/logo.jpg';
 
 import { UserContext } from './Context/userContext'
 
 import axios from "axios";
+import AppRoutes from "./Routes/AppRoutes";
 
-const Locations = () => { return <h1>Locations</h1> }
-const Communication = () => { return <h1>Communication</h1> }
-const Notes = () => { return <h1>Notes</h1> }
-const NotFoundPage = () => { return <h1>NotFoundPage</h1> }
 
 
 
@@ -35,11 +19,14 @@ const NotFoundPage = () => { return <h1>NotFoundPage</h1> }
 const App = () => {
 
 
-  
   const [userData, setUserData] = useState({});
   const [notificationsCount, setNotificationsCount] = useState('');
   const [mailCount, setMailCount] = useState('');
   const [latestAttendance, setLatestAttendance] = useState([]);
+  const [communicationList, setCommunicationList] = useState([]);
+  
+
+  
   useEffect(() => {
     // Get User Data
     axios({
@@ -88,6 +75,12 @@ const App = () => {
       .catch((error) => { console.log(error) })
       
     })
+    // Get Communication List
+    .then(() => {
+      axios({ method: 'GET', url: 'https://salicapi.com/api/User/GetCommunicationList'})
+      .then((res) => { setCommunicationList(res.data.Data) })
+      .catch((error) => { console.log(error) })
+    })
 
     .catch((error) => { console.log(error) })
   }, [])
@@ -99,35 +92,22 @@ const App = () => {
       user_data: userData,
       notifications_count: notificationsCount,
       mail_count: mailCount,
-      latest_attendance: latestAttendance
+      latest_attendance: latestAttendance,
+      communicationList: communicationList
     }}>
       {
         userData.Data?.DisplayName?.length > 0
+        
         ? <Router>
             <div className="app-container">
               <SidebarNav />
               <div className="content-container">
                 <Navbar />
-                <Routes>
-                  <Route index path="/" element={<Home />} />
-                  <Route path="/home" element={<Home />} />
-                  <Route path="/applications" element={<Applications />} />
-                  <Route path="/locations" element={<Locations />} />
-                  <Route path="/communication" element={<Communication />} />
-                  <Route path="/notes" element={<Notes />} />
-                  
-                  <Route path="/community-news" element={<CommunityNews />} />
-                  <Route path="/attendance" element={<Attendance />} />
-
-                  <Route path="/admin-services" element={<AdminServices />} />
-                  <Route path="/it-services" element={<ITServices />} />
-                  <Route path="/hr-self-services" element={<HRSelfServices />} />
-
-                  <Route path="*" element={<NotFoundPage />} />
-                </Routes>
+                <AppRoutes />
               </div>
             </div>
           </Router>
+
         : <div className="loader">  
             <img src={logo} alt="salic logo" style={{maxWidth: '250px', textAlign: 'center'}} />
             <div></div>

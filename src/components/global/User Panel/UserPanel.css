@@ -1,9 +1,10 @@
 .user-panel-container {
   display: flex;
   align-items: center;
-  gap: 25px;
+  gap: 45px;
   position: relative;
   right: 50px;
+  padding-right: 25px;
 }
 .user-panel-container .icons {
   display: flex;
@@ -36,11 +37,11 @@
 .user-panel-container .user-info h2 {
   font-weight: 400;
   font-size: 1.2rem;
-  position: relative;
-  top: -3px;
 }
 .user-panel-container .user-info img {
   width: 45px;
+  max-width: 45px;
+  max-height: 45px;
   border-radius: 50%;
   box-shadow: 0 3px 5px #00000010;
   border: 3px solid #fff;

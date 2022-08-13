@@ -27,11 +27,11 @@ const PersonMobile = (props) => {
     <div className="person-info person-info-mobile">
       <div className="person-control-buttons">
         
-        <a href="">
+        <a href="/" target="blank">
           <DocumentIcon />
         </a>
         
-        <a href="https://outlook.office.com/owa/" target='_blank'>
+        <a href="https://outlook.office.com/owa/" target='blank'>
           <MessageIcon />
           { mail_count > 0 && <span className="badge mail-count">
               {mail_count}
@@ -42,7 +42,7 @@ const PersonMobile = (props) => {
           <img src={`https://salic.sharepoint.com/sites/newsalic/_layouts/15/userphoto.aspx?size=M&username=${user_data.Data?.Mail}`} alt="Person" />
         </div>
         
-        <a href="" target='_blank'>
+        <a href="/" target='blank'>
           <NotificationIcon />
           { notifications_count > 0 && <span className="badge notifi-count">
               {notifications_count}

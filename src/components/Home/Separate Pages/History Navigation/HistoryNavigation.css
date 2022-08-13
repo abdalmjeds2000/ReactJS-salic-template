@@ -1,0 +1,64 @@
+.history-navigation {
+  width: calc(100vw - 50px);
+  padding: 5px 25px;
+  border-top: 1px solid #eee;
+  display: flex;
+  justify-content: space-between;
+  background-color: #fff;
+  position: fixed;
+  top: 50px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+}
+.history-navigation .links {
+  display: flex;
+  gap: 20px;
+}
+
+.history-navigation .links a,
+.history-navigation .links p {
+  font-weight: 400;
+  line-height: 1.7;
+  color: #aaa !important;
+  position: relative;
+}
+.history-navigation .links a:not(:last-child) {
+  font-weight: 600;
+  color: var(--main-color) !important;
+}
+.history-navigation .links a::after {
+  content: '';
+  position: absolute;
+  right: -18px;
+  top: 9px;
+  width: 0;
+  height: 0;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  border-top: 7px solid #e8e8e8;
+  clear: both;
+  transform: rotate(-90deg);
+}
+
+
+.history-navigation .time {
+  color: var(--main-color) !important;
+  font-weight: 500;
+}
+@media screen and (max-width: 650px) {
+  .history-navigation .time {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  
+  .history-navigation .links a, 
+  .history-navigation .links p {
+    line-height: 1.8;
+    font-size: 0.6rem;
+  }
+  .history-navigation .links a::after {
+    top: 6px;
+  }
+}

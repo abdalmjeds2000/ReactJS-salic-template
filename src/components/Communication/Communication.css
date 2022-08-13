@@ -1,0 +1,22 @@
+.boc-light {
+  height: calc(100vh - 50px);
+  background-color: var(--third-color) !important;
+}
+.boc-edit-form-instruments {
+  min-height: 0px !important;
+}
+[data-n-id] rect {
+  fill: var(--second-color);
+}
+.boc-edit-form-header {
+  border-radius: 0px !important;
+  background-color: var(--second-color) !important;
+}
+.boc-edit-form-title {
+  color: #fff !important;
+}
+.boc-edit-form-avatar {
+  width: 120px;
+  height: 120px;
+  top: 55px;
+}

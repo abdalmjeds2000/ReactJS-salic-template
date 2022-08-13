@@ -7,7 +7,7 @@ const Navbar = (props) => {
 
   return ( 
     <div className="navbar" style={props.style}>
-      <img src={logo} alt="logo" />
+      <img src={logo} alt="logo" className="logoSALIC" />
       <img src={VisionLogo} alt='2030 Vision Logo' className="logo_2030" />
       {props.children}
     </div>

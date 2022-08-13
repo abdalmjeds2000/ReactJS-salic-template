@@ -25,7 +25,10 @@ const PersonInfo = (props) => {
   return <div className="person">
     <div className="person-info">
       <div className="person-img">
-        <img src={`https://salic.sharepoint.com/sites/newsalic/_layouts/15/userphoto.aspx?size=M&username=${user_data.Data?.Mail}`} alt="Person" />
+        <img 
+          src={`https://salic.sharepoint.com/sites/newsalic/_layouts/15/userphoto.aspx?size=M&username=${user_data.Data?.Mail}`} 
+          alt="" 
+        />
       </div>
       <div className="person-txt">
         <h1>{user_data.Data?.DisplayName}</h1>
@@ -39,23 +42,23 @@ const PersonInfo = (props) => {
     </div>
     <div className="person-control-buttons">
       
-      <a href="https://outlook.office.com/owa/" target='_blank'>
+      <a href="https://outlook.office.com/owa/" target='blank'>
         <MessageIcon />
         {mail_count > 0 && <span className="badge mail-count">
             {mail_count}
           </span> }
       </a>
       
-      <a href="" target='_blank'>
+      <a href="/" target='blank'>
         <NotificationIcon />
         { notifications_count > 0 && <span className="badge notifi-count">
             {notifications_count}
           </span> }
       </a>
 
-      <a href="">
+      {/* <a href="">
         <DocumentIcon />
-      </a>
+      </a> */}
       
       <a href={`tel:${user_data.Data?.Mobile}`}>
         <CallingIcon />

@@ -22,26 +22,31 @@ function UserPanel(props) {
     <div className='user-panel-container'>
       <div className='icons'>
         
-        <a href="/">
+        {/* <a href="/">
           <img src={DocumentIcon} alt="Document Icon" />
-        </a>
+        </a> */}
+        
         
         <a href={`tel:${props.mobile}`}>
           <img src={CallingIcon} alt="Calling Icon" />
         </a>
         
-        <a href={props.mailTo} target='_blank'>
+        <a href={props.mailTo} target='blank'>
           <img src={MessageIcon} alt="Message Icon" />
-          { props.mailCount > 0 && <span className="badge mail-count" style={{top: '-10px'}}>
+          { 
+            props.mailCount > 0 && <span className="badge mail-count" style={{top: '-10px'}}>
               {props.mailCount}
-            </span> }
+            </span> 
+          }
         </a>
         
-        <a href="" target='_blank'>
+        <a href="/" target='blank'>
           <img src={NotificationIcon} alt="Notification Icon" />
-          { props.notificationsCount > 0 && <span className="badge notifi-count" style={{top: '-10px'}}>
+          { 
+            props.notificationsCount > 0 && <span className="badge notifi-count" style={{top: '-10px'}}>
               {props.notificationsCount}
-            </span> }
+            </span> 
+          }
         </a>
         
       </div>
@@ -50,8 +55,8 @@ function UserPanel(props) {
         <h2>{props.userName}</h2>
         <img 
           src={props.userImage} 
-          alt="user face" 
-          onClick={() => setShowUserDetails(!showUserDetails)} 
+          alt="" 
+          onClick={_ => setShowUserDetails(!showUserDetails)} 
         />
       </div>
       {
@@ -59,7 +64,7 @@ function UserPanel(props) {
         ? <UserSettingsPanel
             userName={props.userName}
             userImage={props.userImage}
-            onClickGradient={() => setShowUserDetails(!showUserDetails)}
+            // onclick={_ => setShowUserDetails(!showUserDetails)}
           />
         : null
       }

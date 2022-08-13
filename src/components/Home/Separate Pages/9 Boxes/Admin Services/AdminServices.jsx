@@ -64,6 +64,7 @@ function AdminServices() {
 
         <h4 className='services-second-header'>Request Center</h4>
         <div className="services-boxs-container">
+          <img src={WorldBG} className='img-bg' alt="world background" />
           <a className='box'>
             <div style={{backgroundColor: '#FBBE82'}}>
               <MyRequests />
@@ -77,7 +78,6 @@ function AdminServices() {
             <h3>Assigned Requests</h3>
           </a>
         </div>
-        <img src={WorldBG} className='img-bg' alt="world background" />
 
       </div>
     </div>

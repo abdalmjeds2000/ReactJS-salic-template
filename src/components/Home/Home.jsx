@@ -59,7 +59,7 @@ const Home = (props) => {
 
 
   return <div className="home-container">
-    <Navbar style={{width: '100%', position: 'fixed', zIndex: '4', display: !scrollSize ? 'none' : ''}}>
+    <Navbar style={{width: '100%', position: 'fixed', zIndex: '2', display: !scrollSize ? 'none' : ''}}>
       <UserPanel 
         mobile={user_data.Data?.Mobile}
         mailTo='https://outlook.office.com/owa/'
