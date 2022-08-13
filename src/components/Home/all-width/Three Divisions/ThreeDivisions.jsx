@@ -19,7 +19,7 @@ import { ReactComponent as SALICTemplates } from '../../../../icons/home/Organiz
 
 import communityNews from '../../../../icons/home/community news/news-person.png'
 
-import video from '../../../../icons/video.mp4';
+// import video from '../../../../icons/video.mp4';
 
 
 
@@ -73,7 +73,7 @@ const ThreeDivisions = (props) => {
             <source src={video} type="video/mp4" />
           </video> */}
           {/* <iframe width="100%" src="https://www.youtube.com/embed/zj_sRm4amu8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> */}
-          <Plyr source={video} options />
+          <Plyr options />
         </div>
 
         {/* Images Section */}
