@@ -97,7 +97,6 @@ const App = () => {
     }}>
       {
         userData.Data?.DisplayName?.length > 0
-        
         ? <Router>
             <div className="app-container">
               <SidebarNav />
@@ -107,7 +106,6 @@ const App = () => {
               </div>
             </div>
           </Router>
-
         : <div className="loader">  
             <img src={logo} alt="salic logo" style={{maxWidth: '250px', textAlign: 'center'}} />
             <div></div>

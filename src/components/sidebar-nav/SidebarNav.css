@@ -1,7 +1,6 @@
 .nav-container {
   background-color: var(--main-color);
   max-height: 100vh;
-  width: 250px;
   padding: 0;
   position: sticky;
   top: 0;
@@ -14,9 +13,11 @@
 }
 .nav-container-small {
   width: 50px;
+  max-width: 50px;
 }
 .nav-container-large {
   width: 220px;
+  max-width: 220px;
 }
 @media screen and (max-width: 800px) {
   .nav-container {
@@ -104,6 +105,11 @@
   font-size: 1.2em;
   transition: var(--main-animation-duration);
   color: #fff !important;
+  overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
 }
 
 .centered-icons-disktop {

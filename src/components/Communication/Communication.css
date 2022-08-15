@@ -1,6 +1,6 @@
 .boc-light {
   height: calc(100vh - 50px);
-  background-color: var(--third-color) !important;
+  background-color: transparent !important;
 }
 .boc-edit-form-instruments {
   min-height: 0px !important;

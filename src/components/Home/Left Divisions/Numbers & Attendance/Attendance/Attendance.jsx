@@ -27,7 +27,7 @@ const Attendance = (props) => {
         </tr>
         {latest_attendance?.slice(0, 3).map((day, i) => {
           return <tr key={i}>
-            <td><span style={{color: day.IsAbsent ? '#FF6868' : (day.IsDelayed ? '#FABD81' : '#94EF9D') }}>•</span>{day.Day}</td>
+            <td><span style={{color: day.IsAbsent ? 'rgb(255, 39, 43)' : (day.IsDelayed ? 'rgb(233 155 77)' : 'rgb(39, 124, 98)') }}>•</span>{day.Day}</td>
             <td>{day.Date || '-'}</td>
             <td>{day.CheckInTime || '-'}</td>
             <td>{day.CheckOutTime || '-'}</td>

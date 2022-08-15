@@ -4,6 +4,7 @@ import { UserContext } from '../../Context/userContext';
 import './Communication.css';
 
 import OrgChart from './mytree';
+import WorldBG from '../../icons/home/world.svg';
 
 
 
@@ -18,10 +19,8 @@ function Communication() {
 
 
   return (
-    <div style={{position: 'relative', top: '50px'}}>
-      <div id='custom-tree' style={{display: 'none'}}>
-      hello world
-      </div>
+    <div style={{position: 'relative', top: '50px', minHeight: 'calc(100vh - 50px)'}}>
+      <img src={WorldBG} className='img-bg' alt="world background" />
       {
         communicationList.length > 0 
         ? <OrgChart nodes={communicationList} />

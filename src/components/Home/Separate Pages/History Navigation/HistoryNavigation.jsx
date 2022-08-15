@@ -6,10 +6,10 @@ import './HistoryNavigation.css'
 
 
 function HistoryNavigation(props) {
-  const [cTime, setTime] = useState(new Date().toUTCString());
+  const [cTime, setTime] = useState(new Date().toUTCString().slice(0, 16) + ' ' + new Date().toLocaleTimeString());
   useEffect(() => {
     setInterval(() => {
-      setTime(new Date().toUTCString());
+      setTime(new Date().toUTCString().slice(0, 16) + ' ' + new Date().toLocaleTimeString());
     }, 1000);
   });
   return (

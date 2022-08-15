@@ -17,7 +17,7 @@
   top: 0vh;
   right: -50vh;
   opacity: 0.15;
-  z-index: -2;
+  z-index: 0;
 }
 .services-page-container > .header {
   display: flex;
@@ -46,7 +46,8 @@
 
 
 .services-body-container {
-  
+  z-index: 0;
+  position: relative;
 }
 .services-body-container .services-boxs-container {
   display: grid;

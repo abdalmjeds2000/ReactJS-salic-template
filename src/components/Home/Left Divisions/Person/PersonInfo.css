@@ -18,8 +18,6 @@
 .home-container .home-division .home-info .person .person-info .person-img img {
   width: 65px;
   height: 65px;
-  max-width: 65px;
-  max-height: 65px;
   border: 5px solid #fff;
   border-radius: 50%;
 }
@@ -78,11 +76,11 @@
   line-height: 1;
 }
 .mail-count {
-  background-color: #79D5A7;
+  background-color: rgb(39, 124, 98);
   box-shadow: 0 2px 3px #79D5A775;
 }
 .notifi-count {
-  background-color: #EF9494;
+  background-color: rgb(255, 39, 43);
   box-shadow: 0 2px 3px #EF949475;
 }
 .home-container .home-division .home-info .person .person-control-buttons a {

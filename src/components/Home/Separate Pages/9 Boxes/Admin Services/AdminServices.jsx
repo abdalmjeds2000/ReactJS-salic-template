@@ -19,26 +19,29 @@ import { ReactComponent as AssignedRequests } from '../../../../../icons/Admin S
 
 
 import WorldBG from '../../../../../icons/home/world.svg';
+import { NavLink } from 'react-router-dom';
 
 function AdminServices() {
 
 
   const [services, setServices] = useState([
-    {bgColor: '#43A2CC',icon: <IssueVISAReequest />, text: 'Issue VISA Reequest'},
-    {bgColor: '#F7937B',icon: <BusinessGateEntry />, text: 'Business Gate Entry'},
-    {bgColor: '#E4A7EB',icon: <ShipmentRequest />, text: 'Shipment Request'},
-    {bgColor: '#43A2CC',icon: <OfficeSupplyRequest />, text: 'Office Supply Request'},
-    {bgColor: '#70CFAF',icon: <Maintenance />, text: 'Maintenance'},
-    {bgColor: '#FD96A6',icon: <VisitorVISA />, text: 'Visitor VISA'},
-    {bgColor: '#FBBE82',icon: <PurchaseRequisition />, text: 'Purchase Requisition'},
-    {bgColor: '#70CFAF',icon: <ReceiveOrderItems />, text: 'Receive Order Items'},
-    {bgColor: '#9BC9ED',icon: <ReceiptConfitmation />, text: 'Receipt Confitmation'},
-    {bgColor: '#FBBE82',icon: <TransportationRequest />, text: 'Transportation Request'},
+    {to: '/admin-services/issuing-VISA', bgColor: '#43A2CC',icon: <IssueVISAReequest />, text: 'Issue VISA Request'},
+    {to: '/admin-services/business-gate', bgColor: '#F7937B',icon: <BusinessGateEntry />, text: 'Business Gate Entry'},
+    {to: '/admin-services/shipment', bgColor: '#E4A7EB',icon: <ShipmentRequest />, text: 'Shipment Request'},
+    {to: '/admin-services/office-supply', bgColor: '#43A2CC',icon: <OfficeSupplyRequest />, text: 'Office Supply Request'},
+    {to: '/admin-services/maintenance', bgColor: '#70CFAF',icon: <Maintenance />, text: 'Maintenance'},
+    {to: '/admin-services/visitor', bgColor: '#FD96A6',icon: <VisitorVISA />, text: 'Visitor VISA'},
+    {to: '/admin-services/', bgColor: '#FBBE82',icon: <PurchaseRequisition />, text: 'Purchase Requisition'},
+    {to: '/admin-services/', bgColor: '#70CFAF',icon: <ReceiveOrderItems />, text: 'Receive Order Items'},
+    {to: '/admin-services/', bgColor: '#9BC9ED',icon: <ReceiptConfitmation />, text: 'Receipt Confitmation'},
+    {to: '/admin-services/transportation', bgColor: '#FBBE82',icon: <TransportationRequest />, text: 'Transportation Request'},
   ]);
 
 
   return (
     <div className='services-page-container'>
+      <img src={WorldBG} className='img-bg' alt="world background" />
+
       <div className="header">
         <div style={{backgroundColor: '#79D5A7'}}>
           <AdminServicesIcon />
@@ -52,19 +55,18 @@ function AdminServices() {
 
         <div className="services-boxs-container">
           {services.map((service, i) => {
-            return <a className='box' key={i}>
+            return <NavLink to={service.to} className='box' key={i}>
               <div style={{backgroundColor: service.bgColor}}>
                 {service.icon}
               </div>
               <h3>{service.text}</h3>
-            </a>
+            </NavLink>
           })}
         </div>
 
 
         <h4 className='services-second-header'>Request Center</h4>
         <div className="services-boxs-container">
-          <img src={WorldBG} className='img-bg' alt="world background" />
           <a className='box'>
             <div style={{backgroundColor: '#FBBE82'}}>
               <MyRequests />

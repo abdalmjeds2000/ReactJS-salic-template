@@ -12,8 +12,8 @@
 }
 
 .simple-user-panel > img {
-  max-width: 45px;
-  max-height: 45px;
+  width: 45px;
+  height: 45px;
   border: 2px solid #fff;
   border-radius: 50px;
   cursor: pointer;

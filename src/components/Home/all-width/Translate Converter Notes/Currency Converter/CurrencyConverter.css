@@ -14,7 +14,7 @@
 .currency-converter-container .header img {
   width: 25px;
 }
-.ant-select-selection-placeholder {
+.currency-converter-container .ant-select-selection-placeholder {
   color: var(--text-color) !important;
   opacity: 0.5 !important;
 }

@@ -90,6 +90,30 @@
   transform: translate(-50%, -50%);
 }
 
+/* Edit Video Player */
+.video-js .vjs-control-bar {
+  background-color: var(--main-color) !important;
+}
+.video-js .vjs-big-play-button {
+  height: 2em !important;
+  width: 2em !important;
+  position: absolute;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  border: 0.1em solid #fff !important;
+  background-color: transparent !important;
+  border-radius: 50px !important;
+}
+.video-js .vjs-big-play-button .vjs-icon-placeholder:before {
+  top: 4px !important;
+}
+
+
+
+
+
+
 
 
 .three-divisions .media-center .gallery2 {

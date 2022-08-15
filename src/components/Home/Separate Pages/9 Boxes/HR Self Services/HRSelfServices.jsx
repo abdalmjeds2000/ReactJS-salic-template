@@ -66,6 +66,7 @@ function HRSelfServices() {
 
   return (
     <div className='services-page-container'>
+      <img src={WorldBG} className='img-bg' alt="world background" />
 
       <SimpleUserPanel
         userImage={`https://salic.sharepoint.com/sites/newsalic/_layouts/15/userphoto.aspx?size=M&username=${user_data.Data?.Mail}`}
@@ -112,7 +113,6 @@ function HRSelfServices() {
         </div>
 
 
-        <img src={WorldBG} className='img-bg' alt="world background" />
       </div>
     </div>
   )

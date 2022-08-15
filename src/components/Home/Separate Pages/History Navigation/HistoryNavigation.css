@@ -1,14 +1,16 @@
 .history-navigation {
   width: calc(100vw - 50px);
+  height: 35px;
   padding: 5px 25px;
   border-top: 1px solid #eee;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   background-color: #fff;
   position: fixed;
   top: 50px;
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
-  z-index: 1;
+  z-index: 2;
 }
 .history-navigation .links {
   display: flex;
@@ -44,6 +46,14 @@
 .history-navigation .time {
   color: var(--main-color) !important;
   font-weight: 500;
+  position: fixed;
+  right: 25px;
+}
+
+@media screen and (max-width: 800px) {
+  .history-navigation {
+    width: 100vw;
+  }
 }
 @media screen and (max-width: 650px) {
   .history-navigation .time {

@@ -12,7 +12,6 @@ import { ReactComponent as ITServiceRequests } from '../../../../../icons/IT Ser
 
 import WorldBG from '../../../../../icons/home/world.svg';
 import { NavLink } from 'react-router-dom';
-import HistoryNavigation from '../../History Navigation/HistoryNavigation';
 
 
 
@@ -20,11 +19,14 @@ function ITServices() {
 
   const [services, setServices] = useState([
     {to: '/it-services/services-request', bgColor: '#70CFAF', icon: <NewITServiceRequest />, text: 'New IT Service Request'},
+    {to: '/it-services/new-asset', bgColor: '#897ED4', icon: <NewITServiceRequest />, text: 'Register New Asset'},
   ]);
 
 
   return (
     <div className='services-page-container'>
+      <img src={WorldBG} className='img-bg' alt="world background" />
+      
       <div className="header">
         <div style={{backgroundColor: '#897ED4'}}>
           <ITServicesIcon />
@@ -57,7 +59,6 @@ function ITServices() {
 
         <h4 className='services-second-header'>Request Center</h4>
         <div className="services-boxs-container">
-          <img src={WorldBG} className='img-bg' alt="world background" />
           <a className='box' href='/'>
             <div style={{backgroundColor: '#43A2CC'}}>
               <MyRequests />

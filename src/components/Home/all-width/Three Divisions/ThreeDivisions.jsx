@@ -1,15 +1,16 @@
 import React, { useCallback, useEffect, useState } from "react";
 import './ThreeDivisions.css';
+import 'video.js/dist/video-js.css';
+import 'video-react/dist/video-react.css'; // import css
 
 import { Timeline, Tweet } from 'react-twitter-widgets'
 import { NavLink } from 'react-router-dom';
 import ImageViewer from 'react-simple-image-viewer';
-import Plyr from "plyr-react"
-import "plyr-react/plyr.css"
 
+import ReactPlayer from 'react-player'
+import VideoPlayer from "./VideoPlayer";
 
 import WorldBG from '../../../../icons/home/world.svg';
-import PlayIcon from '../../../../icons/home/media center/Iconly-Light-Play.svg'
 import { ReactComponent as Policies } from '../../../../icons/home/Organization Documents/Policies.svg'
 import { ReactComponent as Circulations } from '../../../../icons/home/Organization Documents/Circulations.svg'
 import { ReactComponent as Offers } from '../../../../icons/home/Organization Documents/Offers.svg'
@@ -19,7 +20,7 @@ import { ReactComponent as SALICTemplates } from '../../../../icons/home/Organiz
 
 import communityNews from '../../../../icons/home/community news/news-person.png'
 
-// import video from '../../../../icons/video.mp4';
+import video from '../../../../icons/video.mp4';
 
 
 
@@ -36,6 +37,7 @@ const communityNewsBoxs = [
 
 const ThreeDivisions = (props) => {
 
+  // Image Viewer Code
   const [currentImage, setCurrentImage] = useState(0);
   const [isViewerOpen, setIsViewerOpen] = useState(false);
   const images = [
@@ -44,8 +46,6 @@ const ThreeDivisions = (props) => {
     'https://images.unsplash.com/photo-1660275780310-e705e007b18b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw5fHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60',
     'https://images.unsplash.com/photo-1660239963313-8bc0c2735281?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxMHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60',
   ];
-
-
   const openImageViewer = useCallback((index) => {
     setCurrentImage(index);
     setIsViewerOpen(true);
@@ -56,8 +56,9 @@ const ThreeDivisions = (props) => {
   };
 
 
+  // Video Player Code
+  
   return <div className="three-divisions">
-    
 
     <div className="media-center">
       <div className="header">
@@ -73,7 +74,14 @@ const ThreeDivisions = (props) => {
             <source src={video} type="video/mp4" />
           </video> */}
           {/* <iframe width="100%" src="https://www.youtube.com/embed/zj_sRm4amu8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> */}
-          <Plyr options />
+
+
+          {/* <ReactPlayer url={video} height="100%" controls /> */}
+          <VideoPlayer 
+            src={video}
+            controls
+            autoplay={false}
+          />
         </div>
 
         {/* Images Section */}

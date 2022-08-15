@@ -5,7 +5,9 @@
   background: rgb(224,233,255);
   background: linear-gradient(0deg, rgba(224,233,255,1) 0%, rgba(255,255,255,1) 100%);
   position: relative;
-  z-index: 3;
+  top: 50px;
+  margin-bottom: 25px;
+  /* z-index: 3; */
 }
 .attendance-page-container .header {
   display: flex;
@@ -63,7 +65,7 @@
   top: -50vh;
   right: -110vh;
   opacity: 0.15;
-  z-index: -1;
+  /* z-index: -1; */
 }
 
 
