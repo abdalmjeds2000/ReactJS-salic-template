@@ -34,7 +34,7 @@ function SimpleUserPanel(props) {
           ? <UserSettingsPanel
               userName={props.userName}
               userImage={props.userImage}
-              onclick={_ => setShowUserDetails(!showUserDetails)}
+              // onclick={_ => setShowUserDetails(!showUserDetails)}
             />
           : null
         }

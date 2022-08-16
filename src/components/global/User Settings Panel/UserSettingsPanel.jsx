@@ -7,7 +7,7 @@ import logo from '../../../icons/icons-menu/logo.jpg';
 
 function UserSettingsPanel(props) {
   return (
-    <div className="user-setting-panel" onClick={props.onclick}>
+    <div className="user-setting-panel">
       <div className='user-details' onclick={e => e.preventDefault()}>
         <div className='header'>
           <img src={logo} alt="logo" />
@@ -27,6 +27,16 @@ function UserSettingsPanel(props) {
         </div>
         {/* <div className='gradient-bg-ud' onClick={props.onClickGradient}></div> */}
       </div>
+      <div style={{
+        width: '100%',
+        height: '100%',
+        position: 'absolute',
+        top: '0',
+        right: '0',
+        zIndex: '0'
+      }}
+        onClick={props.onClickClose}
+      ></div>
     </div>
   )
 }

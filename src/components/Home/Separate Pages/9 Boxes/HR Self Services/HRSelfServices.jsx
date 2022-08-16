@@ -29,6 +29,7 @@ import { ReactComponent as ERPNotificationsCenter } from '../../../../../icons/H
 import WorldBG from '../../../../../icons/home/world.svg';
 import SimpleUserPanel from '../../../../global/Simple User Panel/SimpleUserPanel';
 import { UserContext } from '../../../../../Context/userContext';
+import HistoryNavigation from '../../History Navigation/HistoryNavigation';
 
 
 
@@ -65,56 +66,61 @@ function HRSelfServices() {
   
 
   return (
-    <div className='services-page-container'>
-      <img src={WorldBG} className='img-bg' alt="world background" />
+    <>
+      <HistoryNavigation>
+        <p>HR Self Services</p>
+      </HistoryNavigation>
+      <div className='services-page-container'>
+        <img src={WorldBG} className='img-bg' alt="world background" />
 
-      <SimpleUserPanel
-        userImage={`https://salic.sharepoint.com/sites/newsalic/_layouts/15/userphoto.aspx?size=M&username=${user_data.Data?.Mail}`}
-        userName={user_data.Data?.DisplayName}
-        notificationsCount={notifications_count}
-        mailCount={mail_count}
-      />
+        <SimpleUserPanel
+          userImage={`https://salic.sharepoint.com/sites/newsalic/_layouts/15/userphoto.aspx?size=M&username=${user_data.Data?.Mail}`}
+          userName={user_data.Data?.DisplayName}
+          notificationsCount={notifications_count}
+          mailCount={mail_count}
+        />
 
-      <div className="header">
-        <div style={{backgroundColor: '#0A89C1'}}>
-          <HRSelfServicesIcon />
+        <div className="header">
+          <div style={{backgroundColor: '#0A89C1'}}>
+            <HRSelfServicesIcon />
+          </div>
+          <h2>HR Self Services</h2>
         </div>
-        <h2>HR Self Services</h2>
-      </div>
 
-      <div className='services-body-container'>
-        
-        <div className="services-boxs-container">
-          {services.map((service, i) => {
-            return <a href={service.href} target='_blank' className='box' key={i}>
-              <div style={{backgroundColor: service.bgColor}}>
-                {service.icon}
+        <div className='services-body-container'>
+          
+          <div className="services-boxs-container">
+            {services.map((service, i) => {
+              return <a href={service.href} target='_blank' className='box' key={i}>
+                <div style={{backgroundColor: service.bgColor}}>
+                  {service.icon}
+                </div>
+                <h3>{service.text}</h3>
+              </a>
+            })}
+          </div>
+
+
+          <h4 className='services-second-header'>Notifications Center</h4>
+          <div className="services-boxs-container">
+            <a className='box' target='_blank' href='https://hen.fa.em2.oraclecloud.com/fscmUI/adfAuthentication?level=FORM&success_url=%2FfscmUI%2Ffaces%2FFuseOverview%3FfndGlobalItemNodeId%3DEXT_EXTN1521037485862_MENU_1521747517899%26_afrLoop%3D6967469320367673%26_afrWindowMode%3D0%26_afrWindowId%3Dnull%26_adf.ctrl-state%3D12y9kgbe6t_91%26_afrFS%3D16%26_afrMT%3Dscreen%26_afrMFW%3D1366%26_afrMFH%3D617%26_afrMFDW%3D1366%26_afrMFDH%3D768%26_afrMFC%3D8%26_afrMFCI%3D0%26_afrMFM%3D0%26_afrMFR%3D96%26_afrMFG%3D0%26_afrMFS%3D0%26_afrMFO%3D0%26_adf.no-new-window-redirect%3Dtrue'>
+              <div style={{backgroundColor: '#FBBE82'}}>
+                <HRNotificationsCenter />
               </div>
-              <h3>{service.text}</h3>
+              <h3>HR Notifications Center</h3>
             </a>
-          })}
+            <a className='box' target='_blank' href='https://hen.fa.em2.oraclecloud.com/fscmUI/faces/AtkHomePageWelcome'>
+              <div style={{backgroundColor: '#FD96A6'}}>
+                <ERPNotificationsCenter />
+              </div>
+              <h3>ERP Notifications Center</h3>
+            </a>
+          </div>
+
+
         </div>
-
-
-        <h4 className='services-second-header'>Notifications Center</h4>
-        <div className="services-boxs-container">
-          <a className='box' target='_blank' href='https://hen.fa.em2.oraclecloud.com/fscmUI/adfAuthentication?level=FORM&success_url=%2FfscmUI%2Ffaces%2FFuseOverview%3FfndGlobalItemNodeId%3DEXT_EXTN1521037485862_MENU_1521747517899%26_afrLoop%3D6967469320367673%26_afrWindowMode%3D0%26_afrWindowId%3Dnull%26_adf.ctrl-state%3D12y9kgbe6t_91%26_afrFS%3D16%26_afrMT%3Dscreen%26_afrMFW%3D1366%26_afrMFH%3D617%26_afrMFDW%3D1366%26_afrMFDH%3D768%26_afrMFC%3D8%26_afrMFCI%3D0%26_afrMFM%3D0%26_afrMFR%3D96%26_afrMFG%3D0%26_afrMFS%3D0%26_afrMFO%3D0%26_adf.no-new-window-redirect%3Dtrue'>
-            <div style={{backgroundColor: '#FBBE82'}}>
-              <HRNotificationsCenter />
-            </div>
-            <h3>HR Notifications Center</h3>
-          </a>
-          <a className='box' target='_blank' href='https://hen.fa.em2.oraclecloud.com/fscmUI/faces/AtkHomePageWelcome'>
-            <div style={{backgroundColor: '#FD96A6'}}>
-              <ERPNotificationsCenter />
-            </div>
-            <h3>ERP Notifications Center</h3>
-          </a>
-        </div>
-
-
       </div>
-    </div>
+    </>
   )
 }
 

@@ -1,9 +1,9 @@
 .user-setting-panel {
-  min-height: 1000vh;
+  min-height: 100vh;
   width: calc(100vw - 60px);
   position: absolute;
   right: 0px;
-  top: 50px;
+  top: 85px;
   display: flex;
   align-items: flex-start;
   justify-content: end;
@@ -24,6 +24,7 @@
   position: relative;
   right: 25px;
   top: 25px;
+  z-index: 1;
 }
 .user-details .header {
   display: flex;

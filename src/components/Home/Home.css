@@ -28,10 +28,9 @@
 }
 ._worldMap {
   position: absolute;
-  top: -20vh;
+  top: -5vh;
   left: 20px;
-  width: 120vh;
-  z-index: 1;
+  width: 110vh;
 }
 
 

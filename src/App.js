@@ -4,7 +4,6 @@ import './App.css';
 
 import Navbar from "./components/navbar/Navbar.jsx";
 import SidebarNav from './components/sidebar-nav/SidebarNav.jsx';
-
 import logo from './icons/icons-menu/logo.jpg';
 
 import { UserContext } from './Context/userContext'
@@ -15,9 +14,7 @@ import AppRoutes from "./Routes/AppRoutes";
 
 
 
-
 const App = () => {
-
 
   const [userData, setUserData] = useState({});
   const [notificationsCount, setNotificationsCount] = useState('');
@@ -26,7 +23,6 @@ const App = () => {
   const [communicationList, setCommunicationList] = useState([]);
   
 
-  
   useEffect(() => {
     // Get User Data
     axios({

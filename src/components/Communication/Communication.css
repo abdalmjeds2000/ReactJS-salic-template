@@ -20,3 +20,17 @@
   height: 120px;
   top: 55px;
 }
+
+[data-n-id] rect {
+  fill: var(--second-color);
+}
+[data-n-id='1'] rect {
+  fill: var(--main-color);
+}
+
+/* [data-n-id='2'] rect {
+  fill: var(--main-color);
+} */
+/* [data-l-id] path {
+  stroke: var(--third-color);
+} */

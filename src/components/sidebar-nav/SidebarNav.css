@@ -9,7 +9,7 @@
   align-items: center;
   gap: 25px;
   transition: var(--main-animation-duration);
-  z-index: 3 !important;
+  z-index: 5 !important;
 }
 .nav-container-small {
   width: 50px;
@@ -49,7 +49,7 @@
     padding: 4px;
     border-radius: 25%;
     left: 0px;
-    top: -50px;
+    top: -80px;
     box-shadow: none;
   }
 }
@@ -139,7 +139,7 @@
     font-size: 0.7rem !important;
   }
   .nav-container {
-    margin-top: 50px;
+    margin-top: 80px;
     padding: 10px;
   }
 }

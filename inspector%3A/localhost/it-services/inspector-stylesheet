@@ -1,0 +1,3 @@
+img.img-bg.img-bg-form {
+    z-index: -1;
+}

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import './AdminServices.css';
 
 import { ReactComponent as AdminServicesIcon } from '../../../../../icons/home/sevices/Admin Services.svg';
@@ -20,8 +20,14 @@ import { ReactComponent as AssignedRequests } from '../../../../../icons/Admin S
 
 import WorldBG from '../../../../../icons/home/world.svg';
 import { NavLink } from 'react-router-dom';
+import HistoryNavigation from '../../History Navigation/HistoryNavigation';
+import SimpleUserPanel from '../../../../global/Simple User Panel/SimpleUserPanel';
+import { UserContext } from '../../../../../Context/userContext';
 
 function AdminServices() {
+  const { user_data } = useContext(UserContext);
+  const { notifications_count } = useContext(UserContext);
+  const { mail_count } = useContext(UserContext);
 
 
   const [services, setServices] = useState([
@@ -39,50 +45,61 @@ function AdminServices() {
 
 
   return (
-    <div className='services-page-container'>
-      <img src={WorldBG} className='img-bg' alt="world background" />
+    <>
+      <HistoryNavigation>
+        <p>Admin Services Center</p>
+      </HistoryNavigation>
+      <div className='services-page-container'>
+        <img src={WorldBG} className='img-bg' alt="world background" />
+        <SimpleUserPanel
+          userImage={`https://salic.sharepoint.com/sites/newsalic/_layouts/15/userphoto.aspx?size=M&username=${user_data.Data?.Mail}`}
+          userName={user_data.Data?.DisplayName}
+          notificationsCount={notifications_count}
+          mailCount={mail_count}
+        />
 
-      <div className="header">
-        <div style={{backgroundColor: '#79D5A7'}}>
-          <AdminServicesIcon />
+        <div className="header">
+          <div style={{backgroundColor: '#79D5A7'}}>
+            <AdminServicesIcon />
+          </div>
+          <h2>Admin Service Request</h2>
         </div>
-        <h2>Admin Service Request</h2>
-      </div>
 
 
-      <div className='services-body-container'>
-        
+        <div className='services-body-container'>
+          
 
-        <div className="services-boxs-container">
-          {services.map((service, i) => {
-            return <NavLink to={service.to} className='box' key={i}>
-              <div style={{backgroundColor: service.bgColor}}>
-                {service.icon}
+          <div className="services-boxs-container">
+            {services.map((service, i) => {
+              return <NavLink to={service.to} className='box' key={i}>
+                <div style={{backgroundColor: service.bgColor}}>
+                  {service.icon}
+                </div>
+                <h3>{service.text}</h3>
+              </NavLink>
+            })}
+          </div>
+
+
+          <h4 className='services-second-header'>Request Center</h4>
+          <div className="services-boxs-container">
+            <a className='box'>
+              <div style={{backgroundColor: '#FBBE82'}}>
+                <MyRequests />
               </div>
-              <h3>{service.text}</h3>
-            </NavLink>
-          })}
+              <h3>My Requests</h3>
+            </a>
+            <a className='box'>
+              <div style={{backgroundColor: '#43A2CC'}}>
+                <AssignedRequests />
+              </div>
+              <h3>Assigned Requests</h3>
+            </a>
+          </div>
+
         </div>
-
-
-        <h4 className='services-second-header'>Request Center</h4>
-        <div className="services-boxs-container">
-          <a className='box'>
-            <div style={{backgroundColor: '#FBBE82'}}>
-              <MyRequests />
-            </div>
-            <h3>My Requests</h3>
-          </a>
-          <a className='box'>
-            <div style={{backgroundColor: '#43A2CC'}}>
-              <AssignedRequests />
-            </div>
-            <h3>Assigned Requests</h3>
-          </a>
-        </div>
-
       </div>
-    </div>
+    </>
   )
 }
 

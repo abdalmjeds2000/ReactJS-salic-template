@@ -19,7 +19,7 @@ const SidebarNav = (props) => {
 
   let listItems = [
     {index: 0, to: '/', icon: <HomeIcon/>, text: <p>Home</p>}, 
-    {index: 1, to: '/applications', icon: <ApplicationsIcon/>, text: <p>Applications</p>}, 
+    // {index: 1, to: '/applications', icon: <ApplicationsIcon/>, text: <p>Applications</p>}, 
     {index: 2, to: '/locations', icon: <LocationsIcon/>, text: <p>Locations</p>},
     {index: 3, to: '/communication', icon: <CommunicationIcon/>, text: <p>Communication</p>},
     {index: 4, to: '/notes', icon: <NotesIcon/>, text: <p>Notes</p>},

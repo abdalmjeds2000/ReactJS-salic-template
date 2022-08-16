@@ -8,6 +8,7 @@ import NumbersAttendance from "./Left Divisions/Numbers & Attendance/Numbers&Att
 import Services from "./Left Divisions/Services/Services";
 import ThreeDivisions from './all-width/Three Divisions/ThreeDivisions';
 import TranslateConverterNotes from './all-width/Translate Converter Notes/TranslateConverterNotes'
+import HistoryNavigation from './Separate Pages/History Navigation/HistoryNavigation'
 
 import MerredinLogo from '../../icons/home/merredin_logo.png'
 import DawatLogo from '../../icons/home/dawat_logo.png'
@@ -16,6 +17,7 @@ import worldIllustration from '../../icons/home/world.svg';
 import Navbar from "../navbar/Navbar";
 import UserPanel from "../global/User Panel/UserPanel";
 import { UserContext } from "../../Context/userContext";
+import { NavLink } from "react-router-dom";
 
 
 
@@ -59,7 +61,7 @@ const Home = (props) => {
 
 
   return <div className="home-container">
-    <Navbar style={{width: '100%', position: 'fixed', zIndex: '2', display: !scrollSize ? 'none' : ''}}>
+    <Navbar style={{width: '100%', position: 'fixed', zIndex: '2', display: !scrollSize ? 'none' : '', backgroundColor: !scrollSize ? 'transparent' : '#fff'}}>
       <UserPanel 
         mobile={user_data.Data?.Mobile}
         mailTo='https://outlook.office.com/owa/'
@@ -69,6 +71,11 @@ const Home = (props) => {
         userImage={`https://salic.sharepoint.com/sites/newsalic/_layouts/15/userphoto.aspx?size=M&username=${user_data.Data?.Mail}`}
       />
     </Navbar>
+    <div style={{display: !scrollSize ? "none" : ''}}>
+      <HistoryNavigation>
+        <p>Home Page</p>
+      </HistoryNavigation>
+    </div>
     <div className="container">
       <div className="home-division">
         <div className="home-info">
