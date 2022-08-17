@@ -1,14 +1,13 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import './UserPanel.css';
+import { NavLink } from 'react-router-dom'
 
 import MessageIcon from '../../../icons/notification-list/Iconly-Bold-Message.svg';
 import NotificationIcon from '../../../icons/notification-list/Iconly-Bold-Notification.svg';
 import DocumentIcon from '../../../icons/notification-list/Iconly-Bold-Document.svg';
 import CallingIcon from '../../../icons/notification-list/Iconly-Bold-Calling.svg';
-import PersonImg from '../../../icons/home/person.png';
 import { useState } from 'react';
 
-import { UserContext } from '../../../Context/userContext';
 import UserSettingsPanel from '../User Settings Panel/UserSettingsPanel';
 
 
@@ -40,14 +39,14 @@ function UserPanel(props) {
           }
         </a>
         
-        <a href="/" target='blank'>
+        <NavLink to="/notification-center">
           <img src={NotificationIcon} alt="Notification Icon" />
           { 
             props.notificationsCount > 0 && <span className="badge notifi-count" style={{top: '-10px'}}>
               {props.notificationsCount}
             </span> 
           }
-        </a>
+        </NavLink>
         
       </div>
       

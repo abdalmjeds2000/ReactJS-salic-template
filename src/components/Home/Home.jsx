@@ -33,12 +33,10 @@ function getScrollY() {
 
 
 
-
-
 const Home = (props) => {
-
   const [windowSize, setWindowSize] = useState(getWindowSize());
   const [scrollSize, setScrollSize] = useState(getScrollY());
+
   useEffect(() => {
     function handleWindowResize() {
       setWindowSize(getWindowSize());
@@ -51,12 +49,7 @@ const Home = (props) => {
     window.addEventListener('scroll', handleScrollY);
   }, []);
 
-
-
-  const { user_data } = useContext(UserContext);
-  const { notifications_count } = useContext(UserContext);
-  const { mail_count } = useContext(UserContext);
-
+  const { user_data, notifications_count, mail_count } = useContext(UserContext);
 
 
 

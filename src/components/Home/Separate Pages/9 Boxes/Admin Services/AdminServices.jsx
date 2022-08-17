@@ -25,9 +25,7 @@ import SimpleUserPanel from '../../../../global/Simple User Panel/SimpleUserPane
 import { UserContext } from '../../../../../Context/userContext';
 
 function AdminServices() {
-  const { user_data } = useContext(UserContext);
-  const { notifications_count } = useContext(UserContext);
-  const { mail_count } = useContext(UserContext);
+  const { user_data, notifications_count, mail_count } = useContext(UserContext);
 
 
   const [services, setServices] = useState([

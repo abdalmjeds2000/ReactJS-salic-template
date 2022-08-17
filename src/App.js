@@ -21,6 +21,7 @@ const App = () => {
   const [mailCount, setMailCount] = useState('');
   const [latestAttendance, setLatestAttendance] = useState([]);
   const [communicationList, setCommunicationList] = useState([]);
+  const [notificationCenterData, setNotificationCenterData] = useState([]);
   
 
   useEffect(() => {
@@ -77,8 +78,29 @@ const App = () => {
       .then((res) => { setCommunicationList(res.data.Data) })
       .catch((error) => { console.log(error) })
     })
-
     .catch((error) => { console.log(error) })
+    //Get Notification Center Data
+    axios({ method: 'GET', url: 'https://salicapi.com/api/notificationcenter/Get?Email=stsadmin@salic.onmicrosoft.com&draw=86&order%5B0%5D%5Bcolumn%5D=0&order%5B0%5D%5Bdir%5D=asc&start=0&length=-1&search%5Bvalue%5D=&search%5Bregex%5D=false&%24orderby=Created+desc&%24top=1&Type=eSign&Status=Pending%2CApproved%2CRejected&_=1660747052191'})
+    .then((res) => { 
+      const notifi_data = res.data?.Data?.map((n) => {
+        const newRow = {
+          id: res.data?.Data?.indexOf(n)+1,
+          subject: <>
+                      <h4>{n.Title}</h4>
+                      <>{n.BodyPreview}</>
+                    </>,
+          dateTime: n.Created.slice(0, -3).replace('T', ' '),
+          status: n.Status,
+          From: n.From,
+          action: <a href="/">View Document</a>
+        }
+        return newRow
+      })
+      setNotificationCenterData(notifi_data);
+    })
+    
+    .catch((error) => { console.log(error) })
+
   }, [])
 
 
@@ -89,7 +111,8 @@ const App = () => {
       notifications_count: notificationsCount,
       mail_count: mailCount,
       latest_attendance: latestAttendance,
-      communicationList: communicationList
+      communicationList: communicationList,
+      notification_center_data: notificationCenterData
     }}>
       {
         userData.Data?.DisplayName?.length > 0

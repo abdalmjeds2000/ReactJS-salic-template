@@ -1,4 +1,6 @@
 import React, { useContext } from "react";
+import { NavLink } from 'react-router-dom';
+
 import './PersonMobile.css';
 
 import PersonImg from '../../../../icons/home/person.png'
@@ -17,10 +19,7 @@ import { UserContext } from "../../../../Context/userContext";
 
 const PersonMobile = (props) => {
 
-  const { user_data } = useContext(UserContext);
-  const { notifications_count } = useContext(UserContext);
-  const { mail_count } = useContext(UserContext);
-
+  const { user_data, notifications_count, mail_count } = useContext(UserContext);
 
 
   return <div className="person person-mobile">
@@ -41,13 +40,11 @@ const PersonMobile = (props) => {
         <div className="person-img">
           <img src={`https://salic.sharepoint.com/sites/newsalic/_layouts/15/userphoto.aspx?size=M&username=${user_data.Data?.Mail}`} alt="Person" />
         </div>
-        
-        <a href="/" target='blank'>
+
+        <NavLink to="/notification-center">
           <NotificationIcon />
-          { notifications_count > 0 && <span className="badge notifi-count">
-              {notifications_count}
-            </span> }
-        </a>
+          { notifications_count > 0 && <span className="badge notifi-count">{notifications_count}</span> }
+        </NavLink>
 
         <a href={`tel:${user_data.Data?.Mobile}`}>
           <CallingIcon />

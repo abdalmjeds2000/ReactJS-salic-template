@@ -20,6 +20,7 @@ import TransportationRequest from '../components/Home/Separate Pages/9 Boxes/Adm
 import BusinessGate from '../components/Home/Separate Pages/9 Boxes/Admin Services/Business Gate/BusinessGate.jsx';
 import IssuingVISA from '../components/Home/Separate Pages/9 Boxes/Admin Services/Issuing VISA/IssuingVISA.jsx';
 import OfficeSupply from '../components/Home/Separate Pages/9 Boxes/Admin Services/Office Supply/OfficeSupply.jsx';
+import NotificationCenter from '../components/Notification Center/NotificationCenter.jsx';
 
 const Locations = () => { return <h1>Locations</h1> }
 const Notes = () => { return <h1>Notes</h1> }
@@ -59,6 +60,7 @@ function AppRoutes() {
         <Route path="/it-services/new-asset" element={<RegisterNewAssets />} />
       </Route>
       <Route path="/hr-self-services" element={<HRSelfServices />} />
+      <Route path="/notification-center" element={<NotificationCenter />} />
 
       <Route path="*" element={<NotFoundPage />} />
     </Routes>

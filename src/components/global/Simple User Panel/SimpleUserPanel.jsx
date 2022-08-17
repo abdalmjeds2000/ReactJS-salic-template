@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { NavLink } from 'react-router-dom';
 import './SimpleUserPanel.css';
 
 import { ReactComponent as NotificationIcon } from '../../../icons/separated pages/Notification-Icon.svg'
@@ -18,10 +19,10 @@ function SimpleUserPanel(props) {
         />
         <p>{props.userName}</p>
         <div className='icons'>
-          <a href="/" target="blank">
+          <NavLink to="/notification-center">
             <NotificationIcon />
-            {props.notificationsCount > 0 && <span className="badge notifi-count">{props.notificationsCount}</span>}  
-          </a>
+            {props.notificationsCount > 0 && <span className="badge notifi-count">{props.notificationsCount}</span>}
+          </NavLink>
           <a href="https://outlook.office.com/owa/" target="blank">
             <MessageIcon />
             {props.mailCount > 0 &&  <span className="badge mail-count">{props.mailCount}</span>}
@@ -34,7 +35,7 @@ function SimpleUserPanel(props) {
           ? <UserSettingsPanel
               userName={props.userName}
               userImage={props.userImage}
-              // onclick={_ => setShowUserDetails(!showUserDetails)}
+              onClickClose={() => setShowUserDetails(!showUserDetails)}
             />
           : null
         }

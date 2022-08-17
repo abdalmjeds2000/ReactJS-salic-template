@@ -18,8 +18,7 @@
   position: relative;
 }
 .user-panel-container .icons a .badge {
-  width: 15px;
-  height: 15px;
+  max-height: 15px;
   font-size: 0.65rem;
   font-weight: 600;
 }

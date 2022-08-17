@@ -426,6 +426,9 @@
   width: calc(100% / 3);
   height: 100%;
 }
+.three-divisions .twitter-wid iframe {
+  height: calc(100vh - 85px) !important;
+}
 /* iframe.twitter-timeline-rendered {
   height: calc(100vh - 120px) !important;
   

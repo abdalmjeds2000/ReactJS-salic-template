@@ -1,4 +1,6 @@
 import React, {useContext} from "react";
+import { NavLink } from 'react-router-dom';
+
 import './PersonInfo.css';
 import { UserContext } from '../../../../Context/userContext'
 
@@ -15,11 +17,7 @@ import { ReactComponent as CallingIcon } from '../../../../icons/notification-li
 
 const PersonInfo = (props) => {
 
-  const { user_data } = useContext(UserContext);
-  const { notifications_count } = useContext(UserContext);
-  const { mail_count } = useContext(UserContext);
-
-  
+  const { user_data, notifications_count, mail_count } = useContext(UserContext);
 
   
   return <div className="person">
@@ -49,12 +47,10 @@ const PersonInfo = (props) => {
           </span> }
       </a>
       
-      <a href="/" target='blank'>
+      <NavLink to="/notification-center">
         <NotificationIcon />
-        { notifications_count > 0 && <span className="badge notifi-count">
-            {notifications_count}
-          </span> }
-      </a>
+        { notifications_count > 0 && <span className="badge notifi-count">{notifications_count}</span> }
+      </NavLink>
 
       {/* <a href="">
         <DocumentIcon />
