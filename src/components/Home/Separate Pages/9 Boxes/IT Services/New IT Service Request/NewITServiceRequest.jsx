@@ -1,13 +1,12 @@
-import React, { useContext, useEffect } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { UserContext } from '../../../../../../Context/userContext';
-import { Button, Col, Form, Input, message, Upload, Radio, Row, Select, Space } from 'antd';
-import { InboxOutlined } from '@ant-design/icons';
+import { Button, Col, Form, Input, message, Modal, Upload, Radio, Row, Select, Space } from 'antd';
+import { PlusOutlined } from '@ant-design/icons';
 import Swal from 'sweetalert2'
 import { NavLink, useNavigate } from 'react-router-dom';
 
 import HistoryNavigation from '../../../History Navigation/HistoryNavigation';
 import FormPageTemplate from '../../Components/Form Page Template/FormPageTemplate';
-import Dragger from 'antd/lib/upload/Dragger';
 import SubmitCancel from '../../Components/Submit Cancel/SubmitCancel';
 
 
@@ -23,7 +22,26 @@ const layout = { labelCol: { span: 6 }, wrapperCol: { span: 12 } };
 
 function NewITServiceRequest() {
   const { user_data } = useContext(UserContext);
-  
+
+  const [previewVisible, setPreviewVisible] = useState(false);
+  const [previewImage, setPreviewImage] = useState('');
+  const [previewTitle, setPreviewTitle] = useState('');
+  const [fileList, setFileList] = useState([]);
+  const handleCancel = () => setPreviewVisible(false);
+  const handlePreview = async (file) => {
+    if (!file.url && !file.preview) {
+      // file.preview = await getBase64(file.originFileObj);
+    }
+
+    setPreviewImage(file.url || file.preview);
+    setPreviewVisible(true);
+    setPreviewTitle(file.name || file.url.substring(file.url.lastIndexOf('/') + 1));
+  };
+  const handleChange = ({ fileList: newFileList }) => setFileList(newFileList);
+
+
+
+
   let getDateAndTime = () => {
     const today = new Date();
     const date = today.getDate() +'-'+ (today.getMonth()+1)+'-' + today.getFullYear();
@@ -149,16 +167,24 @@ function NewITServiceRequest() {
           </Form.Item>
           
           <Form.Item name="Documents" label="Documents">
-            <Dragger>
-              <p className="ant-upload-drag-icon">
-                <InboxOutlined />
-              </p>
-              <p className="ant-upload-text">Click or drag file to this area to upload</p>
-              <p className="ant-upload-hint">
-                Support for a single or bulk upload. Strictly prohibit from uploading company data or other
-                band files
-              </p>
-            </Dragger>
+            <Upload
+              action="https://www.mocky.io/v2/5cc8019d300000980a055e76"
+              listType="picture-card"
+              fileList={fileList}
+              onPreview={handlePreview}
+              onChange={handleChange}
+            >
+              {fileList.length >= 8 ? null : <div><PlusOutlined /><div style={{marginTop: 8,}}>Upload</div></div>}
+            </Upload>
+            <Modal visible={previewVisible} title={previewTitle} footer={null} onCancel={handleCancel}>
+              <img
+                alt="example"
+                style={{
+                  width: '100%',
+                }}
+                src={previewImage}
+              />
+            </Modal>
           </Form.Item>
 
           <SubmitCancel formSubmitHandler={_ => {alert('Submit')}} />

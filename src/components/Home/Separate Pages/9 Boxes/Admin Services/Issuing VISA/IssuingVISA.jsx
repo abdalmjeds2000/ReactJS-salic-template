@@ -1,13 +1,13 @@
 import React, { useContext, useEffect, useRef, useState } from 'react';
 
 import { NavLink } from 'react-router-dom'
-import { Button, Col, Form, Input, message, Upload, Radio, Row, Select, Space, DatePicker, InputNumber, Popconfirm, Table } from 'antd';
+import { Button, Col, Form, Input, message, Upload, Radio, Row, Select, Space, DatePicker, InputNumber, Popconfirm, Table, Modal } from 'antd';
 
 import HistoryNavigation from '../../../History Navigation/HistoryNavigation'
 import FormPageTemplate from '../../Components/Form Page Template/FormPageTemplate'
 import { UserContext } from '../../../../../../Context/userContext';
 import SubmitCancel from '../../Components/Submit Cancel/SubmitCancel';
-import { InboxOutlined } from '@ant-design/icons';
+import { InboxOutlined, PlusOutlined } from '@ant-design/icons';
 const { Search } = Input;
 const { Option } = Select;
 const { Dragger } = Upload;
@@ -21,6 +21,26 @@ function IssuingVISA() {
 
   const { user_data } = useContext(UserContext);
   const [serivceType, setSerivceType] = useState('');
+  
+  
+  const [previewVisible, setPreviewVisible] = useState(false);
+  const [previewImage, setPreviewImage] = useState('');
+  const [previewTitle, setPreviewTitle] = useState('');
+  const [fileList, setFileList] = useState([]);
+  const handleCancel = () => setPreviewVisible(false);
+  const handlePreview = async (file) => {
+    if (!file.url && !file.preview) {
+      // file.preview = await getBase64(file.originFileObj);
+    }
+
+    setPreviewImage(file.url || file.preview);
+    setPreviewVisible(true);
+    setPreviewTitle(file.name || file.url.substring(file.url.lastIndexOf('/') + 1));
+  };
+  const handleChange = ({ fileList: newFileList }) => setFileList(newFileList);
+
+
+
 
   const [dataSource, setDataSource] = useState([]);
   useEffect(() => {
@@ -152,16 +172,24 @@ function IssuingVISA() {
             <Input.TextArea rows={6} placeholder="write a brief description" />
           </Form.Item>
           <Form.Item name="Verification Documents" label="Verification Documents">
-            <Dragger>
-              <p className="ant-upload-drag-icon">
-                <InboxOutlined />
-              </p>
-              <p className="ant-upload-text">Click or drag file to this area to upload</p>
-              <p className="ant-upload-hint">
-                Support for a single or bulk upload. Strictly prohibit from uploading company data or other
-                band files
-              </p>
-            </Dragger>
+            <Upload
+              action="https://www.mocky.io/v2/5cc8019d300000980a055e76"
+              listType="picture-card"
+              fileList={fileList}
+              onPreview={handlePreview}
+              onChange={handleChange}
+            >
+              {fileList.length >= 8 ? null : <div><PlusOutlined /><div style={{marginTop: 8,}}>Upload</div></div>}
+            </Upload>
+            <Modal visible={previewVisible} title={previewTitle} footer={null} onCancel={handleCancel}>
+              <img
+                alt="example"
+                style={{
+                  width: '100%',
+                }}
+                src={previewImage}
+              />
+            </Modal>
           </Form.Item>
 
           <SubmitCancel formSubmitHandler={_ => {alert('Submit')}} />
