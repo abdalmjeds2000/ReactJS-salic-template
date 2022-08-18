@@ -8,20 +8,21 @@
 .number-box-container .circular-progress-bar {
   padding: 7px;
   background-color: #fff;
-  min-width: 60px;
-  max-width: 60px;
+  min-width: 65px;
+  max-width: 65px;
   border-radius: 50%;
-  box-shadow: 2px 2px 15px #00000010;
+  box-shadow: 0 4px 10px rgb(0 0 0 / 15%);
 }
 
 /* .number-box-container .number-box-info {
 } */
 .number-box-container .number-box-info h3 {
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   font-weight: 400;
+  white-space: nowrap;
 }
 .number-box-container .number-box-info p {
-  font-size: 0.7rem;
+  font-size: 0.8rem;
 }
 
 
@@ -80,8 +81,9 @@
 }
 @media screen and (min-width: 1750px) {
   .number-box-container .circular-progress-bar {
-    min-width: 85px;
-    max-width: 85px;
+    padding: 10px;
+    min-width: 95px;
+    max-width: 95px;
   }
   .number-box-container .number-box-info h3 {
     font-size: 1.5rem;

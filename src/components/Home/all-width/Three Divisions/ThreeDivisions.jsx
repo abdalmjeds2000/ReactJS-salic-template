@@ -1,14 +1,12 @@
 import React, { useCallback, useEffect, useState } from "react";
 import './ThreeDivisions.css';
-import 'video.js/dist/video-js.css';
-import 'video-react/dist/video-react.css'; // import css
-
+import { AlertFilled } from '@ant-design/icons'
 import { Timeline, Tweet } from 'react-twitter-widgets'
 import { NavLink } from 'react-router-dom';
 import ImageViewer from 'react-simple-image-viewer';
 
-import ReactPlayer from 'react-player'
-import VideoPlayer from "./VideoPlayer";
+import Plyr from "plyr-react"
+import "plyr-react/plyr.css"
 
 import WorldBG from '../../../../icons/home/world.svg';
 import { ReactComponent as Policies } from '../../../../icons/home/Organization Documents/Policies.svg'
@@ -19,10 +17,13 @@ import { ReactComponent as Research } from '../../../../icons/home/Organization 
 import { ReactComponent as SALICTemplates } from '../../../../icons/home/Organization Documents/SALIC Templates.svg'
 
 import communityNews from '../../../../icons/home/community news/news-person.png'
+import VideoPoster from '../../../../icons/home/media center/gallery1.png'
+import Image1 from '../../../../icons/home/media center/gallery2.png'
+import Image2 from '../../../../icons/home/media center/gallery3.png'
+import Image3 from '../../../../icons/home/media center/gallery4.png'
+import Image4 from '../../../../icons/home/media center/gallery5.png'
 
 // import video from '../../../../icons/video.mp4';
-
-
 
 const communityNewsBoxs = [
   {id: 0, name: 'Policies', icon: <Policies />},
@@ -34,18 +35,11 @@ const communityNewsBoxs = [
 ];
 
 
-
 const ThreeDivisions = (props) => {
-
   // Image Viewer Code
   const [currentImage, setCurrentImage] = useState(0);
   const [isViewerOpen, setIsViewerOpen] = useState(false);
-  const images = [
-    'https://images.unsplash.com/photo-1660299678227-30da3150f1f6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwzfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60',
-    'https://images.unsplash.com/photo-1660227807238-a6591b9c0c11?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60',
-    'https://images.unsplash.com/photo-1660275780310-e705e007b18b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw5fHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60',
-    'https://images.unsplash.com/photo-1660239963313-8bc0c2735281?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxMHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60',
-  ];
+  const images = [Image1, Image2, Image3, Image4];
   const openImageViewer = useCallback((index) => {
     setCurrentImage(index);
     setIsViewerOpen(true);
@@ -56,10 +50,8 @@ const ThreeDivisions = (props) => {
   };
 
 
-  // Video Player Code
   
   return <div className="three-divisions">
-
     <div className="media-center">
       <div className="header">
         <h3>Media Center</h3>
@@ -69,19 +61,14 @@ const ThreeDivisions = (props) => {
       <div className="gallerys">
         {/* Video Section */}
         <div className="gallery gallery1">
-          {/* <img src={PlayIcon} alt="" /> */}
-          {/* <video width="100%" height="100%" controls poster="https://pbs.twimg.com/media/FYrTZYPX0AU62b7?format=jpg&name=small">
-            <source src={video} type="video/mp4" />
-          </video> */}
-          {/* <iframe width="100%" src="https://www.youtube.com/embed/zj_sRm4amu8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> */}
-
-
-          <ReactPlayer url="https://www.youtube.com/embed/zj_sRm4amu8" height="100%" controls />
-          {/* <VideoPlayer 
-            src={video}
-            controls
-            autoplay={false}
-          /> */}
+          <Plyr
+            source={{
+              type: "video", 
+              sources: [{ src: 'zj_sRm4amu8', provider: 'youtube'}], 
+              poster: VideoPoster,
+            }}
+            options={{iconPrefix: <AlertFilled />, }}
+          />
         </div>
 
         {/* Images Section */}
@@ -104,13 +91,10 @@ const ThreeDivisions = (props) => {
           />
         )}
       </div>
-
     </div>
 
 
-
     <div className="community-news">
-
       <div className="news_organization_container">
         <div className="news">
           <div className="header">
@@ -156,7 +140,6 @@ const ThreeDivisions = (props) => {
           </div>
         </div>
       </div>
-
     </div>
 
 
@@ -170,11 +153,12 @@ const ThreeDivisions = (props) => {
           screenName: 'KSA_SALIC'
         }}
         options={{
-          height: 'calc(100vh - 115px)'
+          height: 'calc(100vh - 150px)'
         }}
       />
       {/* <Tweet tweetId="1538823702271430656"  /> */}
     </div>
+
 
     <img src={WorldBG} alt="world background" />
   </div>

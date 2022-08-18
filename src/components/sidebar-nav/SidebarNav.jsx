@@ -30,8 +30,6 @@ const SidebarNav = (props) => {
   
   const [windowSize, setWindowSize] = useState(getWindowSize());
   const [isNavBarLarge, setIsNavBarLarge] = useState(false);
-
-
   useEffect(() => {
     function handleWindowResize() {
       setWindowSize(getWindowSize());
@@ -47,7 +45,6 @@ const SidebarNav = (props) => {
       className={isNavBarLarge? "nav-container nav-container-large" : "nav-container nav-container-small"} 
       style={(windowSize.innerWidth < 800 && !isNavBarLarge) ? {padding: 0} : {}}
     >
-
       <div>
         <NavButton onClick={() => setIsNavBarLarge(!isNavBarLarge)}/>
       </div>
@@ -77,7 +74,6 @@ const SidebarNav = (props) => {
           </a>
         </li>
       </ul>
-
     </nav>
   )
 }

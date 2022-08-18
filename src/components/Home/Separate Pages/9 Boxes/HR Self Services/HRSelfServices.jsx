@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react'
 import './HRSelfServices.css';
 
-import { ReactComponent as HRSelfServicesIcon } from '../../../../../icons/home/sevices/HR Self Services.svg';
+import { ReactComponent as HRSelfServicesIcon } from '../../../../../icons/HR Self Services/HR Self Services.svg';
 
 import { ReactComponent as BusinessTrip } from '../../../../../icons/HR Self Services/Business Trip.svg';
 import { ReactComponent as BusinessTripCompletion } from '../../../../../icons/HR Self Services/Business Trip Completion.svg';

@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="29.749" height="27.003" viewBox="0 0 29.749 27.003">
+  <g id="Group_763" data-name="Group 763" transform="translate(-436.626 -872.998)">
+    <g id="Iconly_Light_Danger" data-name="Iconly/Light/Danger" transform="translate(436.626 872.998)">
+      <g id="Danger" transform="translate(0.999 1.001)">
+        <path id="Path" d="M0,1.134A1.133,1.133,0,0,1,1.125,0,1.119,1.119,0,0,1,2.25,1.118v.016a1.125,1.125,0,1,1-2.25,0Z" transform="translate(12.75 17.646)" fill="#fff"/>
+        <path id="Path_-_Outline" data-name="Path - Outline" d="M1.125,2.759A1.63,1.63,0,1,1,2.75,1.118v.016A1.627,1.627,0,0,1,1.125,2.759ZM1.125.5a.63.63,0,1,0,.625.634V1.118A.622.622,0,0,0,1.125.5Z" transform="translate(12.75 17.646)" fill="rgba(0,0,0,0)"/>
+        <path id="Stroke_3" data-name="Stroke 3" d="M2.959,26,2.9,26a4.183,4.183,0,0,1-1.332-.3A4.127,4.127,0,0,1-.7,20.337a1,1,0,0,1,.058-.12l10.912-19.1a4.119,4.119,0,0,1,7.2,0l10.912,19.1a1,1,0,0,1,.057.116A4.116,4.116,0,0,1,24.843,26H2.959ZM1.135,21.146a2.124,2.124,0,0,0,1.187,2.7A2.182,2.182,0,0,0,3.013,24H24.762a2.116,2.116,0,0,0,1.853-2.854L15.736,2.106l-.007-.012a2.121,2.121,0,0,0-3.708,0l-.007.012Z" transform="translate(0)" fill="#fff"/>
+        <path id="Stroke_1" data-name="Stroke 1" d="M.5,5.65a1,1,0,0,1-1-1V0a1,1,0,1,1,2,0V4.65A1,1,0,0,1,.5,5.65Z" transform="translate(13.359 9.819)" fill="#fff"/>
+      </g>
+    </g>
+  </g>
+</svg>

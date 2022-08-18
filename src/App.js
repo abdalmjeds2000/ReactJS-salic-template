@@ -1,7 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import { BrowserRouter as Router } from 'react-router-dom';
 import './App.css';
-
 import Navbar from "./components/navbar/Navbar.jsx";
 import SidebarNav from './components/sidebar-nav/SidebarNav.jsx';
 import logo from './icons/icons-menu/logo.jpg';
@@ -13,8 +12,9 @@ import AppRoutes from "./Routes/AppRoutes";
 
 
 
-
 const App = () => {
+
+  const [isLoading, setIsLoading] = useState(true); 
 
   const [userData, setUserData] = useState({});
   const [notificationsCount, setNotificationsCount] = useState('');
@@ -23,6 +23,7 @@ const App = () => {
   const [communicationList, setCommunicationList] = useState([]);
   const [notificationCenterData, setNotificationCenterData] = useState([]);
   
+
 
   useEffect(() => {
     // Get User Data
@@ -99,6 +100,10 @@ const App = () => {
       setNotificationCenterData(notifi_data);
     })
     
+
+    // Disable Loader
+    .then(() => setIsLoading(false))
+
     .catch((error) => { console.log(error) })
 
   }, [])
@@ -112,10 +117,10 @@ const App = () => {
       mail_count: mailCount,
       latest_attendance: latestAttendance,
       communicationList: communicationList,
-      notification_center_data: notificationCenterData
+      notification_center_data: notificationCenterData,
     }}>
       {
-        userData.Data?.DisplayName?.length > 0
+        !isLoading
         ? <Router>
             <div className="app-container">
               <SidebarNav />

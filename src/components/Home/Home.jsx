@@ -21,37 +21,19 @@ import { NavLink } from "react-router-dom";
 
 
 
-function getWindowSize() {
-  const {innerWidth, innerHeight} = window;
-  return {innerWidth, innerHeight};
-}
 function getScrollY() {
   const isScroll = window.scrollY > 0 ? true : false;
   return isScroll;
 }
 
-
-
-
 const Home = (props) => {
-  const [windowSize, setWindowSize] = useState(getWindowSize());
-  const [scrollSize, setScrollSize] = useState(getScrollY());
-
-  useEffect(() => {
-    function handleWindowResize() {
-      setWindowSize(getWindowSize());
-    }
-    window.addEventListener('resize', handleWindowResize);
-
-    function handleScrollY() {
-      setScrollSize(getScrollY());
-    }
-    window.addEventListener('scroll', handleScrollY);
-  }, []);
-
   const { user_data, notifications_count, mail_count } = useContext(UserContext);
 
-
+  const [scrollSize, setScrollSize] = useState(getScrollY());
+  useEffect(() => {
+    function handleScrollY() {setScrollSize(getScrollY())}
+    window.addEventListener('scroll', handleScrollY);
+  }, []);
 
   return <div className="home-container">
     <Navbar style={{width: '100%', position: 'fixed', zIndex: '2', display: !scrollSize ? 'none' : '', backgroundColor: !scrollSize ? 'transparent' : '#fff'}}>
@@ -72,14 +54,15 @@ const Home = (props) => {
     <div className="container">
       <div className="home-division">
         <div className="home-info">
-          {windowSize.innerWidth > 600 ? <PersonInfo /> : <PersonMobile />}
+          <PersonInfo />
+          <PersonMobile />
           <NumbersAttendance />
           <Services />
         </div>
 
         <div className="home-world-graph">
+
           <img src={worldIllustration} alt='map' className="_worldMap" />
-          
           {/* <CompanyCard
             logoSrc={MerredinLogo}
             companyName='Merredin Farms'

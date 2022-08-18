@@ -22,7 +22,7 @@ const PersonMobile = (props) => {
   const { user_data, notifications_count, mail_count } = useContext(UserContext);
 
 
-  return <div className="person person-mobile">
+  return <div className="person person-mobile" id="person-mobile">
     <div className="person-info person-info-mobile">
       <div className="person-control-buttons">
         

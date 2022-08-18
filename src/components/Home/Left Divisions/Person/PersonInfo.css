@@ -1,5 +1,5 @@
 .home-container .home-division .home-info .person {
-  display: flex;
+  display: none;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
@@ -107,5 +107,11 @@
   }
   .home-container .home-division .home-info .person .person-info .person-txt > div div svg {
     width: 0.9rem;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .home-container .home-division .home-info .person {
+    display: flex;
   }
 }

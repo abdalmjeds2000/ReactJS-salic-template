@@ -14,6 +14,7 @@
 .home-info .numbers-attendance-container .div5 { grid-area: 2 / 1 / 4 / 3; }
 .CircularProgressbar .CircularProgressbar-text {
   font-size: 1.8rem !important;
+  transform: translateY(3px);
 }
 @media screen and (max-width: 600px) {
   .home-info .numbers-attendance-container {

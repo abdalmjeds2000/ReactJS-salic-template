@@ -2,7 +2,7 @@ import React, { useContext, useState } from 'react'
 import './ITServices.css';
 
 
-import { ReactComponent as ITServicesIcon } from '../../../../../icons/home/sevices/IT Services.svg';
+import { ReactComponent as ITServicesIcon } from '../../../../../icons/IT Services Requests/IT Services.svg';
 
 import { ReactComponent as NewITServiceRequest } from '../../../../../icons/IT Services Requests/New IT Service Request.svg';
 import { ReactComponent as MyRequests } from '../../../../../icons/IT Services Requests/My Requests.svg';

@@ -35,6 +35,7 @@
   background-color: var(--main-color);
   cursor: pointer;
   min-height: 120px;
+  transition: var(--main-animation-duration);
 }
 
 

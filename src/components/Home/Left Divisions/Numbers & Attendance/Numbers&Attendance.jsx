@@ -22,7 +22,7 @@ const NumbersAttendance = (props) => {
           textColor='#277C62'
         />
       </div>
-      <div className="div2">
+      {/* <div className="div2">
         <Number 
           pathColor='#ff272b' 
           header="Employment Period" 
@@ -32,6 +32,18 @@ const NumbersAttendance = (props) => {
           maxValue='24'
           text='5'
           textColor='#ff272b'
+        />
+      </div> */}
+      <div className="div2">
+        <Number 
+          pathColor='#277C62' 
+          header="Annual Leaves" 
+          description="20 / 30 Days" 
+          value='20'
+          minValue='0'
+          maxValue='30'
+          text='20'
+          textColor='#277C62' 
         />
       </div>
       <div className="div3">
@@ -44,18 +56,6 @@ const NumbersAttendance = (props) => {
           maxValue='70'
           text='55'
           textColor='var(--main-color)'
-        />
-      </div>
-      <div className="div4">
-        <Number 
-          pathColor='#277C62' 
-          header="Annual Leaves" 
-          description="20 / 30 Days" 
-          value='20'
-          minValue='0'
-          maxValue='30'
-          text='20'
-          textColor='#277C62' 
         />
       </div>
       <div className="div5">

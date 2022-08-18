@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react'
 import './AdminServices.css';
 
-import { ReactComponent as AdminServicesIcon } from '../../../../../icons/home/sevices/Admin Services.svg';
+import { ReactComponent as AdminServicesIcon } from '../../../../../icons/Admin Service Request/Admin Services.svg';
 
 import { ReactComponent as IssueVISAReequest } from '../../../../../icons/Admin Service Request/Issue VISA Reequest.svg';
 import { ReactComponent as BusinessGateEntry } from '../../../../../icons/Admin Service Request/Business Gate Entry.svg';

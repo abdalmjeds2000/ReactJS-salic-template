@@ -1,10 +1,13 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useContext, useEffect, useRef, useState } from 'react'
 import './NotificationCenter.css'
 import { DownOutlined, SearchOutlined } from '@ant-design/icons'
 import HistoryNavigation from '../Home/Separate Pages/History Navigation/HistoryNavigation'
 import SimpleUserPanel from '../global/Simple User Panel/SimpleUserPanel'
 import { UserContext } from '../../Context/userContext'
-import { Checkbox, Input, Table } from 'antd'
+import { Button, Checkbox, Input, Space, Table } from 'antd'
+import Highlighter from 'react-highlight-words';
+
+
 
 function NotificationCenter() {
 
@@ -14,24 +17,7 @@ function NotificationCenter() {
   const [filteredData, setFilteredData] = useState([])
   const [selectedType, setSelectedType] = useState(['Oracle', 'eSign', 'SharedServices', 'CS']);
   const [selectedStatus, setSelectedStatus] = useState(['Pending']);
-  const columns = [
-    {
-      title: '#',
-      dataIndex: 'id',
-    },{
-      title: 'Subject',
-      dataIndex: 'subject',
-    },{
-      title: 'Date Time',
-      dataIndex: 'dateTime',
-    },{
-      title: 'Status',
-      dataIndex: 'status',
-    },{
-      title: 'Action',
-      dataIndex: 'action',
-    }
-  ];
+
   // Filter by Status && Type
   useEffect(() => {
     setAllData(notification_center_data)
@@ -49,6 +35,129 @@ function NotificationCenter() {
 
 
 
+
+  const [searchText, setSearchText] = useState('');
+  const [searchedColumn, setSearchedColumn] = useState('');
+  const searchInput = useRef(null);
+  const handleSearch = (selectedKeys, confirm, dataIndex) => {
+    confirm();
+    setSearchText(selectedKeys[0]);
+    setSearchedColumn(dataIndex);
+  };
+  const handleReset = (clearFilters) => {
+    clearFilters();
+    setSearchText('');
+  };
+  const getColumnSearchProps = (dataIndex) => ({
+    filterDropdown: ({ setSelectedKeys, selectedKeys, confirm, clearFilters }) => (
+      <div
+        style={{
+          padding: 8,
+        }}
+      >
+        <Input
+          ref={searchInput}
+          placeholder={`Search ${dataIndex}`}
+          value={selectedKeys[0]}
+          onChange={(e) => setSelectedKeys(e.target.value ? [e.target.value] : [])}
+          onPressEnter={() => handleSearch(selectedKeys, confirm, dataIndex)}
+          style={{
+            marginBottom: 8,
+            display: 'block',
+          }}
+        />
+        <Space>
+          <Button
+            type="primary"
+            onClick={() => handleSearch(selectedKeys, confirm, dataIndex)}
+            icon={<SearchOutlined />}
+            size="small"
+            style={{
+              width: 90,
+            }}
+          >
+            Search
+          </Button>
+          <Button
+            onClick={() => clearFilters && handleReset(clearFilters)}
+            size="small"
+            style={{
+              width: 90,
+            }}
+          >
+            Reset
+          </Button>
+          <Button
+            type="link"
+            size="small"
+            onClick={() => {
+              confirm({
+                closeDropdown: false,
+              });
+              setSearchText(selectedKeys[0]);
+              setSearchedColumn(dataIndex);
+            }}
+          >
+            Filter
+          </Button>
+        </Space>
+      </div>
+    ),
+    filterIcon: (filtered) => (
+      <SearchOutlined
+        style={{
+          color: filtered ? '#1890ff' : undefined,
+        }}
+      />
+    ),
+    onFilter: (value, record) =>
+      record[dataIndex].toString().toLowerCase().includes(value.toLowerCase()),
+    onFilterDropdownVisibleChange: (visible) => {
+      if (visible) {
+        setTimeout(() => searchInput.current?.select(), 100);
+      }
+    },
+    render: (text) =>
+      searchedColumn === dataIndex ? (
+        <Highlighter
+          highlightStyle={{
+            backgroundColor: '#ffc069',
+            padding: 0,
+          }}
+          searchWords={[searchText]}
+          autoEscape
+          textToHighlight={text ? text.toString() : ''}
+        />
+      ) : (
+        text
+      ),
+  });
+  const columns = [
+    {
+      title: '#',
+      dataIndex: 'id',
+      key: 'id',
+      ...getColumnSearchProps('id')
+    },{
+      title: 'Subject',
+      dataIndex: 'subject',
+      // key: 'subject',
+      // ...getColumnSearchProps('subject')
+    },{
+      title: 'Date Time',
+      dataIndex: 'dateTime',
+      key: 'dateTime',
+      ...getColumnSearchProps('dateTime')
+    },{
+      title: 'Status',
+      dataIndex: 'status',
+      key: 'status',
+      ...getColumnSearchProps('status')
+    },{
+      title: 'Action',
+      dataIndex: 'action',
+    }
+  ];
 
 
   return (
@@ -147,7 +256,7 @@ function NotificationCenter() {
             <div>
               {
                 notification_center_data.length
-                ? <Table columns={columns} dataSource={filteredData} pagination={{position: ['none', 'bottomCenter'] }} />
+                ? <Table columns={columns} dataSource={filteredData} pagination={{position: ['none', 'bottomCenter'], pageSize: 50, hideOnSinglePage: true }} />
                 : <div className='loader' style={{position: 'relative'}}><div style={{width: '40px', height: '40px'}}></div></div>
               }
             </div>
