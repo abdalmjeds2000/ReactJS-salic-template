@@ -41,8 +41,8 @@
 }
 
 .latest-attendance-table-container .latest-attendance-table tr:nth-child(3) {
-  background: rgb(204,204,204);
-  background: linear-gradient(270deg, rgba(204,204,204,0) 0%, rgba(231,240,254,1) 100%);
+  /* background: rgb(204,204,204);
+  background: linear-gradient(270deg, rgba(204,204,204,0) 0%, rgba(231,240,254,1) 100%); */
 }
 
 .latest-attendance-table-container .latest-attendance-table tbody tr:nth-child(2) th:first-child {

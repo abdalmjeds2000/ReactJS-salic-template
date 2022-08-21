@@ -7,8 +7,6 @@ import './Attendance.css';
 const Attendance = (props) => {
 
 
-  const { latest_attendance } = useContext(UserContext);
-
   return <div className="latest-attendance-table-container">
     <div className="thead">
       
@@ -26,7 +24,7 @@ const Attendance = (props) => {
           <th>CheckOut</th>
           <th>Working Time</th>
         </tr>
-        {latest_attendance?.slice(0, 3).map((day, i) => {
+        {props.latestAttendance?.slice(0, 3).map((day, i) => {
           return <tr key={i} style={{background: `linear-gradient(270deg, transparent 0%, ${day.IsDelayed ? '#fff0dd' : ''} 100%)`}}>
             <td><span style={{color: day.IsAbsent ? 'rgb(255, 39, 43)' : (day.IsDelayed ? 'rgb(233 155 77)' : 'rgb(39, 124, 98)') }}>•</span>{day.Day}</td>
             <td>{day.Date || '-'}</td>

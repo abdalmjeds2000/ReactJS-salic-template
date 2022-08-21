@@ -8,15 +8,51 @@ import { Button, Checkbox, Input, Space, Table } from 'antd'
 import Highlighter from 'react-highlight-words';
 
 
+function getWindowSize() {
+  const {innerWidth, innerHeight} = window;
+  return {innerWidth, innerHeight};
+}
+
+
 
 function NotificationCenter() {
-
-  
   const { user_data, notifications_count, mail_count, notification_center_data } = useContext(UserContext);
+
   const [allData, setAllData] = useState(notification_center_data)
   const [filteredData, setFilteredData] = useState([])
   const [selectedType, setSelectedType] = useState(['Oracle', 'eSign', 'SharedServices', 'CS']);
   const [selectedStatus, setSelectedStatus] = useState(['Pending']);
+  const [typeToSearchText, setTypeToSearchText] = useState('');
+
+
+  // Get Window Size
+  const [windowSize, setWindowSize] = useState(getWindowSize());
+  useEffect(() => {
+    function handleWindowResize() {setWindowSize(getWindowSize());}
+    window.addEventListener('resize', handleWindowResize);
+  }, []);
+
+
+
+  // Filter By Input Search Field
+  let typeToSearch = (value) => {
+    setTypeToSearchText(value)
+    const searchFiltered = allData.filter(n => {
+      return (
+        (
+          n.subject.props.children[0].props.children.includes(value.trim()) ||
+          n.subject.props.children[1].includes(value.trim()) ||
+          n.dateTime.includes(value.trim()) ||
+          n.id.includes(value) ||
+          n.status.toLowerCase().includes(value.toLowerCase())
+        ) && 
+        selectedStatus.includes(n.status) && 
+        selectedType.includes(n.From)
+      )
+    });
+    setFilteredData(searchFiltered);
+  }
+
 
   // Filter by Status && Type
   useEffect(() => {
@@ -28,14 +64,16 @@ function NotificationCenter() {
     const filteredData = allData.filter(g => checkedValues.includes(g.status) && selectedType.includes(g.From))
     setFilteredData(filteredData)
   }
+
+
   // Filter by Type && Status
   useEffect(() => {
     setFilteredData(allData.filter(g => selectedType.includes(g.From) && selectedStatus.includes(g.status)))
+    setTypeToSearchText('')
   }, [selectedType])
 
 
-
-
+  // Search By Columns Code
   const [searchText, setSearchText] = useState('');
   const [searchedColumn, setSearchedColumn] = useState('');
   const searchInput = useRef(null);
@@ -141,7 +179,7 @@ function NotificationCenter() {
     },{
       title: 'Subject',
       dataIndex: 'subject',
-      // key: 'subject',
+      key: 'subject',
       // ...getColumnSearchProps('subject')
     },{
       title: 'Date Time',
@@ -175,7 +213,7 @@ function NotificationCenter() {
         <div className='notification-center_content'>
           <div className="notification_type-container">
             <div className="notification_type"
-              style={{backgroundColor: selectedType.includes('Oracle') ? 'var(--main-color)' : 'var(--link-text-color)'}}
+              style={{backgroundColor: selectedType.includes('Oracle') ? 'var(--link-text-color)' : 'var(--main-color)'}}
               onClick={() => setSelectedType(prev => {
                 if(prev.includes('Oracle')) {
                   return prev.filter(t => t !== 'Oracle')
@@ -191,7 +229,7 @@ function NotificationCenter() {
               <DownOutlined />
             </div>
             <div className="notification_type"
-              style={{backgroundColor: selectedType.includes('eSign') ? 'var(--main-color)' : 'var(--link-text-color)'}}
+              style={{backgroundColor: selectedType.includes('eSign') ? 'var(--link-text-color)' : 'var(--main-color)'}}
               onClick={() => setSelectedType(prev => {
                 if(prev.includes('eSign')) {
                   return prev.filter(t => t !== 'eSign')
@@ -207,7 +245,7 @@ function NotificationCenter() {
               <DownOutlined />
             </div>
             <div className="notification_type"
-              style={{backgroundColor: selectedType.includes('SharedServices') ? 'var(--main-color)' : 'var(--link-text-color)'}}
+              style={{backgroundColor: selectedType.includes('SharedServices') ? 'var(--link-text-color)' : 'var(--main-color)'}}
               onClick={() => setSelectedType(prev => {
                 if(prev.includes('SharedServices')) {
                   return prev.filter(t => t !== 'SharedServices')
@@ -223,7 +261,7 @@ function NotificationCenter() {
               <DownOutlined />
             </div>
             <div className="notification_type"
-              style={{backgroundColor: selectedType.includes('CS') ? 'var(--main-color)' : 'var(--link-text-color)'}}
+              style={{backgroundColor: selectedType.includes('CS') ? 'var(--link-text-color)' : 'var(--main-color)'}}
               onClick={() => setSelectedType(prev => {
                 if(prev.includes('CS')) {
                   return prev.filter(t => t !== 'CS')
@@ -240,7 +278,7 @@ function NotificationCenter() {
             </div>
           </div>
           <div className='status-bar'>
-            <b>Status:</b>
+            {windowSize.innerWidth > 600 ? <b>Status:</b> : ''}
             <Checkbox.Group 
               options={['Pending', 'Approved', 'Rejected']} 
               defaultValue={['Pending']} 
@@ -251,12 +289,32 @@ function NotificationCenter() {
           <div className="table">
             <div className="table-header">
               <h1>All Requests</h1>
-              <Input placeholder="type to search" prefix={<SearchOutlined />} style={{width: '100%', maxWidth: '400px'}} />
+              <Input placeholder="type to search" value={typeToSearchText} onChange={e => typeToSearch(e.target.value)} prefix={<SearchOutlined />} style={{width: '100%', maxWidth: '400px'}} />
             </div>
-            <div>
+            <div style={{overflowX: 'auto'}}>
               {
-                notification_center_data.length
-                ? <Table columns={columns} dataSource={filteredData} pagination={{position: ['none', 'bottomCenter'], pageSize: 50, hideOnSinglePage: true }} />
+                notification_center_data.length ? (
+                  windowSize.innerWidth > 600 
+                  ? <Table 
+                      columns={columns} 
+                      dataSource={filteredData} 
+                      pagination={{position: ['none', 'bottomCenter'], pageSize: 50, hideOnSinglePage: true }} 
+                    />
+                  : <Table 
+                      columns={columns.filter(r => r.dataIndex === 'id' || r.dataIndex === 'subject')} 
+                      dataSource={filteredData} 
+                      pagination={{position: ['none', 'bottomCenter'], pageSize: 50, hideOnSinglePage: true }} 
+                      expandable={{
+                        expandedRowRender: (record) => (
+                          <div style={{paddingLeft: '10px'}}>
+                            <><b>Date Time: </b>{record.dateTime}</><br/>
+                            <><b>Status: </b>{record.status}</><br/>
+                            <><b>Action: </b>{record.action}</>
+                          </div>
+                        ),
+                      }}
+                    />
+                  )
                 : <div className='loader' style={{position: 'relative'}}><div style={{width: '40px', height: '40px'}}></div></div>
               }
             </div>

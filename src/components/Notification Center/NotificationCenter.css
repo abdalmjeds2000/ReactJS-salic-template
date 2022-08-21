@@ -57,7 +57,7 @@
   color: var(--main-color) !important;
 }
 .notification_type .text h2 {
-  font-size: 0.8rem;
+  font-size: 1rem;
   color: var(--main-color) !important;
 }
 .notification_type svg {
@@ -86,7 +86,7 @@
 }
 .table .table-header {
   background-color: var(--main-color);
-  padding: 15px 25px;
+  padding: 10px 25px;
   border-radius: 10px;
   margin-bottom: 20px;
   display: flex;
@@ -121,7 +121,26 @@
     padding: 10px;
   }
   .notification-center_content .notification_type-container {
-    gap: 10px;
+    gap: 5px;
+  }
+  .notification_type-container .notification_type .text {
+    gap: 0;
+    padding: 10px 0 0 0;
+  }
+  .notification_type-container .notification_type {
+    min-height: 80px;
+    height: 80px;
+    min-width: 60px;
+  }
+  .notification_type .text h1 {
+    font-size: 1.5rem;
+  }
+  .notification_type .text h2 {
+    font-size: 0.5rem;
+  }
+  .notification_type svg {
+    top: 0;
+    width: 10px;
   }
 }
 
@@ -139,4 +158,18 @@
 }
 .ant-table-tbody > tr:nth-child(2n+2) {
   background-color: rgb(250, 250, 250) !important;
+}
+
+/* Set Width of Id Column smaller */
+@media screen and (max-width: 599px) {
+  .ant-table-container table > thead > tr th:nth-child(2),
+  .ant-table-container table > tbody > tr td:nth-child(2) {
+    max-width: 50px;
+  }
+}
+@media screen and (min-width: 600px) {
+  .ant-table-container table > thead > tr th:first-child,
+  .ant-table-container table > tbody > tr td:first-child {
+    max-width: 30px;
+  }
 }

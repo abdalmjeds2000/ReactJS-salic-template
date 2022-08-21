@@ -38,18 +38,25 @@ const PersonInfo = (props) => {
         </div>
       </div>
     </div>
-    <div className="person-control-buttons">
+    <div className="person-control-buttons person-btns">
       
       <a href="https://outlook.office.com/owa/" target='blank'>
         <MessageIcon />
-        {mail_count > 0 && <span className="badge mail-count">
-            {mail_count}
+        {
+          mail_count > 0 && 
+          <span className="badge mail-count">
+            {mail_count > 99 ? '99+' : mail_count}
           </span> }
       </a>
       
       <NavLink to="/notification-center">
         <NotificationIcon />
-        { notifications_count > 0 && <span className="badge notifi-count">{notifications_count}</span> }
+        { 
+          notifications_count > 0 && 
+          <span className="badge notifi-count">
+            {notifications_count > 99 ? "99+" : notifications_count}
+          </span> 
+        }
       </NavLink>
 
       {/* <a href="">

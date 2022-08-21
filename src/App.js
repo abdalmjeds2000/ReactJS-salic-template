@@ -22,10 +22,16 @@ const App = () => {
   const [latestAttendance, setLatestAttendance] = useState([]);
   const [communicationList, setCommunicationList] = useState([]);
   const [notificationCenterData, setNotificationCenterData] = useState([]);
+  const [globeData, setGlobeData] = useState({});
+  const [isGlobeReady, setIsGlobeReady] = useState(false);
   
 
 
   useEffect(() => {
+    // pnp.sp.web.currentUser.get().then(f => {
+    //   console.log("user", f);
+    // })
+
     // Get User Data
     axios({
       method: 'GET',
@@ -36,6 +42,10 @@ const App = () => {
       setUserData(response.data)
       return response
     })
+
+    // Disable Loader
+    .then((response) => {setIsLoading(false); return response})
+
     // GetNotifications Count #1
     .then((response) => {
       axios({ method: 'GET', url: `https://salicapi.com/api/Integration/ERPApprovalCount?PIN=${response.data.Data?.PIN}`})
@@ -69,7 +79,7 @@ const App = () => {
           Year: new Date().getUTCFullYear(),
           status: -1
         }})
-      .then((res) => { setLatestAttendance(res.data.Data) })
+      .then((res) => setLatestAttendance(res.data.Data))
       .catch((error) => { console.log(error) })
       
     })
@@ -79,17 +89,26 @@ const App = () => {
       .then((res) => { setCommunicationList(res.data.Data) })
       .catch((error) => { console.log(error) })
     })
+    // Get Globe Data 
+    .then(() => {
+      axios({
+        method: 'GET',
+        url: 'https://vasturiano.github.io/react-globe.gl/example/datasets/ne_110m_admin_0_countries.geojson'
+      }).then(res => setGlobeData(res.data))})
     .catch((error) => { console.log(error) })
+
+
     //Get Notification Center Data
-    axios({ method: 'GET', url: 'https://salicapi.com/api/notificationcenter/Get?Email=stsadmin@salic.onmicrosoft.com&draw=86&order%5B0%5D%5Bcolumn%5D=0&order%5B0%5D%5Bdir%5D=asc&start=0&length=-1&search%5Bvalue%5D=&search%5Bregex%5D=false&%24orderby=Created+desc&%24top=1&Type=eSign&Status=Pending%2CApproved%2CRejected&_=1660747052191'})
+    axios({ 
+      method: 'GET', 
+      url: 'https://salicapi.com/api/notificationcenter/Get?Email=stsadmin@salic.onmicrosoft.com&draw=86&order%5B0%5D%5Bcolumn%5D=0&order%5B0%5D%5Bdir%5D=asc&start=0&length=-1&search%5Bvalue%5D=&search%5Bregex%5D=false&%24orderby=Created+desc&%24top=1&Type=eSign&Status=Pending%2CApproved%2CRejected&_=1660747052191'
+    })
     .then((res) => { 
-      const notifi_data = res.data?.Data?.map((n) => {
+      const notifi_data = res.data?.Data?.map((n, i) => {
         const newRow = {
-          id: res.data?.Data?.indexOf(n)+1,
-          subject: <>
-                      <h4>{n.Title}</h4>
-                      <>{n.BodyPreview}</>
-                    </>,
+          key: i,
+          id: `${i+1}`,
+          subject: <><h3>{n.Title}</h3>{n.BodyPreview}</>,
           dateTime: n.Created.slice(0, -3).replace('T', ' '),
           status: n.Status,
           From: n.From,
@@ -99,16 +118,11 @@ const App = () => {
       })
       setNotificationCenterData(notifi_data);
     })
-    
-
-    // Disable Loader
-    .then(() => setIsLoading(false))
-
-    .catch((error) => { console.log(error) })
-
   }, [])
 
-
+  const toggleGlobeReady = () => {
+    setIsGlobeReady(true)
+  }
 
   return ( 
     <UserContext.Provider value={{
@@ -118,6 +132,9 @@ const App = () => {
       latest_attendance: latestAttendance,
       communicationList: communicationList,
       notification_center_data: notificationCenterData,
+      globe_data: globeData,
+      isGlobeReady,
+      toggleGlobeReady
     }}>
       {
         !isLoading

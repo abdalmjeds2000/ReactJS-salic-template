@@ -21,6 +21,8 @@ import BusinessGate from '../components/Home/Separate Pages/9 Boxes/Admin Servic
 import IssuingVISA from '../components/Home/Separate Pages/9 Boxes/Admin Services/Issuing VISA/IssuingVISA.jsx';
 import OfficeSupply from '../components/Home/Separate Pages/9 Boxes/Admin Services/Office Supply/OfficeSupply.jsx';
 import NotificationCenter from '../components/Notification Center/NotificationCenter.jsx';
+// import Home2 from '../components/Home/Home2.jsx';
+// import Home3 from '../components/Home/Home3.jsx';
 
 const Locations = () => { return <h1>Locations</h1> }
 const Notes = () => { return <h1>Notes</h1> }
@@ -34,6 +36,8 @@ function AppRoutes() {
   return (
     <Routes>
       <Route index path="/" element={<Home />} />
+      {/* <Route index path="/home-2" element={<Home2 />} />
+      <Route index path="/home-3" element={<Home3 />} /> */}
       <Route path="/home" element={<Navigate replace to="/"/>} />
       <Route path="/applications" element={<Applications />} />
       <Route path="/locations" element={<Locations />} />

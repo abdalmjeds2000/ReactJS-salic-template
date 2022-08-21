@@ -29,7 +29,7 @@
 
 
 @media screen and (max-width: 599px) {
-  .home-container .home-division .home-info #person-mobile {
+  #person-mobile {
     display: flex;
   }
 }

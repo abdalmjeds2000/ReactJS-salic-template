@@ -23,8 +23,8 @@
 
 .home-container .home-division .home-world-graph {
   flex-basis: 30%;
-  /* z-index: 3; */
   position: relative;
+  z-index: 2;
 }
 ._worldMap {
   position: absolute;
@@ -54,3 +54,4 @@
     flex-basis: 100%;
   }
 }
+

@@ -1,4 +1,4 @@
-.home-container .home-division .home-info .person {
+.home-container .person {
   display: none;
   justify-content: space-between;
   align-items: center;
@@ -6,61 +6,115 @@
   padding: 5px 25px;
   background: rgb(231,240,254);
   background: linear-gradient(90deg, rgba(231,240,254,1) 0%, rgba(255,255,255,0) 100%);
-  top: 0;
+  position: relative;
+  top: 50px;
+  z-index: 1;
 }
-.home-container .home-division .home-info .person .person-info {
+.home-container .person .person-info {
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
   gap: 20px;
 }
-.home-container .home-division .home-info .person .person-info .person-img img {
+.home-container .person .person-info .person-img img {
   width: 65px;
   height: 65px;
   border: 5px solid #fff;
   border-radius: 50%;
 }
-.home-container .home-division .home-info .person .person-info .person-txt {
+.home-container .person .person-info .person-txt {
   display: flex;
   flex-direction: column;
 }
-.home-container .home-division .home-info .person .person-info .person-txt h1 {
+.home-container .person .person-info .person-txt h1 {
   font-weight: 400;
   font-size: 1.3rem;
   line-height: 1.2;
 }
-.home-container .home-division .home-info .person .person-info .person-txt > p {
+.home-container .person .person-info .person-txt > p {
   font-weight: 400;
   font-size: 1.0rem;
   line-height: 1.2;
 }
-.home-container .home-division .home-info .person .person-info .person-txt > div {
+.home-container .person .person-info .person-txt > div {
   display: flex;
   gap: 30px;
 }
-.home-container .home-division .home-info .person .person-info .person-txt > div div {
+.home-container .person .person-info .person-txt > div div {
   display: flex;
   gap: 8px;
   align-items: center;
   font-size: 0.7rem;
 }
-.home-container .home-division .home-info .person .person-info .person-txt > div div svg {
+.home-container .person .person-info .person-txt > div div svg {
   width: 0.7rem;
 }
-.home-container .home-division .home-info .person .person-control-buttons {
+.home-container .person .person-control-buttons {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
   gap: 10px;
 }
-.home-container .home-division .home-info .person .person-control-buttons svg {
+.home-container .person .person-control-buttons svg {
   width: 1.7rem;
   transition: .3s;
   cursor: pointer;
 }
-.home-container .home-division .home-info .person .person-control-buttons svg:hover {
+.home-container .person .person-control-buttons svg:hover {
   opacity: 0.7;
+}
+.home-container .person .person-control-buttons a {
+  position: relative;
+  display: flex;
+}
+@media screen and (min-width: 1500px) {
+  .home-container .home-division .home-info .person {
+    padding: 20px 25px;
+  }
+  .home-container .person .person-control-buttons svg {
+    width: 2rem;
+  }
+  .home-container .person .person-info .person-img img {
+    max-width: 75px;
+  }
+  .home-container .person .person-info .person-txt h1 {
+    font-size: 1.7rem;
+  }
+  .home-container .person .person-info .person-txt > p {
+    font-size: 1.4rem;
+  }
+  .home-container .person .person-info .person-txt > div div {
+    font-size: 0.9rem;
+  }
+  .home-container .person .person-info .person-txt > div div svg {
+    width: 0.9rem;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .home-container .person {
+    display: flex;
+  }
+}
+
+
+
+.products-imgs {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  top: -180px;
+}
+.products-imgs img {
+  max-height: 130px;
+}
+
+.globe-2 .scene-container {
+  position: relative !important;
+  top: -130px !important;
 }
 .badge {
   min-width: 17px;
@@ -72,7 +126,7 @@
   font-size: 0.75rem;
   top: -4px;
   right: -10px;
-  padding: 2px;
+  padding: 2px 4px;
   line-height: 1;
 }
 .mail-count {
@@ -83,35 +137,10 @@
   background-color: rgb(255, 39, 43);
   box-shadow: 0 2px 3px #EF949475;
 }
-.home-container .home-division .home-info .person .person-control-buttons a {
-  position: relative;
-}
-@media screen and (min-width: 1500px) {
-  .home-container .home-division .home-info .person {
-    padding: 20px 25px;
-  }
-  .home-container .home-division .home-info .person .person-control-buttons svg {
-    width: 2rem;
-  }
-  .home-container .home-division .home-info .person .person-info .person-img img {
-    max-width: 75px;
-  }
-  .home-container .home-division .home-info .person .person-info .person-txt h1 {
-    font-size: 1.7rem;
-  }
-  .home-container .home-division .home-info .person .person-info .person-txt > p {
-    font-size: 1.4rem;
-  }
-  .home-container .home-division .home-info .person .person-info .person-txt > div div {
-    font-size: 0.9rem;
-  }
-  .home-container .home-division .home-info .person .person-info .person-txt > div div svg {
-    width: 0.9rem;
-  }
-}
 
-@media screen and (min-width: 600px) {
-  .home-container .home-division .home-info .person {
-    display: flex;
-  }
+
+
+.person-btns {
+  position: absolute;
+  left: 52%;
 }

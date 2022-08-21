@@ -32,8 +32,10 @@ const PersonMobile = (props) => {
         
         <a href="https://outlook.office.com/owa/" target='blank'>
           <MessageIcon />
-          { mail_count > 0 && <span className="badge mail-count">
-              {mail_count}
+          { 
+            mail_count > 0 && 
+            <span className="badge mail-count">
+              {mail_count > 99 ? '99+' : mail_count}
             </span> }
         </a>
         
@@ -43,7 +45,12 @@ const PersonMobile = (props) => {
 
         <NavLink to="/notification-center">
           <NotificationIcon />
-          { notifications_count > 0 && <span className="badge notifi-count">{notifications_count}</span> }
+          { 
+            notifications_count > 0 && 
+            <span className="badge notifi-count">
+              {notifications_count > 99 ? '99+' : notifications_count}
+            </span> 
+          }
         </NavLink>
 
         <a href={`tel:${user_data.Data?.Mobile}`}>

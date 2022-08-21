@@ -21,11 +21,20 @@ function SimpleUserPanel(props) {
         <div className='icons'>
           <NavLink to="/notification-center">
             <NotificationIcon />
-            {props.notificationsCount > 0 && <span className="badge notifi-count">{props.notificationsCount}</span>}
+            {
+              props.notificationsCount > 0 && 
+              <span className="badge notifi-count">
+                {props.notificationsCount > 9 ? '9+' : props.notificationsCount}
+              </span>}
           </NavLink>
           <a href="https://outlook.office.com/owa/" target="blank">
             <MessageIcon />
-            {props.mailCount > 0 &&  <span className="badge mail-count">{props.mailCount}</span>}
+            {
+              props.mailCount > 0 && 
+              <span className="badge mail-count">
+                {props.mailCount > 9 ? '9+' : props.mailCount}
+              </span>
+            }
           </a>
         </div>
 

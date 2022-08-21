@@ -67,7 +67,7 @@ const ThreeDivisions = (props) => {
               sources: [{ src: 'zj_sRm4amu8', provider: 'youtube'}], 
               poster: VideoPoster,
             }}
-            options={{iconPrefix: <AlertFilled />, }}
+            options={{iconPrefix: <AlertFilled />, loadSprite: true}}
           />
         </div>
 
@@ -153,7 +153,7 @@ const ThreeDivisions = (props) => {
           screenName: 'KSA_SALIC'
         }}
         options={{
-          height: 'calc(100vh - 150px)'
+          height: 'calc(100vh - 125px)'
         }}
       />
       {/* <Tweet tweetId="1538823702271430656"  /> */}

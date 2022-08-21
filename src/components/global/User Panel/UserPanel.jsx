@@ -33,8 +33,9 @@ function UserPanel(props) {
         <a href={props.mailTo} target='blank'>
           <img src={MessageIcon} alt="Message Icon" />
           { 
-            props.mailCount > 0 && <span className="badge mail-count" style={{top: '-10px'}}>
-              {props.mailCount}
+            props.mailCount > 0 && 
+            <span className="badge mail-count" style={{top: '-10px'}}>
+              {props.mailCount > 99 ? '99+' : props.mailCount}
             </span> 
           }
         </a>
@@ -42,8 +43,9 @@ function UserPanel(props) {
         <NavLink to="/notification-center">
           <img src={NotificationIcon} alt="Notification Icon" />
           { 
-            props.notificationsCount > 0 && <span className="badge notifi-count" style={{top: '-10px'}}>
-              {props.notificationsCount}
+            props.notificationsCount > 0 && 
+            <span className="badge notifi-count" style={{top: '-10px'}}>
+              {props.notificationsCount > 99 ? '99+' : props.notificationsCount}
             </span> 
           }
         </NavLink>

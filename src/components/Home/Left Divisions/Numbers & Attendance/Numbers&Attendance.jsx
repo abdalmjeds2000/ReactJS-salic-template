@@ -1,12 +1,14 @@
-import React from "react";
+import React, { useContext } from "react";
 import './Numbers%Attendance.css';
 
 import Number from "./Number/Number.jsx";
 import Attendance from "./Attendance/Attendance.jsx";
+import { UserContext } from "../../../../Context/userContext";
 
 // import NextEventIcon from '../../../../icons/home/next-event-icon.svg';
 
 const NumbersAttendance = (props) => {
+  const { latest_attendance } = useContext(UserContext);
 
   return <>
     <div className="numbers-attendance-container">
@@ -59,8 +61,13 @@ const NumbersAttendance = (props) => {
         />
       </div>
       <div className="div5">
-      <Attendance />
-    </div>
+        {
+          latest_attendance.length > 0 
+          ? <Attendance latestAttendance={latest_attendance} />
+          : <div className="loader small"><div></div></div>
+        }
+        
+      </div>
     </div>
     
     

@@ -1,0 +1,13 @@
+.globe-3 .scene-container {
+  position: absolute !important;
+  top: -300px !important;
+  left: -30px !important;
+}
+.home-container .home-division .home-world-graph {
+  position: relative;
+  z-index: 3;
+}
+.home-container .home-division .home-info {
+  position: relative;
+  z-index: 2;
+}

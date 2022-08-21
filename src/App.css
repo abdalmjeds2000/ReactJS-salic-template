@@ -54,6 +54,10 @@ html {
   max-width: 2560px;
 }
 
+
+
+
+/* App Loader */
 .loader {
   position: absolute;
   left: 50%;
@@ -69,7 +73,19 @@ html {
   margin: 30px auto;
   animation: spin 2s linear infinite;
 }
-
+/* Section Loader */
+.loader.small {
+  position: relative;
+}
+.loader.small div {
+  border: 5px solid #f3f3f3;
+  border-top: 5px solid var(--link-text-color);
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  margin: 10px auto;
+  animation: spin 2s linear infinite;
+}
 @keyframes spin {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
