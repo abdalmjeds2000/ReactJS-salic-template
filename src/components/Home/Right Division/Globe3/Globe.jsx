@@ -4,6 +4,7 @@ import { UserContext } from '../../../../Context/userContext';
 import './Globe.css'
 import Globe from 'react-globe.gl';
 import img from './earth.png';
+import dawatLogo from '../../../../icons/home/Companys/dawat_logo.png';
 
 function GlobeE3() {
   const { globe_data } = useContext(UserContext)
@@ -38,7 +39,7 @@ function GlobeE3() {
           if(ourCountry.includes(d.ADMIN)){
             return `<div class='card-container'>
                       <div>
-                        <img src='' alt="Company Logo" />
+                        <img src=${dawatLogo} alt="Company Logo" />
                         <div>
                           <h3 data-item='name'>Merredin Farms</h3>
                           <p>Australia,</p>

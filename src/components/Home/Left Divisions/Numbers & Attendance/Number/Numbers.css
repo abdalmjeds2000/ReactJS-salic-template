@@ -3,7 +3,7 @@
   align-items: center;
   justify-content: flex-start;
   gap: 7px;
-  padding: 0 25px;
+  padding: 0;
 }
 .number-box-container .circular-progress-bar {
   padding: 7px;

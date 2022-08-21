@@ -16,6 +16,7 @@ import productRedMeat from '../../../../icons/home/Products/Red Meat.png'
 import productAquaculture from '../../../../icons/home/Products/Aquaculture.png'
 import productMilk from '../../../../icons/home/Products/Milk Products.png'
 import productPoultry from '../../../../icons/home/Products/Poultry.png'
+import merredinLogo from '../../../../icons/home/Companys/merredin_logo.png'
 
 
 
@@ -54,7 +55,7 @@ function GlobeE3() {
             setCurrentCountry(d.ADMIN)
             return `<div class='card-container'>
                       <div>
-                        <img src='' alt="Company Logo" />
+                        <img src=${merredinLogo} alt="Company Logo" />
                         <div>
                           <h3 data-item='name'>Merredin Farms</h3>
                           <p>Australia,</p>
@@ -74,29 +75,6 @@ function GlobeE3() {
         atmosphereColor='#0C508C'
         onHexPolygonHover={setHoverD}
       />
-      <div className='products-imgs'>
-        {
-          currentCountry === 'Saudi Arabia'
-          ? <><img src={productWheat} alt="product" />
-              <img src={productBarley} alt="product" />
-              <img src={productCorn} alt="product" />
-              <img src={productSoybean} alt="product" /></>
-          : currentCountry === 'Canada' 
-          ? <><img src={productRice} alt="product" />
-              <img src={productPoultry} alt="product" />
-              <img src={productOil} alt="product" />
-              <img src={productFodder} alt="product" /></> 
-          
-          : ''
-        }
-        
-        
-        {/* <img src={productRedMeat} alt="product" />
-        <img src={productSugar} alt="product" />
-        <img src={productMilk} alt="product" />
-        <img src={productAquaculture} alt="product" />
-         */}
-      </div>
     </div>
   )
 }

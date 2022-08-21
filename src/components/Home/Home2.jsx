@@ -50,12 +50,11 @@ const Home2 = (props) => {
         <p>Home Page</p>
       </HistoryNavigation>
     </div>
-    <PersonInfo />
-    <PersonMobile />  
     <div className="container">
       <div className="home-division">
-        <div className="home-info">
-          
+        <div className="home-info home2">
+          <PersonInfo />
+          <PersonMobile /> 
           <NumbersAttendance />
           <Services />
         </div>

@@ -1,5 +1,7 @@
 import React, { useState, useEffect, useContext } from "react";
 import './Home.css';
+import { Carousel } from 'antd';
+import SALICUK from '../../icons/home/Companys/SALIC UK.png'
 
 import PersonInfo from "./Left Divisions/Person/PersonInfo";
 import PersonMobile from "./Left Divisions/Person Mobile/PersonMobile";

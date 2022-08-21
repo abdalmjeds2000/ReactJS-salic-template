@@ -100,22 +100,6 @@
 
 
 
-.products-imgs {
-  display: flex;
-  gap: 20px;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  top: -180px;
-}
-.products-imgs img {
-  max-height: 130px;
-}
-
-.globe-2 .scene-container {
-  position: relative !important;
-  top: -130px !important;
-}
 .badge {
   min-width: 17px;
   height: 17px;

@@ -1,5 +1,6 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react'
 import './globe.css'
+import { Carousel } from 'antd';
 import { useContext } from 'react';
 import { UserContext } from '../../../../Context/userContext';
 import Globe from 'react-globe.gl';
@@ -30,6 +31,13 @@ function getWindowSize() {
   const {innerWidth, innerHeight} = window;
   return {innerWidth, innerHeight};
 }
+const contentStyle = {
+  height: '160px',
+  color: '#fff',
+  lineHeight: '160px',
+  textAlign: 'center',
+  background: '#364d79',
+};
 
 
 
@@ -48,8 +56,6 @@ function GlobeE3(props) {
     window.addEventListener('resize', handleWindowResize);
   }, []);
 
-
-
   // Auto Rotation
   useEffect(() => {
     globeEl.current.controls().autoRotate = true;
@@ -57,7 +63,7 @@ function GlobeE3(props) {
     globeEl.current.controls().autoRotateSpeed = 1.5;
     globeEl.current.pointOfView({ lat: 45, lng: 45, altitude: 2.1 }, 5000);
   }, [rotation]);
-  // Stop Rotation on Hover
+  // Stop Rotation on Hover 
   const onHoverHandler = useCallback((polygon) => {
     if (polygon !== null) {
       setHover(polygon.properties.ISO_A3);

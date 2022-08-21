@@ -100,7 +100,7 @@
 
 @media screen and (min-width: 1500px) {
   .home-info .numbers-attendance-container {
-    grid-column-gap: 30px;
+    /* grid-column-gap: 30px; */
     grid-row-gap: 30px;
   }
   .latest-attendance-table-container .latest-attendance-table td {

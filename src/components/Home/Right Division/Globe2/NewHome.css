@@ -1,4 +1,4 @@
-.home-container .person {
+/* .home-container .person {
   display: none;
   justify-content: space-between;
   align-items: center;
@@ -114,4 +114,69 @@
 .globe-2 .scene-container {
   position: relative !important;
   top: -130px !important;
+} */
+
+.home-container .home-info.home2 .person {
+  top: 0px;
+}
+.home-info.home2 .person .person-btns {
+  position: static !important;
+}
+
+
+
+
+
+.globe-2 .products-imgs {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  top: -180px;
+}
+.globe-2 .products-imgs img {
+  max-height: 130px;
+}
+
+.globe-2 .scene-container {
+  position: relative !important;
+  top: 0 !important;
+}
+
+
+
+
+
+.card-container{
+  border-radius: 10px;
+  padding: 10px;
+  color: var(--text-color);
+  width: 100%;
+  margin: 0 auto;
+  max-width: 75%;
+  background-color: #fff;
+  min-width: 250px;
+  max-width: 300px;
+}
+.card-container div:nth-child(1) {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.card-container div:nth-child(1) img {
+  max-width: 40px;
+}
+.card-container div:nth-child(1) div h3 {
+  font-weight: 400;
+  font-size: 1rem;
+}
+.card-container div:nth-child(1) div p {
+  font-weight: 400;
+  font-size: 0.8rem;
+}
+.card-container div:nth-child(2) p {
+  font-weight: 400;
+  font-size: 0.7rem;
 }

@@ -34,7 +34,7 @@ const Home2 = (props) => {
     window.addEventListener('scroll', handleScrollY);
   }, []);
 
-  return <div className="home-container">
+  return <div className="home-container home-3">
     <Navbar style={{width: '100%', position: 'fixed', zIndex: '4', display: !scrollSize ? 'none' : '', backgroundColor: !scrollSize ? 'transparent' : '#fff'}}>
       <UserPanel 
         mobile={user_data.Data?.Mobile}
