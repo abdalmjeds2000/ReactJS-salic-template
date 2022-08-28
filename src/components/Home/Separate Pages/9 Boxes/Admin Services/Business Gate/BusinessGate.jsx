@@ -1,16 +1,14 @@
-import React, { useContext, useEffect, useRef, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 
 import { NavLink } from 'react-router-dom'
-import { Button, Col, Form, Input, message, Upload, Radio, Row, Select, Space, DatePicker, InputNumber, Popconfirm, Table } from 'antd';
+import { Form, DatePicker } from 'antd';
 import moment from 'moment';
 
 import HistoryNavigation from '../../../History Navigation/HistoryNavigation'
 import FormPageTemplate from '../../Components/Form Page Template/FormPageTemplate'
 import { UserContext } from '../../../../../../Context/userContext';
-import { EnvironmentOutlined } from '@ant-design/icons';
 import SubmitCancel from '../../Components/Submit Cancel/SubmitCancel';
 import EditableTableBusinessGate from '../../Components/Editable Table/EditableTableBusinessGate.jsx';
-const { Search } = Input;
 const layout = { labelCol: { span: 6 }, wrapperCol: { span: 12 } };
 
 
@@ -19,8 +17,6 @@ const layout = { labelCol: { span: 6 }, wrapperCol: { span: 12 } };
 function BusinessGate() {
 
   const { user_data } = useContext(UserContext);
-  const [serivceType, setSerivceType] = useState('');
-
   
   const [dataSource, setDataSource] = useState([]);
   useEffect(() => {
@@ -32,7 +28,7 @@ function BusinessGate() {
   return (
     <>
       <HistoryNavigation>
-        <NavLink to="/admin-services">Admin Service</NavLink>
+        <NavLink to="/sites/newsalic/SitePages/Dev/dev.aspx/admin-services">Admin Service</NavLink>
         <p>Business Gate Request</p>
       </HistoryNavigation>
       

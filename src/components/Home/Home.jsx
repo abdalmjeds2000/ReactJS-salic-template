@@ -29,7 +29,7 @@ const Home = (props) => {
 
   const [scrollSize, setScrollSize] = useState(getScrollY());
   useEffect(() => {
-    window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
+    window.scrollTo({top: 0, left: 0});
     function handleScrollY() {setScrollSize(getScrollY())}
     window.addEventListener('scroll', handleScrollY);
   }, []);
@@ -53,8 +53,8 @@ const Home = (props) => {
           </div>
           
           <div className="container">
-          <PersonInfo />
-          <PersonMobile />
+            <PersonInfo />
+            <PersonMobile />
             <div className="home-division">
               <div className="home-info">
                 <NumbersAttendance />
@@ -68,7 +68,6 @@ const Home = (props) => {
       
             <ThreeDivisions />
             <TranslateConverterNotes />
-      
           </div>
         </div>
 }

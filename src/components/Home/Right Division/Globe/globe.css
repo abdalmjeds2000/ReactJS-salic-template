@@ -1,23 +1,33 @@
+.globe {
+  display: flex;
+  flex-direction: column;
+}
 
+
+
+
+
+/* Slider Cards */
 .cards .card-container{
   border-radius: 10px;
   padding: 10px;
   color: var(--text-color);
   width: 100%;
   margin: 0 auto;
-  max-width: 75%;
+  max-width: 90%;
 }
-/* .cards .card-container::after {
-  content: '';
-  width: 20px;
-  height: 20px;
-  clip-path: polygon(50% 80%, 0 0, 100% 0);
-  background-color: #fff;
-  position: absolute;
-  top: -20px;
-  left: 50%;
-  transform: rotate(180deg) translateX(calc(-50% + 20px));
-} */
+.cards .carousel-row .card-container{
+  position: relative !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+}
+.carousel-next:before {
+  background-image: url(../../../../icons/home//globe//next-card-icon.svg) !important;
+}
+.carousel-prev:before {
+  background-image: url(../../../../icons/home//globe//prev-card-icon.svg) !important;
+}
+
 .cards .card-container div:nth-child(1) {
   display: flex;
   gap: 10px;
@@ -25,19 +35,20 @@
   margin-bottom: 10px;
 }
 .cards .card-container div:nth-child(1) img {
-  max-width: 40px;
+  width: 60px;
 }
 .cards .card-container div:nth-child(1) div h3 {
   font-weight: 400;
-  font-size: 1rem;
+  font-size: 1.3rem;
 }
 .cards .card-container div:nth-child(1) div p {
   font-weight: 400;
-  font-size: 0.8rem;
+  font-size: 1rem;
 }
 .cards .card-container div:nth-child(2) p {
   font-weight: 400;
-  font-size: 0.7rem;
+  font-size: 1rem;
+  line-height: 1.2;
 }
 .cards .card-container ul {
   display: flex;
@@ -51,60 +62,52 @@
   border-radius: 5px;
 }
 
-
-
-
-
-
-
-
-
-
-.products-imgs {
-  display: flex;
-  gap: 20px;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  top: -180px;
-}
-.products-imgs img {
-  max-height: 40px;
-}
-
-.globe > div {
-  position: relative;
-  top: -80px;
-}
-/* .globe .scene-container {
-  position: relative !important;
-  top: -140px !important;
-} */
-
-@media screen and (min-width: 1000px) {
-  .globe > div {
-    position: relative;
-    top: -30px;
+@media screen and (max-width: 1750px) and (min-width: 1500px) {
+  .cards .card-container div:nth-child(1) img {
+    width: 50px;
+  }
+  .cards .card-container div:nth-child(1) div h3 {
+    font-size: 1.1rem;
+  }
+  .cards .card-container div:nth-child(1) div p {
+    font-size: 0.9rem;
+  }
+  .cards .card-container div:nth-child(2) p {
+    font-size: 0.9rem;
   }
 }
-@media screen and (min-width: 1300px) and (max-width: 1399px) {
-  .globe > div {
-    position: relative;
-    top: -40px;
+@media screen and (max-width: 1499px) and (min-width: 1200px) {
+  .cards .card-container div:nth-child(1) img {
+    width: 40px;
+  }
+  .cards .card-container div:nth-child(1) div h3 {
+    font-size: 1rem;
+  }
+  .cards .card-container div:nth-child(1) div p {
+    font-size: 0.8rem;
+  }
+  .cards .card-container div:nth-child(2) p {
+    font-size: 0.8rem;
+    line-height: 1.1;
   }
 }
-@media screen and (min-width: 1500px) and (max-width: 1749px) {
-  .globe > div {
-    position: relative;
-    top: -50px;
+@media screen and (max-width: 1199px) and (min-width: 990px) {
+  .cards .card-container div:nth-child(1) img {
+    width: 30px;
+  }
+  .cards .card-container div:nth-child(1) div h3 {
+    font-size: 0.8rem;
+  }
+  .cards .card-container div:nth-child(1) div p {
+    font-size: 0.6rem;
+  }
+  .cards .card-container div:nth-child(2) p {
+    font-size: 0.6rem;
+    line-height: 1.2;
   }
 }
-@media screen and (min-width: 1750px) {
-  .globe > div {
-    position: relative;
-    top: -70px;
-  }
-}
+
+
 
 
 
@@ -136,4 +139,51 @@
   opacity: 1;
   transform: translate3d(0px) !important;
   width: 200px !important;
+}
+
+
+.home-container .home-division .home-world-graph {
+  position: relative;
+  z-index: 3;
+  top: -90px;
+}
+@media screen and (min-width: 1750px) {
+  .home-container .home-division .home-world-graph {
+    top: -90px;
+  }
+}
+@media screen and (max-width: 1749px) and (min-width: 1500px) {
+  .home-container .home-division .home-world-graph {
+    top: -90px;
+  }
+}
+@media screen and (max-width: 1499px) and (min-width: 1400px) {
+  .home-container .home-division .home-world-graph {
+    top: -65px;
+  }
+}
+@media screen and (max-width: 1399px) and (min-width: 1300px) {
+  .home-container .home-division .home-world-graph {
+    top: -65px;
+  }
+}
+@media screen and (max-width: 1299px) and (min-width: 1150px) {
+  .home-container .home-division .home-world-graph {
+    top: -60px;
+  }
+}
+@media screen and (max-width: 1149px) and (min-width: 990px) {
+  .home-container .home-division .home-world-graph {
+    top: -60px;
+  }
+}
+
+.products-imgs {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+}
+.products-imgs img {
+  width: 40px;
 }

@@ -162,14 +162,14 @@
 
 /* Set Width of Id Column smaller */
 @media screen and (max-width: 599px) {
-  .ant-table-container table > thead > tr th:nth-child(2),
-  .ant-table-container table > tbody > tr td:nth-child(2) {
+  .notification-center-container .ant-table-container table > thead > tr th:nth-child(2),
+  .notification-center-container .ant-table-container table > tbody > tr td:nth-child(2) {
     max-width: 50px;
   }
 }
 @media screen and (min-width: 600px) {
-  .ant-table-container table > thead > tr th:first-child,
-  .ant-table-container table > tbody > tr td:first-child {
+  .notification-center-container .ant-table-container table > thead > tr th:first-child,
+  .notification-center-container .ant-table-container table > tbody > tr td:first-child {
     max-width: 30px;
   }
 }

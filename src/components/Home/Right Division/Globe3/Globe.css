@@ -4,7 +4,7 @@
   left: -30px !important;
 }
 
-.home-container .home-division .home-world-graph {
+.home-container.home-3 .home-division .home-world-graph {
   position: relative;
   z-index: 3;
 }
@@ -19,7 +19,6 @@
   top: 0px !important;
 }
 .home-container.home-3 .three-divisions {
-  min-height: calc(100vh - 85px);
   display: flex;
   align-items: stretch;
   justify-content: stretch;

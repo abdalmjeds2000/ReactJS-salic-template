@@ -30,7 +30,7 @@ function TransportationRequest() {
   return (
     <>
       <HistoryNavigation>
-        <NavLink to="/admin-services">Admin Service</NavLink>
+        <NavLink to="/sites/newsalic/SitePages/Dev/dev.aspx/admin-services">Admin Service</NavLink>
         <p>Transportation Request</p>
       </HistoryNavigation>
       

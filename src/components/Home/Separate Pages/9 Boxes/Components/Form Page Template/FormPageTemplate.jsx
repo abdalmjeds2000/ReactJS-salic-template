@@ -25,7 +25,6 @@ function FormPageTemplate(props) {
       />
       <div className='it-services_new-request-container'>
         <div className="content-services-request">
-        
         <img src={WorldBG} className='img-bg img-bg-form' alt="world background" />
           
           <div className="header">

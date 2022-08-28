@@ -2,7 +2,7 @@
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(30%, 1fr));
   gap: 50px;
-  padding: 50px 25px;
+  padding: 25px;
   position: relative;
 }
 

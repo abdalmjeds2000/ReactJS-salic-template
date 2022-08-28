@@ -6,8 +6,6 @@
   padding: 5px 25px;
   background: rgb(231,240,254);
   background: linear-gradient(90deg, rgba(231,240,254,1) 0%, rgba(255,255,255,0) 100%);
-  position: relative;
-  top: 50px;
   z-index: 1;
 }
 .home-container .person .person-info {
@@ -90,6 +88,10 @@
   .home-container .person .person-info .person-txt > div div svg {
     width: 0.9rem;
   }
+  .home-container .person {
+    display: flex;
+    padding: 15px 25px;
+  }
 }
 
 @media screen and (min-width: 600px) {
@@ -126,5 +128,11 @@
 
 .person-btns {
   position: absolute;
-  left: 52%;
+  right: 30%;
+}
+@media screen and (max-width: 990px) {
+  .person-btns {
+    position: absolute;
+    right: 25px;
+  }
 }

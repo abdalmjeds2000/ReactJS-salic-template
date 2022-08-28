@@ -40,7 +40,7 @@ function UserPanel(props) {
           }
         </a>
         
-        <NavLink to="/notification-center">
+        <NavLink to="/sites/newsalic/SitePages/Dev/dev.aspx/notification-center">
           <img src={NotificationIcon} alt="Notification Icon" />
           { 
             props.notificationsCount > 0 && 

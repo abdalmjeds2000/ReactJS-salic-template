@@ -1,6 +1,5 @@
 import React, { useContext, useState } from "react";
 import { NavLink } from 'react-router-dom';
-import { UserContext } from "../../../../../Context/userContext";
 import './Attendance.css';
 
 
@@ -15,7 +14,7 @@ const Attendance = (props) => {
       <tbody>
         <tr>
           <td colSpan={4}><h2>Latest Attendance</h2></td>
-          <td colSpan={1}><NavLink to="/attendance">See All</NavLink></td>
+          <td colSpan={1}><NavLink to="/sites/newsalic/SitePages/Dev/dev.aspx/attendance">See All</NavLink></td>
         </tr>  
         <tr>
           <th>Day</th>

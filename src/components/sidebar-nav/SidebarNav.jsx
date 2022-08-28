@@ -18,13 +18,13 @@ function getWindowSize() {
 const SidebarNav = (props) => {
 
   let listItems = [
-    {index: 0, to: '/', icon: <HomeIcon/>, text: <p>Home</p>}, 
+    {index: 0, to: '/sites/newsalic/SitePages/Dev/dev.aspx/home', icon: <HomeIcon/>, text: <p>Home</p>}, 
     // {index: 1, to: '/applications', icon: <ApplicationsIcon/>, text: <p>Applications</p>}, 
     // {index: 2, to: '/locations', icon: <LocationsIcon/>, text: <p>Locations</p>},
-    {index: 3, to: '/communication', icon: <CommunicationIcon/>, text: <p>Communication</p>},
+    {index: 3, to: '/sites/newsalic/SitePages/Dev/dev.aspx/communication', icon: <CommunicationIcon/>, text: <p>Communication</p>},
     // {index: 4, to: '/notes', icon: <NotesIcon/>, text: <p>Notes</p>},
-    {index: 5, to: '/home-2', icon: <NotesIcon/>, text: <p>Notes</p>},
-    {index: 6, to: '/home-3', icon: <NotesIcon/>, text: <p>Notes</p>},
+    {index: 5, to: '/sites/newsalic/SitePages/Dev/dev.aspx/home-2', icon: <NotesIcon/>, text: <p>Notes</p>},
+    {index: 6, to: '/sites/newsalic/SitePages/Dev/dev.aspx/home-3', icon: <NotesIcon/>, text: <p>Notes</p>},
   ];
   let activeStyle = {
     borderLeft: "4px solid var(--second-color)",

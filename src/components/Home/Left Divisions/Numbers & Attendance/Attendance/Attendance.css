@@ -1,6 +1,7 @@
 .latest-attendance-table-container .latest-attendance-table {
   width: 100%;
   padding: 10px 25px;
+  table-layout: fixed;
 }
 .latest-attendance-table-container .latest-attendance-table tr th,
 .latest-attendance-table-container .latest-attendance-table tr td:not(:first-child) {
@@ -52,7 +53,10 @@
 .latest-attendance-table-container .latest-attendance-table tbody tr:nth-child(2) th {
   font-weight: 500;
 }
-
+.latest-attendance-table-container .latest-attendance-table th,
+.latest-attendance-table-container .latest-attendance-table td {
+  color: var(--text-color) !important;
+}
 @media screen and (max-width: 1090px) {
   .latest-attendance-table-container .latest-attendance-table {
     width: 100%;
@@ -99,10 +103,6 @@
 }
 
 @media screen and (min-width: 1500px) {
-  .home-info .numbers-attendance-container {
-    /* grid-column-gap: 30px; */
-    grid-row-gap: 30px;
-  }
   .latest-attendance-table-container .latest-attendance-table td {
     font-size: 1.1rem;
   }

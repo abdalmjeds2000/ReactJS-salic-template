@@ -1,16 +1,14 @@
-import React, { useContext, useEffect, useRef, useState } from 'react';
+import React, { useContext, useState } from 'react';
 
 import { NavLink } from 'react-router-dom'
-import { Button, Col, Form, Input, message, Upload, Radio, Row, Select, Space, DatePicker, InputNumber, Popconfirm, Table, Modal } from 'antd';
+import { Form, Input, Upload, Radio, Select, DatePicker, Modal } from 'antd';
 
 import HistoryNavigation from '../../../History Navigation/HistoryNavigation'
 import FormPageTemplate from '../../Components/Form Page Template/FormPageTemplate'
 import { UserContext } from '../../../../../../Context/userContext';
 import SubmitCancel from '../../Components/Submit Cancel/SubmitCancel';
-import { InboxOutlined, PlusOutlined } from '@ant-design/icons';
-const { Search } = Input;
+import { PlusOutlined } from '@ant-design/icons';
 const { Option } = Select;
-const { Dragger } = Upload;
 
 const layout = { labelCol: { span: 6 }, wrapperCol: { span: 12 } };
 
@@ -41,12 +39,6 @@ function IssuingVISA() {
 
 
 
-
-  const [dataSource, setDataSource] = useState([]);
-  useEffect(() => {
-    console.log(dataSource)
-  }, [dataSource])
-
   let getDateAndTime = () => {
     const today = new Date();
     const date = today.getDate() +'-'+ (today.getMonth()+1)+'-' + today.getFullYear();
@@ -55,13 +47,10 @@ function IssuingVISA() {
   }
 
 
-
-
-
   return (
     <>
       <HistoryNavigation>
-        <NavLink to="/admin-services">Admin Service</NavLink>
+        <NavLink to="/sites/newsalic/SitePages/Dev/dev.aspx/admin-services">Admin Service</NavLink>
         <p>Issuing VISA</p>
       </HistoryNavigation>
       

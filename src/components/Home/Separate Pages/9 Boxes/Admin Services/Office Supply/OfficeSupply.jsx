@@ -32,7 +32,7 @@ function OfficeSupply() {
   return (
     <>
       <HistoryNavigation>
-        <NavLink to="/admin-services">Admin Service</NavLink>
+        <NavLink to="/sites/newsalic/SitePages/Dev/dev.aspx/admin-services">Admin Service</NavLink>
         <p>Office Supply</p>
       </HistoryNavigation>
       

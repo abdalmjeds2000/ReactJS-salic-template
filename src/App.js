@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import { BrowserRouter as Router } from 'react-router-dom';
+
 import './App.css';
 import Navbar from "./components/navbar/Navbar.jsx";
 import SidebarNav from './components/sidebar-nav/SidebarNav.jsx';
@@ -28,9 +29,7 @@ const App = () => {
 
 
   useEffect(() => {
-    // pnp.sp.web.currentUser.get().then(f => {
-    //   console.log("user", f);
-    // })
+
 
     // Get User Data
     axios({
@@ -42,7 +41,6 @@ const App = () => {
       setUserData(response.data)
       return response
     })
-
     // Disable Loader
     .then((response) => {setIsLoading(false); return response})
 
@@ -118,6 +116,18 @@ const App = () => {
       })
       setNotificationCenterData(notifi_data);
     })
+
+    axios({
+      method: 'POST',
+      url: 'https://salic.sharepoint.com/sites/newsalic/SitePages/Home/_api/contextinfo',
+      headers: {
+        'Access-Control-Allow-Methods': 'OPTIONS',
+        "Origin": "https://salic.sharepoint.com",
+        "Access-Control-Allow-Origin": "https://salic.sharepoint.com",
+        // "Access-Control-Allow-Origin": "*"
+      }
+    }).then((res) => console.log(res))
+    .catch((err) => console.log(err))
   }, [])
 
   const toggleGlobeReady = () => {

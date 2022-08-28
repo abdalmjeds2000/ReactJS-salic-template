@@ -19,7 +19,7 @@ function SimpleUserPanel(props) {
         />
         <p>{props.userName}</p>
         <div className='icons'>
-          <NavLink to="/notification-center">
+          <NavLink to="/sites/newsalic/SitePages/Dev/dev.aspx/notification-center">
             <NotificationIcon />
             {
               props.notificationsCount > 0 && 

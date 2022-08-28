@@ -15,7 +15,7 @@ function HistoryNavigation(props) {
   return (
     <div className='history-navigation'>
       <div className="links">
-        <NavLink to="/">SALIC Gate</NavLink>
+        <NavLink to="/sites/newsalic/SitePages/Dev/dev.aspx/home">SALIC Gate</NavLink>
         {props.children}
       </div>
       <div className="time">

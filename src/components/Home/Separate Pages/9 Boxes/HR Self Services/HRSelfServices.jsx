@@ -25,12 +25,10 @@ import { ReactComponent as RelocationAllowance } from '../../../../../icons/HR S
 import { ReactComponent as HRNotificationsCenter } from '../../../../../icons/HR Self Services/HR Notifications Center.svg';
 import { ReactComponent as ERPNotificationsCenter } from '../../../../../icons/HR Self Services/ERP Notifications Center.svg';
 
-
 import WorldBG from '../../../../../icons/home/world.svg';
 import SimpleUserPanel from '../../../../global/Simple User Panel/SimpleUserPanel';
 import { UserContext } from '../../../../../Context/userContext';
 import HistoryNavigation from '../../History Navigation/HistoryNavigation';
-import { useEffect } from 'react';
 
 
 

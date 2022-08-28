@@ -10,17 +10,7 @@
 .services-body-container .services-boxs-container:last-child {
   margin-bottom: 100px;
 }
-img.img-bg {
-  width: 150vh;
-  position: absolute;
-  top: 0vh;
-  right: -50vh;
-  opacity: 0.15;
-  z-index: 0;
-}
-img.img-bg.img-bg-form {
-  z-index: -1;
-}
+
 .services-page-container > .header {
   display: flex;
   align-items: center;

@@ -26,7 +26,7 @@ const PersonMobile = (props) => {
     <div className="person-info person-info-mobile">
       <div className="person-control-buttons">
         
-        <a href="/" target="blank">
+        <a href="/sites/newsalic/SitePages/Dev/dev.aspx" target="blank">
           <DocumentIcon />
         </a>
         
@@ -43,7 +43,7 @@ const PersonMobile = (props) => {
           <img src={`https://salic.sharepoint.com/sites/newsalic/_layouts/15/userphoto.aspx?size=M&username=${user_data.Data?.Mail}`} alt="Person" />
         </div>
 
-        <NavLink to="/notification-center">
+        <NavLink to="/sites/newsalic/SitePages/Dev/dev.aspx/notification-center">
           <NotificationIcon />
           { 
             notifications_count > 0 && 

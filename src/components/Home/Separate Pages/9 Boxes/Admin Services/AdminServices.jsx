@@ -28,18 +28,18 @@ function AdminServices() {
   const { user_data, notifications_count, mail_count } = useContext(UserContext);
 
 
-  const [services, setServices] = useState([
-    {to: '/admin-services/issuing-VISA', bgColor: '#43A2CC',icon: <IssueVISAReequest />, text: 'Issue VISA Request'},
-    {to: '/admin-services/business-gate', bgColor: '#F7937B',icon: <BusinessGateEntry />, text: 'Business Gate Entry'},
-    {to: '/admin-services/shipment', bgColor: '#E4A7EB',icon: <ShipmentRequest />, text: 'Shipment Request'},
-    {to: '/admin-services/office-supply', bgColor: '#43A2CC',icon: <OfficeSupplyRequest />, text: 'Office Supply Request'},
-    {to: '/admin-services/maintenance', bgColor: '#70CFAF',icon: <Maintenance />, text: 'Maintenance'},
-    {to: '/admin-services/visitor', bgColor: '#FD96A6',icon: <VisitorVISA />, text: 'Visitor VISA'},
-    {to: '/admin-services/', bgColor: '#FBBE82',icon: <PurchaseRequisition />, text: 'Purchase Requisition'},
-    {to: '/admin-services/', bgColor: '#70CFAF',icon: <ReceiveOrderItems />, text: 'Receive Order Items'},
-    {to: '/admin-services/', bgColor: '#9BC9ED',icon: <ReceiptConfitmation />, text: 'Receipt Confitmation'},
-    {to: '/admin-services/transportation', bgColor: '#FBBE82',icon: <TransportationRequest />, text: 'Transportation Request'},
-  ]);
+  const services = [
+    {to: '/sites/newsalic/SitePages/Dev/dev.aspx/admin-services/issuing-VISA', bgColor: '#43A2CC',icon: <IssueVISAReequest />, text: 'Issue VISA Request'},
+    {to: '/sites/newsalic/SitePages/Dev/dev.aspx/admin-services/business-gate', bgColor: '#F7937B',icon: <BusinessGateEntry />, text: 'Business Gate Entry'},
+    {to: '/sites/newsalic/SitePages/Dev/dev.aspx/admin-services/shipment', bgColor: '#E4A7EB',icon: <ShipmentRequest />, text: 'Shipment Request'},
+    {to: '/sites/newsalic/SitePages/Dev/dev.aspx/admin-services/office-supply', bgColor: '#43A2CC',icon: <OfficeSupplyRequest />, text: 'Office Supply Request'},
+    {to: '/sites/newsalic/SitePages/Dev/dev.aspx/admin-services/maintenance', bgColor: '#70CFAF',icon: <Maintenance />, text: 'Maintenance'},
+    {to: '/sites/newsalic/SitePages/Dev/dev.aspx/admin-services/visitor', bgColor: '#FD96A6',icon: <VisitorVISA />, text: 'Visitor VISA'},
+    {to: '/sites/newsalic/SitePages/Dev/dev.aspx/admin-services/', bgColor: '#FBBE82',icon: <PurchaseRequisition />, text: 'Purchase Requisition'},
+    {to: '/sites/newsalic/SitePages/Dev/dev.aspx/admin-services/', bgColor: '#70CFAF',icon: <ReceiveOrderItems />, text: 'Receive Order Items'},
+    {to: '/sites/newsalic/SitePages/Dev/dev.aspx/admin-services/', bgColor: '#9BC9ED',icon: <ReceiptConfitmation />, text: 'Receipt Confitmation'},
+    {to: '/sites/newsalic/SitePages/Dev/dev.aspx/admin-services/transportation', bgColor: '#FBBE82',icon: <TransportationRequest />, text: 'Transportation Request'},
+  ];
 
 
   return (

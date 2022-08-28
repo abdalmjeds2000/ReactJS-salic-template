@@ -1,24 +1,16 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { UserContext } from '../../../../../../Context/userContext';
-import { Button, Col, Form, Input, message, Modal, Upload, Radio, Row, Select, Space } from 'antd';
+import { Form, Input, Modal, Upload, Radio, Select, Space } from 'antd';
 import { PlusOutlined } from '@ant-design/icons';
 import Swal from 'sweetalert2'
-import { NavLink, useNavigate } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 import HistoryNavigation from '../../../History Navigation/HistoryNavigation';
 import FormPageTemplate from '../../Components/Form Page Template/FormPageTemplate';
 import SubmitCancel from '../../Components/Submit Cancel/SubmitCancel';
 
-
-
 const { Option } = Select;
 const layout = { labelCol: { span: 6 }, wrapperCol: { span: 12 } };
-
-
-
-
-
-
 
 function NewITServiceRequest() {
   const { user_data } = useContext(UserContext);
@@ -38,9 +30,6 @@ function NewITServiceRequest() {
     setPreviewTitle(file.name || file.url.substring(file.url.lastIndexOf('/') + 1));
   };
   const handleChange = ({ fileList: newFileList }) => setFileList(newFileList);
-
-
-
 
   let getDateAndTime = () => {
     const today = new Date();
@@ -63,7 +52,7 @@ function NewITServiceRequest() {
   return (
     <>
       <HistoryNavigation>
-        <NavLink to="/it-services">IT Service Center</NavLink>
+        <NavLink to="/sites/newsalic/SitePages/Dev/dev.aspx/it-services">IT Service Center</NavLink>
         <p>New Service Request</p>
       </HistoryNavigation>
 
@@ -94,7 +83,7 @@ function NewITServiceRequest() {
           >
             <Input placeholder='Date' size='large' disabled />
           </Form.Item>
-          <Form.Item name={'On Behalf Of'} label="On Behalf Of" >
+          <Form.Item name={'On Behalf Of'} label="On Behalf Of">
             <Select
               showSearch
               placeholder="employee name"

@@ -5,12 +5,6 @@
   justify-content: center;
   background: none !important;
 }
-@media screen and (max-width: 1090px) {
-  .person-mobile {
-    position: relative;
-    top: -345px;
-  }
-}
 .person-mobile .person-info-mobile {
   flex-direction: column;
   align-items: center;

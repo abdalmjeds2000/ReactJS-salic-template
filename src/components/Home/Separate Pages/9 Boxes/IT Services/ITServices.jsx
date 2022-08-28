@@ -21,12 +21,10 @@ import { UserContext } from '../../../../../Context/userContext';
 function ITServices() {
   const { user_data, notifications_count, mail_count } = useContext(UserContext);
 
-
-  const [services, setServices] = useState([
-    {to: '/it-services/services-request', bgColor: '#70CFAF', icon: <NewITServiceRequest />, text: 'New IT Service Request'},
-    {to: '/it-services/new-asset', bgColor: '#897ED4', icon: <NewITServiceRequest />, text: 'Register New Asset'},
-  ]);
-
+  const services = [
+    {to: '/sites/newsalic/SitePages/Dev/dev.aspx/it-services/services-request', bgColor: '#70CFAF', icon: <NewITServiceRequest />, text: 'New IT Service Request'},
+    {to: '/sites/newsalic/SitePages/Dev/dev.aspx/it-services/new-asset', bgColor: '#897ED4', icon: <NewITServiceRequest />, text: 'Register New Asset'},
+  ];
 
   return (
     <>

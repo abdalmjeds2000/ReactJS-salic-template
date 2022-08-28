@@ -1,15 +1,13 @@
 import React, { useContext, useState } from 'react'
 import { NavLink } from 'react-router-dom'
-import Swal from 'sweetalert2';
 import HistoryNavigation from '../../../History Navigation/HistoryNavigation'
-import { Button, Col, Form, Input, message, Upload, Radio, Row, Select, Space, DatePicker, InputNumber, Modal } from 'antd';
+import { Button, Form, Input, Upload, Radio, Select, Space, DatePicker, InputNumber, Modal } from 'antd';
 import FormPageTemplate from '../../Components/Form Page Template/FormPageTemplate';
 import { UserContext } from '../../../../../../Context/userContext';
-import { InboxOutlined, MinusCircleOutlined, PlusOutlined } from '@ant-design/icons';
+import { MinusCircleOutlined, PlusOutlined } from '@ant-design/icons';
 import SubmitCancel from '../../Components/Submit Cancel/SubmitCancel';
 
 const { Option } = Select;
-const { Dragger } = Upload;
 const layout = { labelCol: { span: 6 }, wrapperCol: { span: 12 } };
 
 function RegisterNewAssets() {
@@ -43,7 +41,7 @@ function RegisterNewAssets() {
   return (
     <>
       <HistoryNavigation>
-        <NavLink to="/it-services">IT Service Center</NavLink>
+        <NavLink to="/sites/newsalic/SitePages/Dev/dev.aspx/it-services">IT Service Center</NavLink>
         <p>Register New Asset</p>
       </HistoryNavigation>
       

@@ -3,7 +3,7 @@
   display: flex;
   align-items: stretch;
   justify-content: stretch;
-  margin: 50px 25px 0 25px;
+  margin: 50px 25px 25px 25px;
   gap: 50px;
   position: relative;
 }
@@ -438,7 +438,7 @@
   
   .three-divisions {
     flex-wrap: wrap;
-    margin: 20px 10px;
+    margin: 10px;
   }
   .three-divisions .media-center {
     width: 100vw;

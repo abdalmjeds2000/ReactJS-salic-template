@@ -49,7 +49,7 @@ const PersonInfo = (props) => {
           </span> }
       </a>
       
-      <NavLink to="/notification-center">
+      <NavLink to="/sites/newsalic/SitePages/Dev/dev.aspx/notification-center">
         <NotificationIcon />
         { 
           notifications_count > 0 && 
